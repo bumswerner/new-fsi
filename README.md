@@ -70,6 +70,8 @@
     //= require_tree .
 
 27. prepare for anynines
+
+    gem install a9s
     move gem 'sqlite3' to group :development, :test
     create new group in Gemfile
     group :production do
@@ -101,10 +103,12 @@
     cf target -s production
     cf create-service a9s-postgresql postgresql-single-small [name-of-application]
     cf service [name-of-application]
-34. 
+34.
+    add manifest.yml file
+
     cf push --random-route 
 
-
+https://support.anynines.com/hc/en-us/community/posts/234548468-How-to-deploy-your-apps-on-anynines
 
 
 
