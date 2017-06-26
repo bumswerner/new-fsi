@@ -79,10 +79,19 @@ Things you may want to cover:
     rails g devise:views:locale en
     rails g devise:views:bootstrap_templates
 
-21. 
+26. # Use SCSS for stylesheets
+    gem 'jquery-rails'
+    bundle install --without production
+    assets/javascript/application.js
+    //= require jquery
+    //= require jquery_ujs
+    //= require rails-ujs
+    //= require bootstrap-sprockets
+    //= require turbolinks
+    //= require_tree .
 
-21. 
-
+    gem 'bootstrap-sass', '~> 3.3.5'
+    
 
 
 
