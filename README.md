@@ -78,8 +78,31 @@
     end
     bundle install --without production
 
-    
+28. add to config/application.rb
+    config.assets.initialize_on_precompile = false    
 
+29. install cf cli  https://github.com/cloudfoundry/cli/releases/
+    wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+    echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+    curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
+    sudo mv [your-download-dir]/cf /usr/local/bin/cf
+    chmod +x /usr/local/bin/cf
+
+30. cf api https://api.aws.ie.a9s.eu
+31. cf login
+    --> email and password form anynines account
+    --> 1 for production
+32. You can see the available organizations by tying:
+    cf orgs
+    To see all available spaces
+    cf spaces
+    
+33. You can change or select an organization or a space by typing:
+    cf target -s production
+    cf create-service a9s-postgresql postgresql-single-small [name-of-application]
+    cf service [name-of-application]
+34. 
+    cf push --random-route 
 
 
 

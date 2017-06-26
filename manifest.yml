@@ -1,0 +1,11 @@
+---
+applications:
+- name: fsi
+  memory: 256M
+  instances: 1
+  host: fsi
+  path: .
+  services:
+  - fsi # TODO: adjust to a mysql instance name
+  env:
+    RAILS_ENV: production
