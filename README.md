@@ -71,7 +71,7 @@
 
 27. prepare for anynines
 
-    gem install a9s
+   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!shit gem install a9s
     move gem 'sqlite3' to group :development, :test
     create new group in Gemfile
     group :production do
