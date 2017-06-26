@@ -56,8 +56,14 @@ Things you may want to cover:
     gem 'devise'
     bundle install --without production
     rails generate devise:install
+    - config/environments/development.rb 
+    --> config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
+
     rails generate devise User
+    if you add the confirmable option in the model, you'll need to uncomment the Confirmable section in the migration.
+    controller/application_controller.rb -> before_action :authenticate_user!
     rake db:migrate
+
     gem 'twitter-bootstrap-rails'
     bundle install --without production
     rails generate bootstrap:install static
