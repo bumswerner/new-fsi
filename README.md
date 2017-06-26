@@ -40,7 +40,8 @@ Things you may want to cover:
 15. git status // shows the current respository status
 16. git commit -m "description of commit"
 17. git push // pushed all file to the remote respository
-18. git checkout -f // reset to the last commit
+18. git checkout -f // reset to the last commit  
+    git reset --hard // stellt die vorherige Version wieder her
 19. GIT <---> Cloud9
     cat ~/.ssh/id_rsa.pub // Zeigt den SSH-Key an
     kopiere den kompletten Schlüssel und füge ihn deinem  Github-Accout hinzu
@@ -51,7 +52,28 @@ Things you may want to cover:
     dann zum testen 'git remote -v' eingeben
     git push -u origin master // pushed den Code zum Repository
 
-20. 
+20. Install devise
+    gem 'devise'
+    bundle install --without production
+    rails generate devise:install
+    rails generate devise User
+    rake db:migrate
+    gem 'twitter-bootstrap-rails'
+    bundle install --without production
+    rails generate bootstrap:install static
+    rails g bootstrap:layout application (then hits Y und enter)
+    gem 'devise-bootstrap-views'
+    bundle install --without production
+
+    add this line to file assets/stylesheets/application.css
+    over the line  *= require_tree . 
+    *= require devise_bootstrap_views
+
+    rails g devise:views:locale en
+    rails g devise:views:bootstrap_templates
+
+21. 
+
 21. 
 
 
