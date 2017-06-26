@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-* 
 1. rvm install ruby-2.4.1
 2. rvm --default ruby-2.4.1
 3. rvm list // check if the correct ruby version selected
@@ -67,7 +44,8 @@ Things you may want to cover:
     gem 'twitter-bootstrap-rails'
     bundle install --without production
     rails generate bootstrap:install static
-    rails g bootstrap:layout application (then hits Y und enter)
+    rails g bootstrap:layout application 
+    (then hits Y und enter)
 23.
     gem 'devise-bootstrap-views'
     bundle install --without production
@@ -81,6 +59,7 @@ Things you may want to cover:
 
 26. # Use SCSS for stylesheets
     gem 'jquery-rails'
+    gem 'bootstrap-sass', '~> 3.3.5'
     bundle install --without production
     assets/javascript/application.js
     //= require jquery
@@ -90,7 +69,15 @@ Things you may want to cover:
     //= require turbolinks
     //= require_tree .
 
-    gem 'bootstrap-sass', '~> 3.3.5'
+27. prepare for anynines
+    move gem 'sqlite3' to group :development, :test
+    create new group in Gemfile
+    group :production do
+      gem 'pg'
+      gem 'rails_12factor'
+    end
+    bundle install --without production
+
     
 
 
