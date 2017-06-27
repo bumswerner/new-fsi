@@ -1,11 +1,11 @@
 ---
 applications:
-- name: fsi
+- name: fsi-htw
   memory: 256M
   instances: 1
-  host: fsi
+  host: fsi-htw
   path: .
   services:
-  - fsi # TODO: adjust to a mysql instance name
+  - fsi-htw # TODO: adjust to a mysql instance name
   env:
     RAILS_ENV: production

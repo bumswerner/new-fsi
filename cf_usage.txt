@@ -1,0 +1,50 @@
+cf version 6.27.0+d26b32d.2017-06-08, Cloud Foundry command line tool
+Usage: cf [global options] command [arguments...] [command options]
+
+[1mBefore getting started:[0m
+  config    login,l      target,t
+  help,h    logout,lo    
+
+[1mApplication lifecycle:[0m
+  apps,a        run-task,rt    events
+  push,p        logs           set-env,se
+  start,st      ssh            create-app-manifest
+  stop,sp       app            
+  restart,rs    env,e          
+  restage,rg    scale          
+
+[1mServices integration:[0m
+  marketplace,m        create-user-provided-service,cups
+  services,s           update-user-provided-service,uups
+  create-service,cs    create-service-key,csk
+  update-service       delete-service-key,dsk
+  delete-service,ds    service-keys,sk
+  service              service-key
+  bind-service,bs      bind-route-service,brs
+  unbind-service,us    unbind-route-service,urs
+
+[1mRoute and domain management:[0m
+  routes,r        delete-route    create-domain
+  domains         map-route       
+  create-route    unmap-route     
+
+[1mSpace management:[0m
+  spaces         create-space    set-space-role
+  space-users    delete-space    unset-space-role
+
+[1mOrg management:[0m
+  orgs,o       set-org-role
+  org-users    unset-org-role
+
+[1mCLI plugin management:[0m
+  plugins           add-plugin-repo      repo-plugins
+  install-plugin    list-plugin-repos    
+
+[1mCommands offered by installed plugins:[0m
+
+[1mGlobal options:[0m
+  --help, -h                         Show help
+  -v                                 Print API request diagnostics to stdout
+
+These are commonly used commands. Use 'cf help -a' to see all, with descriptions.
+See 'cf help <command>' to read about a specific command.
