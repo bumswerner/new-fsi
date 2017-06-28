@@ -40,6 +40,9 @@
     if you add the confirmable option in the model, you'll need to uncomment the Confirmable section in the migration.
     controller/application_controller.rb -> before_action :authenticate_user!
     rake db:migrate
+
+    # skip the user authentication for index action
+    skip_before_action :authenticate_user!, only: [:index]
 22.
     gem 'twitter-bootstrap-rails'
     bundle install --without production
@@ -107,9 +110,12 @@
     add manifest.yml file
 
     cf push --random-route 
-
+    
+     cf run-task [appname] rake db:migrate     
+     cf logs fsi-htw --recent
+      cf push [appname] -c "bundle exec rake db:migrate" 
+      
 https://support.anynines.com/hc/en-us/community/posts/234548468-How-to-deploy-your-apps-on-anynines
-
 
 
 

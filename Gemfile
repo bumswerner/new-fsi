@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ gem 'pg'
+
+
  # Use SCSS for stylesheets
 gem 'jquery-rails'
 # Adding Authentication with Devise
@@ -60,7 +63,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+ 
   gem 'rails_12factor'
 end
 
