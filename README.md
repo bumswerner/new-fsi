@@ -117,5 +117,7 @@
       
 https://support.anynines.com/hc/en-us/community/posts/234548468-How-to-deploy-your-apps-on-anynines
 
-
+35. sudo apt-get update
+    sudo apt-get install imagemagick
+    
 

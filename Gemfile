@@ -10,6 +10,7 @@ gem 'aws-sdk'
 gem 'fog'
 
 gem 'paperclip'
+#gem 'imagemagick'
 
  # Use SCSS for stylesheets
 gem 'jquery-rails'
