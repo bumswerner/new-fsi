@@ -121,6 +121,25 @@ https://support.anynines.com/hc/en-us/community/posts/234548468-How-to-deploy-yo
     sudo apt-get install imagemagick
     
 36. gem 'letter_opener_web'
+
+how install cli and cf to codeanywhere
+
+
+curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
+sudo mv cf /usr/local/bin
+sudo curl -o /usr/share/bash-completion/completions/cf https://raw.githubusercontent.com/cloudfoundry/cli/master/ci/installers/completion/cf
+cf --version
+cf login 
+API endpoint --> https://api.aws.ie.a9s.eu   
+cf orgs
+
+cf target -s production 
+cf create-service a9s-postgresql postgresql-single-small [name-of-application]
+cf service [name-of-application]
+cf push [name-of-application]
+
+
+ 
     
     
 
