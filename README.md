@@ -120,4 +120,7 @@ https://support.anynines.com/hc/en-us/community/posts/234548468-How-to-deploy-yo
 35. sudo apt-get update
     sudo apt-get install imagemagick
     
+36. gem 'letter_opener_web'
+    
+    
 

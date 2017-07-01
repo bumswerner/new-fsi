@@ -10,7 +10,8 @@ gem 'aws-sdk'
 gem 'fog'
 
 gem 'paperclip'
-#gem 'imagemagick'
+gem 'letter_opener_web'
+
 
  # Use SCSS for stylesheets
 gem 'jquery-rails'
