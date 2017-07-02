@@ -89,10 +89,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  
-  
-  # config.action_mailer.default_url_options = { :host => "fsi-htw" }
-  
+ # Fog::Storage::AWS::DEFAULT_REGION = 'us-east-1'
   
   config.paperclip_defaults = {
     :storage => :fog,
@@ -105,4 +102,11 @@ Rails.application.configure do
      },
      :fog_host => "https://s3-eu-west-1.amazonaws.com/#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
 }
+
+
+
+  config.action_mailer.default_url_options = { host: 'http://fsi.aws.ie.a9sapp.eu' }
+  
+  config.action_mailer.delivery_method = :letter_opener_web
+
 end

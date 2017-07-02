@@ -53,7 +53,9 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   # IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  config.action_mailer.default_url_options = { host: 'https://fsi-miketheman769562.codeanyapp.com' }
+  # config.action_mailer.default_url_options = { host: 'https://fsi-miketheman769562.codeanyapp.com' }
+   # config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
+    config.action_mailer.default_url_options = { host: 'http://fsi-htw-kalax.c9users.io', port: 8080 }
   
   config.action_mailer.delivery_method = :letter_opener_web
 
