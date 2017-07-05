@@ -142,4 +142,14 @@ cf push [name-of-application]
  
     
     
+new cli for heroku
 
+wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+
+
+
+
+for cf
+
+cf ssh [name-of-application] -t -c "/tmp/lifecycle/launcher /home/vcap/app 'rails c' ''"
