@@ -153,3 +153,16 @@ wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 for cf
 
 cf ssh [name-of-application] -t -c "/tmp/lifecycle/launcher /home/vcap/app 'rails c' ''"
+
+
+Install RSpec
+
+group :development, :test do
+  
+  gem 'rspec-rails', '3.1.0'
+
+
+group :test do 
+  gem 'capybara', '2.7.1'
+end  
+rails generate rspec:install
