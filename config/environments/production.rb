@@ -99,8 +99,6 @@ Rails.application.configure do
        :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
      },
      :fog_host => "https://s3-eu-west-1.amazonaws.com/#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
-#   :fog_directory => "#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}",                             
- #  :fog_host => "https://s3-eu-west-1.amazonaws.com"                
 }
 
   config.action_mailer.default_url_options = { host: 'http://fsi.aws.ie.a9sapp.eu' }
