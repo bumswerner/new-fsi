@@ -159,10 +159,18 @@ Install RSpec
 
 group :development, :test do
   
-  gem 'rspec-rails', '3.1.0'
+  gem 'rspec-rails', '3.5.0'
 
 
 group :test do 
   gem 'capybara', '2.7.1'
 end  
+
+
 rails generate rspec:install
+
+bundle binstubs rspec-core
+
+
+Let's GO
+

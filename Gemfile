@@ -50,7 +50,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   
-  gem 'rspec-rails', '3.1.0'
+  gem 'rspec-rails', '3.5.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
