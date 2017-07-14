@@ -186,3 +186,14 @@ git checkout -b faculty-fecture-spec
 rails generate scaffold Faculty name:string symbol:string description:text
 rake db:migrate
 rails g bootstrap:themed Faculties
+
+
+install guard then add this three gems to group development
+  
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  
+  bundle install
+  bundle binstubs guard
+  guard init
