@@ -117,8 +117,8 @@
       
 https://support.anynines.com/hc/en-us/community/posts/234548468-How-to-deploy-your-apps-on-anynines
 
-35. sudo apt-get update
-    sudo apt-get install imagemagick
+35. sudo apt update
+    sudo apt install imagemagick
     
 36. gem 'letter_opener_web'
 
@@ -172,5 +172,17 @@ rails generate rspec:install
 bundle binstubs rspec-core
 
 
-Let's GO
+Let's GO -----------------------------------------------------------------------
 
+Process for creatung faculties feature test feature
+
+  - Create a nranch to do the development work
+  - Write feature test
+  - Build features to make pass one by one
+  - Once the feature test passes with no errors - merge branch with master branch
+
+git checkout -b faculty-fecture-spec
+
+rails generate scaffold Faculty name:string symbol:string description:text
+rake db:migrate
+rails g bootstrap:themed Faculties

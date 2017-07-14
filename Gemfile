@@ -50,7 +50,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   
-  gem 'rspec-rails', '3.5.0'
+  gem 'rspec-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,10 +58,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   #gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do 
-  gem 'capybara', '2.7.1'
+  gem 'capybara'
 end
 
 
