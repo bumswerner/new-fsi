@@ -187,13 +187,31 @@ rails generate scaffold Faculty name:string symbol:string description:text
 rake db:migrate
 rails g bootstrap:themed Faculties
 
+------------------------------------------------------------------------------
+Create a new git topic branch as follows:
 
-install guard then add this three gems to group development
-  
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-cucumber'
-  
-  bundle install
-  bundle binstubs guard
-  guard init
+git checkout -b adding-guard
+
+Add the following gems to the development group of the Gemfile:
+gem 'guard', '~> 2.14.0'
+gem 'guard-rspec', '~> 4.7.2' 
+gem 'guard-cucumber', '~> 2.1.2'
+
+Run the following command to install the gems:
+bundle install
+
+Also run the command:
+guard init
+
+Run the command: 
+bundle binstubs guard
+
+Run:
+cucumber --init 
+
+Make a commit:
+git add -A
+git commit -m "Add Guard"
+git checkout master
+git merge adding-guard
+git push
