@@ -1,9 +1,5 @@
 require "rails_helper"
 
-
-
-
- 
 # feature 'Creating book' do  
 #   scenario 'can create a book' do
 #     # 1. go to root where will be button to Add New Book:
@@ -31,7 +27,7 @@ require "rails_helper"
 
 RSpec.feature "Creating Faculty - " do
   scenario "A user creates a new faculty" do
-    
+     
   #  sign_in_with 'miketheman@t-online.de', 'massick'
   #  user = build(:user, name: "John")
     visit "/faculties"
@@ -44,15 +40,43 @@ RSpec.feature "Creating Faculty - " do
     click_button "Create Faculty"
     
     expect(page).to have_content("Faculty was successfully created.")
-    expect(page.current_path).to eq(faculty_path(1))
+    expect(page.current_path).to eq(faculty_path(2))
+  end
+  
+  scenario "A user fails to create a new faculty" do
+    visit "/faculties"
+    click_link "New Faculty" 
+    
+    fill_in "Name", with: ""
+    fill_in "Symbol", with: ""
+    fill_in "Description", with: ""
+    
+    click_button "Create Faculty"
+    
+    expect(page).to have_content("Faculty has not been created")
+    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Symbol can't be blank")
+    expect(page).to have_content("Description can't be blank")
+    
   end
 end
 
 
+#RSpec.describe Faculty, type :model do
+ # before do
+ #   @faculty = FactoryGirl.create(:faculty)
+#  end
+# end
+
 # RSpec.feature "Updating Faculty - " do
 #   scenario "A user update a faculty" do
-#     visit "/faculties/edit"
-#   # click_link "Edit" 
+#     #visit "/faculties/2/edit"
+  
+#     faculty = FactoryGirl.create(:faculty)
+    
+
+
+# #  click_link "Edit" 
     
 #     fill_in "Name", with: "Ingenieurwissenschaften updated"
 #     fill_in "Symbol", with: "IngWi updated"

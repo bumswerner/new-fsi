@@ -215,3 +215,33 @@ git commit -m "Add Guard"
 git checkout master
 git merge adding-guard
 git push
+
+
+
+---------------------------------------------------------------------------
+how to delete a branch
+git branch -d [name-of-branch]
+
+
+
+Add FactoryGirl
+
+add gem 'factory_girl_rails' to development, :test group
+
+After running bundle open up the spec/rails_helper.rb file and add the following line inside of the configure block:
+# spec/rails_helper.rb
+
+config.include FactoryGirl::Syntax::Methods
+mkdir spec/factories
+
+create new file 
+spec/factories/faculties.rb
+and add in in the following ode:
+
+FactoryGirl.define do
+  factory :faculty do
+    name "My Amazing Article"
+    symbol "Jon Snow"
+    description "bla bla"
+  end
+end

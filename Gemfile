@@ -79,6 +79,8 @@ group :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-cucumber'
+  
+  gem 'rails-controller-testing'
 end
 
 group :production do

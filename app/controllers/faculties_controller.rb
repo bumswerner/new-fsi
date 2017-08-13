@@ -31,6 +31,7 @@ class FacultiesController < ApplicationController
         format.html { redirect_to @faculty, notice: 'Faculty was successfully created.' }
         format.json { render :show, status: :created, location: @faculty }
       else
+        flash[:danger] = "Faculty has not been created"
         format.html { render :new }
         format.json { render json: @faculty.errors, status: :unprocessable_entity }
       end
