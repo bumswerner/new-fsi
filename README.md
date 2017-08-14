@@ -245,3 +245,17 @@ FactoryGirl.define do
     description "bla bla"
   end
 end
+
+
+
+
+********************************************************************************
+++++ identity ++++ Faculty +++++++++++++++
+rails generate scaffold Faculty name:string symbol:string description:text
+rake db:migrate
+rails g bootstrap:themed Faculties
+
+++++ identity ++++ Course ++++++++++++++++
+rails generate scaffold Course name:string symbol:string description:text faculty:references
+rake db:migrate
+rails g bootstrap:themed Courses

@@ -66,27 +66,25 @@ end
  # before do
  #   @faculty = FactoryGirl.create(:faculty)
 #  end
-# end
 
-# RSpec.feature "Updating Faculty - " do
-#   scenario "A user update a faculty" do
-#     #visit "/faculties/2/edit"
+RSpec.feature "Updating Faculty - " do
+  scenario "A user update a faculty" do
+#   visit "/faculties/2/edit"
   
-#     faculty = FactoryGirl.create(:faculty)
-    
+    faculty = FactoryGirl.create(:faculty)
+   puts faculty.name
+  #  faculty.name 
 
-
-# #  click_link "Edit" 
+#  click_link "Edit" 
+#    fill_in "Name", with: "Ingenieurwissenschaften updated"
+   # fill_in "Symbol", with: "IngWi updated"
+  #  fill_in "Description", with: "Die Fakultät für Ingenieurwissenschaften updated"
     
-#     fill_in "Name", with: "Ingenieurwissenschaften updated"
-#     fill_in "Symbol", with: "IngWi updated"
-#     fill_in "Description", with: "Die Fakultät für Ingenieurwissenschaften updated"
+  #  click_button "Update Faculty"
     
-#     click_button "Update Faculty"
-    
-#     expect(page).to have_content("Faculty was successfully created.")
-#     expect(page.current_path).to eq(faculty_path(1))
-#   end
-# end
+  #  expect(page).to have_content("Faculty was successfully created.")
+  #  expect(page.current_path).to eq(faculty_path(1))
+  end
+end
 
 # Run only this test
