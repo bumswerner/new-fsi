@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170819143212) do
+=======
+ActiveRecord::Schema.define(version: 20170819171352) do
+
+  create_table "courseofstudies", force: :cascade do |t|
+    t.string "name"
+    t.string "symbol"
+    t.text "description"
+    t.integer "faculty_id"
+    t.integer "studytype_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["faculty_id"], name: "index_courseofstudies_on_faculty_id"
+    t.index ["studytype_id"], name: "index_courseofstudies_on_studytype_id"
+  end
+>>>>>>> d02feb7
 
   create_table "courses", force: :cascade do |t|
     t.string "name"

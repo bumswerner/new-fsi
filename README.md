@@ -275,12 +275,17 @@ end
  
  
 ********************************************************************************
->>>>>>>>> local version
+
+
 ++++ identity ++++ Course ++++++++++++++++
 rails generate scaffold Course name:string symbol:string description:text faculty:references studytype:references
+=======
+++++ identity ++++ C ++++++++++++++++
+rails generate scaffold Courseofstudy name:string symbol:string description:text faculty:references studytype:references
+
 rake db:migrate
-rails g bootstrap:themed Courses
-<<<<<<<<< saved version
+rails g bootstrap:themed Courseofstudies
+
 
 =========
 
@@ -385,5 +390,3 @@ rails g bootstrap:themed Profiles
 class Profile < ActiveRecord::Base
   belongs_to :user
 end
-  
->>>>>>>>> local version
