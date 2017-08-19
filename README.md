@@ -277,7 +277,7 @@ end
 ********************************************************************************
 >>>>>>>>> local version
 ++++ identity ++++ Course ++++++++++++++++
-rails generate scaffold Course name:string symbol:string description:text faculty:references
+rails generate scaffold Course name:string symbol:string description:text faculty:references studytype:references
 rake db:migrate
 rails g bootstrap:themed Courses
 <<<<<<<<< saved version
