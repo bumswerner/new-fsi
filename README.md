@@ -297,7 +297,7 @@ rails g bootstrap:themed Categories
 class Category < ActiveRecord::Base
   has_many :assoziations
   has_many :lectures, :through => :assoziations
-  has_many :courses, :through => :assoziations
+  has_many :courseofstudies, :through => :assoziations
 end
 
 ********************************************************************************
