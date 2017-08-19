@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  resources :courses
-=======
   resources :courseofstudies
->>>>>>> d02feb7
   resources :studytypes
   resources :faculties
   resources :images
