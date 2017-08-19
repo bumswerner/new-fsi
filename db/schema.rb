@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819211828) do
+ActiveRecord::Schema.define(version: 20170819213335) do
 
   create_table "assoziations", force: :cascade do |t|
     t.string "code"
@@ -93,6 +93,21 @@ ActiveRecord::Schema.define(version: 20170819211828) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "name"
+    t.text "discription"
+    t.string "data_file_name"
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.datetime "data_updated_at"
+    t.integer "section_id"
+    t.integer "lecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lecture_id"], name: "index_materials_on_lecture_id"
+    t.index ["section_id"], name: "index_materials_on_section_id"
   end
 
   create_table "sections", force: :cascade do |t|

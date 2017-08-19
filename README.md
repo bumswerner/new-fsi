@@ -318,8 +318,7 @@ end
 ********************************************************************************
 ++++ identity +++++ Assoziation +++++++++
 ********************************************************************************
-rails generate scaffold Assoziation code:string instructor:string
-               category:references course:references lecture:references
+rails generate scaffold Assoziation code:string instructor:string category:references courseofstudy:references lecture:references
 rake db:migrate
 rails g bootstrap:themed Assoziations
 
@@ -332,8 +331,7 @@ end
 ********************************************************************************
 ++++ identity +++++ Connection +++++++++
 ********************************************************************************
-rails generate scaffold Connection name:string
-               lecture:references section:references
+rails generate scaffold Connection name:string lecture:references section:references
 rake db:migrate
 rails g bootstrap:themed Connections
 
@@ -358,13 +356,13 @@ end
 ********************************************************************************
 ++++ identity +++++ Material +++++++++
 ********************************************************************************
-rails generate scaffold Material name:string discription:text data:attachment
-                                 section:references
+rails generate scaffold Material name:string discription:text data:attachment section:references lecture:references
 rake db:migrate
 rails g bootstrap:themed Materials
 
 class Material < ActiveRecord::Base
   belongs_to :section
+  belongs_to :lecture
 end
 
  change_column(:materials, :id, :bigint)
