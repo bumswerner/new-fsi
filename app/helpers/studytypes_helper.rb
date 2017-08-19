@@ -1,0 +1,2 @@
+module StudytypesHelper
+end

@@ -1,0 +1,2 @@
+class Studytype < ApplicationRecord
+end
