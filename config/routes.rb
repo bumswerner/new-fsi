@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :materials
   resources :connections
+  resources :assoziations
   resources :sections
   resources :lectures
   resources :categories
