@@ -138,7 +138,7 @@ cf create-service a9s-postgresql postgresql-single-small [name-of-application]
 cf service [name-of-application]
 cf push [name-of-application]
 
-
+fsi_worker_pgsel --> name of service
  
     
     
@@ -251,19 +251,17 @@ end
 
 ********************************************************************************
 ++++ identity ++++ Faculty +++++++++++++++
+********************************************************************************
 rails generate scaffold Faculty name:string symbol:string description:text
 rake db:migrate
 rails g bootstrap:themed Faculties
 
-<<<<<<<<< saved version
-
-=========
 class Faculty < ActiveRecord::Base
   has_many :courses
 end
  
 ********************************************************************************
-++++ identity ++++ Coursetype +++++++++++++++
+++++ identity ++++ Studytype +++++++++++++++
 ********************************************************************************
 rails generate scaffold Studytype name:string symbol:string description:text
 rake db:migrate
@@ -275,28 +273,19 @@ end
  
  
 ********************************************************************************
-
-
-++++ identity ++++ Course ++++++++++++++++
-rails generate scaffold Course name:string symbol:string description:text faculty:references studytype:references
-=======
-++++ identity ++++ C ++++++++++++++++
+++++ identity ++++ Courseofstudy ++++++++++++++++
+********************************************************************************
 rails generate scaffold Courseofstudy name:string symbol:string description:text faculty:references studytype:references
-
 rake db:migrate
 rails g bootstrap:themed Courseofstudies
 
-
-=========
-
-class Course < ActiveRecord::Base
-  belongs_to :coursetype
+class Courseofstudy < ActiveRecord::Base
+  belongs_to :studytype
   belongs_to :faculty
   has_many :assoziations
   has_many :categories, :through => :assoziations
   has_many :lectures, :through => :assoziations
 end
-
 
 ********************************************************************************
 ++++ identity ++++ Category +++++++++++++
@@ -321,7 +310,7 @@ rails g bootstrap:themed Lectures
 class Lecture < ActiveRecord::Base
   has_many :assoziations
   has_many :categories, :through => :assoziations
-  has_many :courses, :through => :assoziations
+  has_many :courseofstudies, :through => :assoziations
   has_many :connections
   has_many :materials, :through => :connections
 end
