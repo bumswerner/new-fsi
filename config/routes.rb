@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  # all routes 
   resources :profiles
   resources :materials
   resources :connections
@@ -10,7 +12,9 @@ Rails.application.routes.draw do
   resources :studytypes
   resources :faculties
   resources :images
-  devise_for :users
+  
+  # change the default routes at devise
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
