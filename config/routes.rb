@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :notifications
+  resources :notificationtypes
   # all routes 
   resources :profiles
   resources :materials

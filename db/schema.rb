@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823090537) do
+ActiveRecord::Schema.define(version: 20170823151405) do
 
   create_table "assoziations", force: :cascade do |t|
     t.string "code"
@@ -96,6 +96,26 @@ ActiveRecord::Schema.define(version: 20170823090537) do
     t.datetime "updated_at", null: false
     t.index ["lecture_id"], name: "index_materials_on_lecture_id"
     t.index ["section_id"], name: "index_materials_on_section_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.text "message"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer "notificationtype_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notificationtype_id"], name: "index_notifications_on_notificationtype_id"
+  end
+
+  create_table "notificationtypes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "profiles", force: :cascade do |t|

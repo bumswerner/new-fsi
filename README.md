@@ -382,14 +382,12 @@ Step 1 - Create a Standalone Migration
 
   rails generate migration AddAdminAndModeratorToUsers
 
-Step 2 -
+Step 2 - Add this to the new migration
 
-  def change
-    add_column :users, :admin, :boolean
-    add_column :users, :moderator, :boolean
-  end
+  add_column :users, :admin, :boolean, :default => false, :null => false
+  add_column :users, :moderator, :boolean, :default => false, :null => false
 
-  rake db:migrate
+Step 3  - rake db:migrate
   
 ********************************************************************************
 ++++ identity +++++ Profile +++++++++
