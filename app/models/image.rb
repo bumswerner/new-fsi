@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
-  belongs_to :user
+  belongs_to :gallery
   
   has_attached_file :picture, styles: { medium: "300x300", thumb: "100x100" }
   # Validate content type

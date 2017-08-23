@@ -408,7 +408,7 @@ Section - News
 ********************************************************************************
 rails generate scaffold Notification title:string message:text image:attachment notificationtype:references
 rake db:migrate
-rails g bootstrap:themed Notification
+rails g bootstrap:themed Notifications
 
 class Notification < ActiveRecord::Base
   belongs_to :notificationtype
@@ -442,10 +442,23 @@ end
 ********************************************************************************
 ++++ identity +++++ Picture +++++++++
 ********************************************************************************
-rails generate scaffold Picture name:string image:attachment gallery:references
+rails generate scaffold Image name:string picture:attachment gallery:references
 rake db:migrate
-rails g bootstrap:themed Pictures
+rails g bootstrap:themed Images
 
 class Picture < ActiveRecord::Base
   belongs_to :gallery
 end
+
+# Example to change a column
+remove_column :images, :user_id, :integer
+add_column :images, :gallery_id, :integer, references: :gallery
+add_index :images, :gallery_id
+
+Validation:
+name, image
+
+********************************************************************************
+Validation   Validation
+********************************************************************************
+

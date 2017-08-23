@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :pictures
+  # all routes 
   resources :galleries
   resources :notifications
   resources :notificationtypes
-  # all routes 
   resources :profiles
   resources :materials
   resources :connections
