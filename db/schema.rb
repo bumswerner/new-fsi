@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823081755) do
+ActiveRecord::Schema.define(version: 20170823090537) do
 
   create_table "assoziations", force: :cascade do |t|
     t.string "code"
@@ -53,18 +53,6 @@ ActiveRecord::Schema.define(version: 20170823081755) do
     t.datetime "updated_at", null: false
     t.index ["faculty_id"], name: "index_courseofstudies_on_faculty_id"
     t.index ["studytype_id"], name: "index_courseofstudies_on_studytype_id"
-  end
-
-  create_table "courses", force: :cascade do |t|
-    t.string "name"
-    t.string "symbol"
-    t.text "description"
-    t.integer "faculty_id"
-    t.integer "studytype_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["faculty_id"], name: "index_courses_on_faculty_id"
-    t.index ["studytype_id"], name: "index_courses_on_studytype_id"
   end
 
   create_table "faculties", force: :cascade do |t|
@@ -157,6 +145,8 @@ ActiveRecord::Schema.define(version: 20170823081755) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false, null: false
+    t.boolean "moderator", default: false, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

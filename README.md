@@ -378,9 +378,19 @@ Section - Benutzer
 ********************************************************************************
 ++++ identity +++++ User +++++++++
 ********************************************************************************
-add_column  admin :boolean
-add_column  moderator : boolean
+Step 1 - Create a Standalone Migration
 
+  rails generate migration AddAdminAndModeratorToUsers
+
+Step 2 -
+
+  def change
+    add_column :users, :admin, :boolean
+    add_column :users, :moderator, :boolean
+  end
+
+  rake db:migrate
+  
 ********************************************************************************
 ++++ identity +++++ Profile +++++++++
 ********************************************************************************
