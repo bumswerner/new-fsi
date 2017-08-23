@@ -228,7 +228,8 @@ Add FactoryGirl
 
 add gem 'factory_girl_rails' to development, :test group
 
-After running bundle open up the spec/rails_helper.rb file and add the following line inside of the configure block:
+After running bundle open up the spec/rails_helper.rb file and
+add the following line inside of the configure block:
 # spec/rails_helper.rb
 
 config.include FactoryGirl::Syntax::Methods
@@ -248,7 +249,9 @@ end
 
 
 
-
+********************************************************************************
+Section - Materials
+********************************************************************************
 ********************************************************************************
 ++++ identity ++++ Faculty +++++++++++++++
 ********************************************************************************
@@ -366,6 +369,17 @@ class Material < ActiveRecord::Base
 end
 
  change_column(:materials, :id, :bigint)
+ 
+ 
+********************************************************************************
+Section - Benutzer
+********************************************************************************
+
+********************************************************************************
+++++ identity +++++ User +++++++++
+********************************************************************************
+add_column  admin :boolean
+add_column  moderator : boolean
 
 ********************************************************************************
 ++++ identity +++++ Profile +++++++++
@@ -376,4 +390,54 @@ rails g bootstrap:themed Profiles
 
 class Profile < ActiveRecord::Base
   belongs_to :user
+end
+
+********************************************************************************
+Section - News
+********************************************************************************
+********************************************************************************
+++++ identity +++++ Notification +++++++++
+********************************************************************************
+rails generate scaffold Notification title:string message:text image:attachment notificationtype:references
+rake db:migrate
+rails g bootstrap:themed Notification
+
+class Notification < ActiveRecord::Base
+  belongs_to :notificationtype
+end
+
+********************************************************************************
+++++ identity +++++ Notificationtype +++++++++
+********************************************************************************
+rails generate scaffold Notificationtype name:string description:text
+rake db:migrate
+rails g bootstrap:themed Notificationtypes
+
+class Notificationtype < ActiveRecord::Base
+  has_many :notifications
+end
+
+********************************************************************************
+Section - Gallery
+********************************************************************************
+********************************************************************************
+++++ identity +++++ Gallery +++++++++
+********************************************************************************
+rails generate scaffold Gallery name:string description:text
+rake db:migrate
+rails g bootstrap:themed Galleries
+
+class Gallery < ActiveRecord::Base
+  has_many :pictures
+end
+
+********************************************************************************
+++++ identity +++++ Picture +++++++++
+********************************************************************************
+rails generate scaffold Picture name:string image:attachment gallery:references
+rake db:migrate
+rails g bootstrap:themed Pictures
+
+class Picture < ActiveRecord::Base
+  belongs_to :gallery
 end
