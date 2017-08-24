@@ -462,29 +462,21 @@ name, image
 Validation   Validation
 ********************************************************************************
 
+install gem 'petergate', '~> 1.7', '>= 1.7.5'
 
+Prerequisites: Setup Authentication (Devise)
 
+Make sure your user model is defined in app/models/user.rb and called User.
 
-class Post < ActiveRecord::Base
-  belongs_to :author
-end
+If you're using devise you're in luck, otherwise you'll have to add following methods to your project:
 
-class Author < ActiveRecord::Base
-  has_many :posts
-  def name_with_initial
-    "#{first_name.first}. #{last_name}"
-  end
-end
+user_signed_in?
+current_user
+after_sign_in_path_for(current_user)
+authenticate_user!
 
-Sample usage (selecting the associated Author for an instance of Post, @post):
+Run the generators
 
-collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true)
-
-If @post.author_id is already 1, this would return:
-
-<select name="post[author_id]" id="post_author_id">
-  <option value="">Please select</option>
-  <option value="1" selected="selected">D. Heinemeier Hansson</option>
-  <option value="2">D. Thomas</option>
-  <option value="3">M. Clark</option>
-</select>
+rails g petergate:install
+rake db:migrate
+This will add a migration and insert petergate into your User model.
