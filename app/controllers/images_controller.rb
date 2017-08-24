@@ -15,6 +15,7 @@ class ImagesController < ApplicationController
   # GET /images/new
   def new
     @image = Image.new
+    @image.gallery_id = Gallery.find(params[:id]).id
   end
 
   # GET /images/1/edit

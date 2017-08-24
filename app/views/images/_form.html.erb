@@ -32,7 +32,7 @@
   <div class="form-group">
     <%= f.label :gallery_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :gallery_id, :class => 'form-control' %>
+      <%= f.text_field :gallery_id, :readonly => true, :class => 'form-control' %>
     </div>
     <%=f.error_span(:gallery_id) %>
   </div>
@@ -40,8 +40,15 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                images_path, :class => 'btn btn-default' %>
+      
+      <% if @image.gallery_id %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
+      <% else %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
+      <% end %>
+    
     </div>
   </div>
 

@@ -25,3 +25,4 @@ manifest.yml.example
 manifest.yml
 /public/system/images/pictures
 /public/system/
+/app/views/images.1/
