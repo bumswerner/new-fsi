@@ -462,3 +462,29 @@ name, image
 Validation   Validation
 ********************************************************************************
 
+
+
+
+class Post < ActiveRecord::Base
+  belongs_to :author
+end
+
+class Author < ActiveRecord::Base
+  has_many :posts
+  def name_with_initial
+    "#{first_name.first}. #{last_name}"
+  end
+end
+
+Sample usage (selecting the associated Author for an instance of Post, @post):
+
+collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true)
+
+If @post.author_id is already 1, this would return:
+
+<select name="post[author_id]" id="post_author_id">
+  <option value="">Please select</option>
+  <option value="1" selected="selected">D. Heinemeier Hansson</option>
+  <option value="2">D. Thomas</option>
+  <option value="3">M. Clark</option>
+</select>
