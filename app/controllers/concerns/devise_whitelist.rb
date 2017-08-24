@@ -7,7 +7,7 @@ module DeviseWhitelist
   end
   
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys:[:admin, :moderator]) 
+    devise_parameter_sanitizer.permit(:account_update, keys:[:name, :admin, :moderator]) 
   end
     
 end
