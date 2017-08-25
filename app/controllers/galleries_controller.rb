@@ -1,5 +1,11 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
+  
+  # set access roles
+  access all: [:show, :index], 
+  user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator: :all,
+  site_admin: :all
 
   # GET /galleries
   # GET /galleries.json

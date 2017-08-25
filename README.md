@@ -484,3 +484,14 @@ This will add a migration and insert petergate into your User model.
 
 
 gem install pry
+
+
+# set access roles
+  access all: [:show, :index], 
+  user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator: :all,
+  site_admin: :all
+  
+Inside your views you can use logged_in?(:admin, :customer, :etc) to show or hide content.
+
+<%= link_to "destroy", destroy_listing_path(listing) if logged_in?(:admin, :customer, :etc) %>
