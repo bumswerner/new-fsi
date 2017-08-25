@@ -34,6 +34,10 @@
         <div class="col-lg-9">
           <%= bootstrap_flash %>
           <%= yield %>
+          
+          <% if session[:source] %>
+            Thanks for visiting me from <%= session[:source] %>
+          <% end %>
         </div>
       
         <!--<div class="col-lg-3">-->
