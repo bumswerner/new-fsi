@@ -480,3 +480,7 @@ Run the generators
 rails g petergate:install
 rake db:migrate
 This will add a migration and insert petergate into your User model.
+
+
+
+gem install pry
