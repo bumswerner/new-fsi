@@ -7,7 +7,7 @@ class User < ApplicationRecord
   ## The :user role is added by default and shouldn't be included in this list.             ##
   ## The :root_admin can access any page regardless of access settings. Use with caution!   ##
   ## The multiple option can be set to true if you need users to have multiple roles.       ##
-  petergate(roles: [:site_admin, :moderator], multiple: false)                              ##
+  petergate(roles: [:admin, :moderator], multiple: false)                              ##
   ############################################################################################ 
  
   
@@ -15,15 +15,33 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
+         
+  
+  # variable area
+
         
   # add virtual attributes
-  validates_presence_of :name
+  # validates_presence_of :name
   
   def first_name
-    self.name.split.first
+ #   self.name.split.first
   end
   
   def last_name
-    self.name.split.last 
+ #   self.name.split.last 
   end  
+  
+  # read the current role name
+  def get_role_name
+    length = self.roles.to_s.length
+    if length == 7
+      role = "user"
+    else if length == 19
+      role = "moderator"
+    else
+      role = "admin"
+    end
+    end
+  end
+
 end

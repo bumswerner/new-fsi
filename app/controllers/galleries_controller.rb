@@ -5,7 +5,7 @@ class GalleriesController < ApplicationController
   access all: [:show, :index], 
   user: {except: [:destroy, :new, :create, :update, :edit]},
   moderator: :all,
-  site_admin: :all
+  admin: :all
 
   # GET /galleries
   # GET /galleries.json

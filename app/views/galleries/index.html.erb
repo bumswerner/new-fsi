@@ -23,7 +23,7 @@
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       gallery_path(gallery), :class => 'btn btn-default btn-xs' %>
                       
-        <% if logged_in?(:site_admin, :moderator) %>
+        <% if logged_in?(:admin, :moderator) %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_gallery_path(gallery), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -39,7 +39,7 @@
 </table>
 
 
-<% if logged_in?(:site_admin, :moderator) %>
+<% if logged_in?(:admin, :moderator) %>
   <%= link_to t('.new', :default => t("helpers.links.new")), 
               new_gallery_path,
               :class => 'btn btn-primary' %>
