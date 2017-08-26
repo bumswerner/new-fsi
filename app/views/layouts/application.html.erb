@@ -10,7 +10,6 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -23,7 +22,9 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Gallery", galleries_path  %></li>
             <li><%= link_to "News", notifications_path %></li>
-            <li><%= link_to "User", users_path  %></li>
+            <% if logged_in?(:admin) %>
+              <li><%= link_to "User", users_path  %></li>
+            <% end %>
           </ul>
         </div>
       </div>

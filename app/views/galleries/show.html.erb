@@ -40,21 +40,29 @@
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       image_path(image), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_image_path(image), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      image_path(image),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      
+          <% if logged_in?(:admin, :moderator) %>            
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_image_path(image), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        image_path(image),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm',
+                        :default => t("helpers.links.confirm", 
+                        :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_image_path(:id => @gallery.id), :class => 'btn btn-primary' %>
-            
+<% if logged_in?(:admin, :moderator) %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_image_path(:id => @gallery.id), 
+              :class => 'btn btn-primary' %>
+<% end %>
+              
 <%= link_to t('.back', :default => t("helpers.links.back")),
               galleries_path, :class => 'btn btn-default'  %>

@@ -1,5 +1,11 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  
+   # set access roles
+  access all: [:show, :index], 
+  user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator: :all,
+  admin: :all
 
   # GET /images
   # GET /images.json

@@ -20,16 +20,9 @@ class User < ApplicationRecord
   # variable area
 
         
-  # add virtual attributes
-  # validates_presence_of :name
+  # add attributes validation
+  validates_presence_of :username
   
-  def first_name
- #   self.name.split.first
-  end
-  
-  def last_name
- #   self.name.split.last 
-  end  
   
   # read the current role name
   def get_role_name
