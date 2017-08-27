@@ -2,7 +2,7 @@ class FacultiesController < ApplicationController
   before_action :set_faculty, only: [:show, :edit, :update, :destroy]
   
   
-   # set access roles
+  # set access roles
   access user: {except: [:destroy, :new, :create, :update, :edit]},
   moderator:   :all,
   admin:       :all
