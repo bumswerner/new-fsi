@@ -1,5 +1,10 @@
 class AssoziationsController < ApplicationController
   before_action :set_assoziation, only: [:show, :edit, :update, :destroy]
+  
+   # set access roles
+  access user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator:   :all,
+  admin:       :all
 
   # GET /assoziations
   # GET /assoziations.json

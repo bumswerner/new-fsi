@@ -5,42 +5,47 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:instructor) %></th>
       <th><%= model_class.human_attribute_name(:category_id) %></th>
       <th><%= model_class.human_attribute_name(:courseofstudy_id) %></th>
       <th><%= model_class.human_attribute_name(:lecture_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @assoziations.each do |assoziation| %>
       <tr>
-        <td><%= link_to assoziation.id, assoziation_path(assoziation) %></td>
         <td><%= assoziation.code %></td>
         <td><%= assoziation.instructor %></td>
-        <td><%= assoziation.category_id %></td>
-        <td><%= assoziation.courseofstudy_id %></td>
-        <td><%= assoziation.lecture_id %></td>
-        <td><%=l assoziation.created_at %></td>
+        <% current_category = Category.find(assoziation.category_id) 
+           current_courseofstudy = Courseofstudy.find(assoziation.courseofstudy_id)
+           current_lecture = Lecture.find(assoziation.lecture_id) %>
+        <td><%= current_category.name if current_category.present? %></td>
+        <td><%= current_courseofstudy.name if current_courseofstudy.present? %></td>
+        <td><%= current_lecture.name if current_lecture.present? %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      assoziation_path(assoziation), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_assoziation_path(assoziation), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      assoziation_path(assoziation),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                                assoziation_path(assoziation), :class => 'btn btn-default btn-xs' %>
+                                
+            <% if logged_in?(:admin, :moderator) %>            
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_assoziation_path(assoziation), :class => 'btn btn-default btn-xs' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          assoziation_path(assoziation),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm',
+                          :default => t("helpers.links.confirm", 
+                          :default => 'Are you sure?')) },
+                          :class => 'btn btn-xs btn-danger' %>
+            <% end %>            
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_assoziation_path,
-            :class => 'btn btn-primary' %>
+<% if logged_in?(:admin, :moderator) %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_assoziation_path,
+              :class => 'btn btn-primary' %>
+<% end %>
