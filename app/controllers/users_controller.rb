@@ -5,14 +5,14 @@ class UsersController < ApplicationController
   # set access roles
   access user: {except: [:destroy, :new, :create, :update, :edit, :show, :index]},
   moderator:   {except: [:destroy, :new, :create, :update, :edit, :show, :index]},
-  admin:  :all
+  admin:       {except: [:new, :create, :show]}
    
   def index 
     @users = User.all
   end
   
   def new
-  
+    # out of order 
   end
   
   def edit 
@@ -20,11 +20,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    
+    # out of order
   end
   
   def create
-    
+    # out of order
   end
   
   def update
