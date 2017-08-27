@@ -20,21 +20,26 @@
     <div class="col-lg-10">
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:name) %>
   </div>
   <div class="form-group">
     <%= f.label :lecture_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :lecture_id, :class => 'form-control' %>
+     <%= select_tag "connection[lecture_id]", 
+          options_from_collection_for_select(Lecture.all, "id", "name",
+          :selected => @connection.lecture_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
-    <%=f.error_span(:lecture_id) %>
   </div>
   <div class="form-group">
     <%= f.label :section_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :section_id, :class => 'form-control' %>
+     <%= select_tag "connection[section_id]", 
+          options_from_collection_for_select(Section.all, "id", "name",
+          :selected => @connection.section_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
-    <%=f.error_span(:section_id) %>
   </div>
 
   <div class="form-group">
