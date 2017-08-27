@@ -1,5 +1,11 @@
 class ConnectionsController < ApplicationController
   before_action :set_connection, only: [:show, :edit, :update, :destroy]
+  
+  # set access roles
+  access user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator:   :all,
+  admin:       :all
+  
 
   # GET /connections
   # GET /connections.json
