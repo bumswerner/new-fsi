@@ -1,5 +1,10 @@
 class CourseofstudiesController < ApplicationController
   before_action :set_courseofstudy, only: [:show, :edit, :update, :destroy]
+  
+  # set access roles
+  access user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator:   :all,
+  admin:       :all
 
   # GET /courseofstudies
   # GET /courseofstudies.json
@@ -71,4 +76,5 @@ class CourseofstudiesController < ApplicationController
     def courseofstudy_params
       params.require(:courseofstudy).permit(:name, :symbol, :description, :faculty_id, :studytype_id)
     end
+    
 end

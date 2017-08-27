@@ -10,18 +10,25 @@
   <dd><%= @courseofstudy.symbol %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @courseofstudy.description %></dd>
+  <% current_faculty = Faculty.find(@courseofstudy.faculty_id) 
+     current_studytype = Studytype.find(@courseofstudy.studytype_id) %>
   <dt><strong><%= model_class.human_attribute_name(:faculty_id) %>:</strong></dt>
-  <dd><%= @courseofstudy.faculty_id %></dd>
+  <dd><%= current_faculty.name if current_faculty.present? %></dd>
   <dt><strong><%= model_class.human_attribute_name(:studytype_id) %>:</strong></dt>
-  <dd><%= @courseofstudy.studytype_id %></dd>
+  <dd><%= current_studytype.name if current_studytype.present? %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               courseofstudies_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_courseofstudy_path(@courseofstudy), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              courseofstudy_path(@courseofstudy),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              
+<% if logged_in?(:admin, :moderator) %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_courseofstudy_path(@courseofstudy), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                courseofstudy_path(@courseofstudy),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', 
+                :default => t("helpers.links.confirm", 
+                :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+<% end %>

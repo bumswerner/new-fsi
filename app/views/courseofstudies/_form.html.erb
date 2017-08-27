@@ -20,35 +20,39 @@
     <div class="col-lg-10">
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:name) %>
   </div>
   <div class="form-group">
     <%= f.label :symbol, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :symbol, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:symbol) %>
   </div>
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :description, :class => 'form-control' %>
+      <%= f.text_area :description, rows: 6, :class => 'form-control',
+                       placeholder: 'Description of Courseofstudy' %>
     </div>
-    <%=f.error_span(:description) %>
   </div>
   <div class="form-group">
     <%= f.label :faculty_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :faculty_id, :class => 'form-control' %>
+     <%= select_tag "courseofstudy[faculty_id]", 
+          options_from_collection_for_select(Faculty.all, "id", "name",
+          :selected => @courseofstudy.faculty_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
-    <%=f.error_span(:faculty_id) %>
   </div>
   <div class="form-group">
     <%= f.label :studytype_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :studytype_id, :class => 'form-control' %>
+      <%= select_tag "courseofstudy[studytype_id]", 
+          options_from_collection_for_select(Studytype.all, "id", "name",
+          :selected => @courseofstudy.studytype_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
-    <%=f.error_span(:studytype_id) %>
   </div>
 
   <div class="form-group">
@@ -60,3 +64,5 @@
   </div>
 
 <% end %>
+
+  

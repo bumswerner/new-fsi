@@ -5,42 +5,45 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:symbol) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:faculty_id) %></th>
       <th><%= model_class.human_attribute_name(:studytype_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @courseofstudies.each do |courseofstudy| %>
       <tr>
-        <td><%= link_to courseofstudy.id, courseofstudy_path(courseofstudy) %></td>
         <td><%= courseofstudy.name %></td>
         <td><%= courseofstudy.symbol %></td>
-        <td><%= courseofstudy.description %></td>
-        <td><%= courseofstudy.faculty_id %></td>
-        <td><%= courseofstudy.studytype_id %></td>
-        <td><%=l courseofstudy.created_at %></td>
+        <% current_faculty = Faculty.find(courseofstudy.faculty_id) 
+           current_studytype = Studytype.find(courseofstudy.studytype_id) %>
+        <td><%= current_faculty.name if current_faculty.present? %></td>
+        <td><%= current_studytype.name if current_studytype.present? %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       courseofstudy_path(courseofstudy), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_courseofstudy_path(courseofstudy), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      courseofstudy_path(courseofstudy),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      
+          <% if logged_in?(:admin, :moderator) %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_courseofstudy_path(courseofstudy), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        courseofstudy_path(courseofstudy),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', 
+                        :default => t("helpers.links.confirm", 
+                        :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+            <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_courseofstudy_path,
-            :class => 'btn btn-primary' %>
+<% if logged_in?(:admin, :moderator) %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_courseofstudy_path,
+              :class => 'btn btn-primary' %>
+<% end %>
