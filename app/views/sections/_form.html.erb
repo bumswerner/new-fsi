@@ -20,14 +20,12 @@
     <div class="col-lg-10">
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:name) %>
   </div>
   <div class="form-group">
-    <%= f.label :discription, :class => 'control-label col-lg-2' %>
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :discription, :class => 'form-control' %>
+      <%= f.text_area :description, rows: 10, :class => 'form-control', placeholder: 'Description of section' %>
     </div>
-    <%=f.error_span(:discription) %>
   </div>
 
   <div class="form-group">

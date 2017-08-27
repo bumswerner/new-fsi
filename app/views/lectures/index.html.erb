@@ -5,22 +5,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:symbol) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
-        <td><%= link_to lecture.id, lecture_path(lecture) %></td>
         <td><%= lecture.name %></td>
         <td><%= lecture.symbol %></td>
         <td><%= truncate(lecture.description, length: 100) %></td>
-        <td><%=l lecture.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       lecture_path(lecture), :class => 'btn btn-default btn-xs' %>

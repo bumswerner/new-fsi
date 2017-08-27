@@ -1,5 +1,10 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
+  
+  # set access roles
+  access user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator:   :all,
+  admin:       :all
 
   # GET /sections
   # GET /sections.json
@@ -69,6 +74,6 @@ class SectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
-      params.require(:section).permit(:name, :discription)
+      params.require(:section).permit(:name, :description)
     end
 end
