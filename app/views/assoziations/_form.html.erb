@@ -20,35 +20,45 @@
     <div class="col-lg-10">
       <%= f.text_field :code, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:code) %>
   </div>
   <div class="form-group">
     <%= f.label :instructor, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :instructor, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:instructor) %>
   </div>
   <div class="form-group">
     <%= f.label :category_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :category_id, :class => 'form-control' %>
+     <%= select_tag "assoziation[category_id]", 
+          options_from_collection_for_select(Category.all, "id", "name",
+          :selected => @assoziation.category_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
-    <%=f.error_span(:category_id) %>
   </div>
   <div class="form-group">
     <%= f.label :courseofstudy_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :courseofstudy_id, :class => 'form-control' %>
+      <%= select_tag "assoziation[courseofstudy_id]", 
+          options_from_collection_for_select(Courseofstudy.all, "id", "name",
+          :selected => @assoziation.courseofstudy_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
-    <%=f.error_span(:courseofstudy_id) %>
   </div>
+   <!--
+   TODO !!!!!! -> AJAX automatische Anzeige
+   -->
   <div class="form-group">
     <%= f.label :lecture_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :lecture_id, :class => 'form-control' %>
+      <%= select_tag "assoziation[lecture_id]", 
+        options_from_collection_for_select(Lecture.all, "id", "name", 
+        :selected => @assoziation.lecture_id),
+        :prompt => "Please select",
+        :class => 'form-control' %>
     </div>
-    <%=f.error_span(:lecture_id) %>
   </div>
 
   <div class="form-group">
