@@ -8,20 +8,27 @@
   <dd><%= @assoziation.code %></dd>
   <dt><strong><%= model_class.human_attribute_name(:instructor) %>:</strong></dt>
   <dd><%= @assoziation.instructor %></dd>
+  <% current_category = Category.find(@assoziation.category_id) 
+     current_courseofstudy = Courseofstudy.find(@assoziation.courseofstudy_id)
+     current_lecture = Lecture.find(@assoziation.lecture_id) %>
   <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
-  <dd><%= @assoziation.category_id %></dd>
+  <dd><%= current_category.name if current_category.present? %></dd>
   <dt><strong><%= model_class.human_attribute_name(:courseofstudy_id) %>:</strong></dt>
-  <dd><%= @assoziation.courseofstudy_id %></dd>
+  <dd><%= current_courseofstudy.name if current_courseofstudy.present? %></dd>
   <dt><strong><%= model_class.human_attribute_name(:lecture_id) %>:</strong></dt>
-  <dd><%= @assoziation.lecture_id %></dd>
+  <dd><%= current_lecture.name if current_lecture.present? %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              assoziations_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_assoziation_path(@assoziation), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              assoziation_path(@assoziation),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              assoziations_path, :class => 'btn btn-default' %>
+<% if logged_in?(:admin, :moderator) %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_assoziation_path(@assoziation), :class => 'btn btn-default' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  assoziation_path(@assoziation),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', 
+                  :default => t("helpers.links.confirm", 
+                  :default => 'Are you sure?')) },
+                  :class => 'btn btn-danger' %>
+<% end %>
