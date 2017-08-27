@@ -1,5 +1,10 @@
 class StudytypesController < ApplicationController
   before_action :set_studytype, only: [:show, :edit, :update, :destroy]
+  
+  # set access roles
+  access user: {except: [:destroy, :new, :create, :update, :edit]},
+  moderator:   :all,
+  admin:       :all
 
   # GET /studytypes
   # GET /studytypes.json
