@@ -19,24 +19,32 @@
         <td><%= link_to lecture.id, lecture_path(lecture) %></td>
         <td><%= lecture.name %></td>
         <td><%= lecture.symbol %></td>
-        <td><%= lecture.description %></td>
+        <td><%= truncate(lecture.description, length: 100) %></td>
         <td><%=l lecture.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       lecture_path(lecture), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_lecture_path(lecture), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      lecture_path(lecture),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      
+          <% if logged_in?(:admin, :moderator) %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_lecture_path(lecture), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        lecture_path(lecture),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm',
+                        :default => t("helpers.links.confirm",
+                        :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_lecture_path,
-            :class => 'btn btn-primary' %>
+
+<% if logged_in?(:admin, :moderator) %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_lecture_path,
+              :class => 'btn btn-primary' %>
+<% end %>
