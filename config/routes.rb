@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   resources :notificationtypes
   resources :profiles
   resources :materials
-  get "/materials" => "materials#download"
-  get "materials/download"
+ 
   resources :connections
   resources :assoziations
   resources :sections
@@ -15,8 +14,19 @@ Rails.application.routes.draw do
   resources :categories
   resources :courseofstudies
   resources :studytypes
-  resources :faculties
+ 
   resources :images
+  
+  
+  # routes only for moderator and admin
+  namespace :moderator do
+    resources :faculties
+    
+  end
+  
+  
+  get "/materials" => "materials#download"
+  get "materials/download"
   
   # scope module: 'faculty' do
   #   resources :courseofstudies
@@ -33,7 +43,6 @@ Rails.application.routes.draw do
   
   # change the default routes at devise
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  resources :users #,:only => [:index, :show, :edit, :update, :new, :create, :delete]
   
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

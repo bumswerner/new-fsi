@@ -23,7 +23,7 @@
             <li><%= link_to "Gallery", galleries_path  %></li>
             <li><%= link_to "News", notifications_path %></li>
             <% if logged_in?(:admin) %>
-              <li><%= link_to "User", users_path %></li>
+              <li><%= link_to "User", admin_users_path %></li>
             <% end %>
             
             <% if logged_in?(:admin, :moderator) %>
@@ -31,7 +31,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moderator
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                 <li><%= link_to "Faculties", faculties_path %></li>
+                 <li><%= link_to "Faculties", moderator_faculties_path %></li>
                  <li><%= link_to "StudyTypes", studytypes_path %></li>
                  <li role="separator" class="divider"></li>
                  <li><%= link_to "CourseOfStudies", courseofstudies_path %></li>
