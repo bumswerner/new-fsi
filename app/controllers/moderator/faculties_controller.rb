@@ -34,7 +34,7 @@ class Moderator::FacultiesController < ApplicationController
 
     respond_to do |format|
       if @faculty.save
-        format.html { redirect_to @faculty, notice: 'Faculty was successfully created.' }
+        format.html { redirect_to moderator_faculties_path, notice: 'Faculty was successfully created.' }
         format.json { render :show, status: :created, location: @faculty }
       else
         flash[:danger] = "Faculty has not been created"
@@ -49,7 +49,7 @@ class Moderator::FacultiesController < ApplicationController
   def update
     respond_to do |format|
       if @faculty.update(faculty_params)
-        format.html { redirect_to @faculty, notice: 'Faculty was successfully updated.' }
+        format.html { redirect_to moderator_faculties_path, notice: 'Faculty was successfully updated.' }
         format.json { render :show, status: :ok, location: @faculty }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class Moderator::FacultiesController < ApplicationController
   def destroy
     @faculty.destroy
     respond_to do |format|
-      format.html { redirect_to faculties_url, notice: 'Faculty was successfully destroyed.' }
+      format.html { redirect_to moderator_faculties_path, notice: 'Faculty was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
