@@ -1,7 +1,7 @@
 <h1>Welcome and go home</h1>
 <h2>Hi, <%= current_user.username %></h2>
 <%= link_to "logout", destroy_user_session_path, method: :delete %>
-
+<%= current_user.inspect %>
 
 <%#= params.inspect %>
 <%#= session.inspect %>

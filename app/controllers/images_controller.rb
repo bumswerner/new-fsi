@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   
    # set access roles
   access all: [:show, :index], 
-  user: {except: [:destroy, :new, :create, :update, :edit]},
+  user:  {except: [:destroy, :new, :create, :update, :edit]},
   moderator: :all,
   admin: :all
 

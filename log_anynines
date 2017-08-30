@@ -1,0 +1,218 @@
+Retrieving logs for app [36;1mfsi[0m in org [36;1mmiketheman_t-online_de[0m / space [36;1mproduction[0m as [36;1mmiketheman@t-online.de[0m...
+
+   2017-08-28T15:26:39.73+0000 [STG/0] OUT        Using mail 2.6.6
+   2017-08-28T15:26:39.73+0000 [STG/0] OUT        Using launchy 2.4.3
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using loofah 2.0.3
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using rbvmomi 1.11.3
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using aws-sdk-resources 2.10.25
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using sass-listen 4.0.0
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using fog-json 1.0.2
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using fog-xml 0.1.3
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using fog-local 0.3.1
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using fog-vmfusion 0.1.0
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using rails-dom-testing 2.0.3
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using globalid 0.4.0
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using activemodel 5.1.3
+   2017-08-28T15:26:39.74+0000 [STG/0] OUT        Using jbuilder 2.7.0
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using rails-html-sanitizer 1.0.3
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using aws-sdk 2.10.25
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-vsphere 1.11.3
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using letter_opener 1.4.1
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-aliyun 0.2.0
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-brightbox 0.13.0
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-dnsimple 1.0.0
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-joyent 0.0.1
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-openstack 0.1.21
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-profitbricks 4.0.0
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-sakuracloud 1.7.5
+   2017-08-28T15:26:39.76+0000 [STG/0] OUT        Using fog-serverlove 0.1.2
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using fog-softlayer 1.1.4
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using fog-storm_on_demand 0.1.1
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using sass 3.5.1
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using fog-atmos 0.1.0
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using fog-aws 1.4.0
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using fog-cloudatcost 0.1.2
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using fog-digitalocean 0.3.0
+   2017-08-28T15:26:39.77+0000 [STG/0] OUT        Using fog-dynect 0.0.3
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-ecloud 0.3.0
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-google 0.1.0
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-internet-archive 0.0.1
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-powerdns 0.1.1
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-rackspace 0.1.5
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-radosgw 0.0.5
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-riakcs 0.1.0
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-terremark 0.1.0
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-voxel 0.1.0
+   2017-08-28T15:26:39.78+0000 [STG/0] OUT        Using fog-xenserver 0.3.0
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using activerecord 5.1.3
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using paperclip 5.1.0
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using activejob 5.1.3
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using actionview 5.1.3
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using bootstrap-sass 3.3.7
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using petergate 1.7.5
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using actionpack 5.1.3
+   2017-08-28T15:26:39.79+0000 [STG/0] OUT        Using fog 1.41.0
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using actioncable 5.1.3
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using actionmailer 5.1.3
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using railties 5.1.3
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using less-rails 2.8.0
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using sprockets-rails 3.2.0
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using coffee-rails 4.2.2
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using responders 2.4.0
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using jquery-rails 4.3.1
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using letter_opener_web 1.3.1
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using rails 5.1.3
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using sass-rails 5.0.6
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using twitter-bootstrap-rails 4.0.0
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Using devise 4.3.0
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Bundle complete! 35 Gemfile dependencies, 126 gems now installed.
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Gems in the groups development, test and production were not installed.
+   2017-08-28T15:26:39.80+0000 [STG/0] OUT        Bundled gems are installed into ./vendor/bundle.
+   2017-08-28T15:26:39.85+0000 [STG/0] OUT        Bundle completed (10.51s)
+   2017-08-28T15:26:39.85+0000 [STG/0] OUT        Cleaning up the bundler cache.
+   2017-08-28T15:26:40.16+0000 [STG/0] OUT        The latest bundler is 1.15.4, but you are currently running 1.15.3.
+   2017-08-28T15:26:40.16+0000 [STG/0] OUT        To update, run `gem install bundler`
+   2017-08-28T15:26:59.92+0000 [STG/0] OUT        Detected manifest file, assuming assets were compiled locally
+   2017-08-28T15:27:33.04+0000 [STG/0] OUT Exit status 0
+   2017-08-28T15:27:33.04+0000 [STG/0] OUT Staging complete
+   2017-08-28T15:27:33.04+0000 [STG/0] OUT Uploading droplet, build artifacts cache...
+   2017-08-28T15:27:33.04+0000 [STG/0] OUT Uploading build artifacts cache...
+   2017-08-28T15:27:33.04+0000 [STG/0] OUT Uploading droplet...
+   2017-08-28T15:27:34.93+0000 [STG/0] OUT Uploaded build artifacts cache (42.5M)
+   2017-08-28T15:27:43.18+0000 [STG/0] OUT Uploaded droplet (71.7M)
+   2017-08-28T15:27:43.19+0000 [STG/0] OUT Uploading complete
+   2017-08-28T15:27:43.22+0000 [STG/0] OUT Stopping instance 3ce7a1ef-3d34-49e7-b42f-410ccde9e3e9
+   2017-08-28T15:27:43.22+0000 [STG/0] OUT Destroying container
+   2017-08-28T15:27:44.24+0000 [STG/0] OUT Successfully destroyed container
+   2017-08-28T15:32:05.42+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:32:05.340+0000] "GET / HTTP/1.0" 200 0 2295 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:47934" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"84c621bf-4cd3-49f2-4e80-441b239a3c11" response_time:0.088030329 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:32:05.42+0000 [RTR/0] OUT 
+   2017-08-28T15:32:05.88+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:32:05.883+0000] "GET /favicon.ico HTTP/1.0" 200 0 0 "http://fsi.aws.ie.a9sapp.eu/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:56920" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"f2ed08d7-1c4a-4758-7294-8b9acf968e60" response_time:0.002373425 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:32:05.88+0000 [RTR/0] OUT 
+   2017-08-28T15:32:19.03+0000 [RTR/2] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:32:19.017+0000] "GET /galleries HTTP/1.0" 200 0 2810 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:37816" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"60e81463-122f-42a8-4d07-c0cbd59403de" response_time:0.014578887 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:32:19.03+0000 [RTR/2] OUT 
+   2017-08-28T15:32:19.10+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:32:19.102+0000] "GET /assets/application-bfa6db76db64fa97baf78e3b0ee70f45d4f5df2d2f65213c7a0a446b611789d5.js HTTP/1.0" 200 0 122505 "http://fsi.aws.ie.a9sapp.eu/galleries" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:56940" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"1e8eba2e-dbe3-4b78-5c9c-9e5ddfdc275e" response_time:0.006582549 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:32:19.10+0000 [RTR/0] OUT 
+   2017-08-28T15:32:47.10+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:32:47.098+0000] "GET /assets/application-ffcbb7e564d51f09481a56fa535627ad2a8e25fd09668d9677ad06dfa577ec35.css HTTP/1.0" 200 0 48652 "http://fsi.aws.ie.a9sapp.eu/galleries" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:47990" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"8d9e7625-6260-43ff-7141-5d9500da8bab" response_time:0.004042473 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:32:47.10+0000 [RTR/0] OUT 
+   2017-08-28T15:33:03.91+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:33:03.886+0000] "GET /galleries/1 HTTP/1.0" 200 0 2766 "http://fsi.aws.ie.a9sapp.eu/galleries" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:57022" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"ff29499a-3c29-4580-7819-4ccfa1a38aa2" response_time:0.025324543 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:33:03.91+0000 [RTR/0] OUT 
+   2017-08-28T15:33:05.45+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:33:05.437+0000] "GET /galleries HTTP/1.0" 200 0 2810 "http://fsi.aws.ie.a9sapp.eu/galleries/1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:57030" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"b0e565fc-a110-4b49-551d-c031e0ce9bec" response_time:0.014318777 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:33:05.45+0000 [RTR/0] OUT 
+   2017-08-28T15:33:10.49+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:33:10.482+0000] "GET /galleries HTTP/1.0" 200 0 2810 "http://fsi.aws.ie.a9sapp.eu/galleries/1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:57064" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"692c4dcf-276b-4e3e-4fc9-87e4a5005889" response_time:0.017142032 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:33:10.49+0000 [RTR/0] OUT 
+   2017-08-28T15:33:43.35+0000 [RTR/2] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:33:43.332+0000] "GET /galleries/new HTTP/1.0" 200 0 3345 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:38006" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"808ff1e3-d943-4ba4-44d6-243c3e9acbee" response_time:0.019010203 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:33:43.35+0000 [RTR/2] OUT 
+   2017-08-28T15:33:43.42+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:33:43.424+0000] "GET /assets/application-ffcbb7e564d51f09481a56fa535627ad2a8e25fd09668d9677ad06dfa577ec35.css HTTP/1.0" 304 0 0 "http://fsi.aws.ie.a9sapp.eu/galleries/new" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.167:57130" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"8fdff9fb-783f-4f3c-5ffd-24cb8d040a75" response_time:0.002858814 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:33:43.42+0000 [RTR/0] OUT 
+   2017-08-28T15:33:43.43+0000 [RTR/2] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:33:43.431+0000] "GET /assets/application-bfa6db76db64fa97baf78e3b0ee70f45d4f5df2d2f65213c7a0a446b611789d5.js HTTP/1.0" 304 0 0 "http://fsi.aws.ie.a9sapp.eu/galleries/new" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:52296" "10.0.102.129:60648" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"3ccb3f73-f633-4db8-78b9-d05b97c32fba" response_time:0.001993901 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:33:43.43+0000 [RTR/2] OUT 
+   2017-08-28T15:37:48.40+0000 [API/0] OUT Updated app with guid 79f704e0-8a66-499e-92f7-fe2b52b1b9bb ({"name"=>"fsi", "instances"=>1, "memory"=>512, "environment_json"=>"PRIVATE DATA HIDDEN"})
+   2017-08-28T15:38:37.58+0000 [API/0] OUT Creating build for app with guid 79f704e0-8a66-499e-92f7-fe2b52b1b9bb
+   2017-08-28T15:38:38.70+0000 [API/0] OUT Updated app with guid 79f704e0-8a66-499e-92f7-fe2b52b1b9bb ({"state"=>"STARTED"})
+   2017-08-28T15:39:59.60+0000 [STG/0] OUT Uploaded build artifacts cache (42.5M)
+   2017-08-28T15:40:04.95+0000 [STG/0] OUT Uploaded droplet (71.8M)
+   2017-08-28T15:40:04.96+0000 [STG/0] OUT Uploading complete
+   2017-08-28T15:40:04.98+0000 [STG/0] OUT Stopping instance 8c06d098-70b3-4d5b-86a6-1a253866bca2
+   2017-08-28T15:40:04.98+0000 [STG/0] OUT Destroying container
+   2017-08-28T15:40:05.86+0000 [CELL/0] OUT Creating container
+   2017-08-28T15:40:06.16+0000 [STG/0] OUT Successfully destroyed container
+   2017-08-28T15:40:06.17+0000 [CELL/0] OUT Successfully created container
+   2017-08-28T15:40:11.93+0000 [CELL/0] OUT Starting health monitoring of container
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT => Booting Puma
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT => Rails 5.1.3 application starting in production on http://0.0.0.0:8080
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT => Run `rails server -h` for more startup options
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:40:19.046283 #32] DEBUG -- :   [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3390721604850301260)[0m
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:40:19.085679 #32] DEBUG -- :   [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:40:19.102336 #32] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:40:19.110795 #32] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:40:19.112528 #32] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:40:19.113563 #32] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(3390721604850301260)[0m
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT Puma starting in single mode...
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT * Version 3.9.1 (ruby 2.4.1-p111), codename: Private Caller
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT * Min threads: 5, max threads: 5
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT * Environment: production
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT * Listening on tcp://0.0.0.0:8080
+   2017-08-28T15:40:20.57+0000 [APP/PROC/WEB/0] OUT Use Ctrl-C to stop
+   2017-08-28T15:40:22.60+0000 [CELL/0] OUT Container became healthy
+   2017-08-28T15:42:34.52+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:42:34.522+0000] "GET /favicon.ico HTTP/1.0" 200 0 0 "http://fsi.aws.ie.a9sapp.eu/galleries/new" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:48524" "10.0.102.129:60654" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"55141893-59fa-42a2-6aad-1ddc7f0500d0" response_time:0.005650256 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:42:34.52+0000 [RTR/0] OUT 
+   2017-08-28T15:42:36.60+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:36.606767 #32]  INFO -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca] Started GET "/galleries" for 95.88.91.121 at 2017-08-28 15:42:36 +0000
+   2017-08-28T15:42:36.61+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:36.617993 #32]  INFO -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca] Processing by GalleriesController#index as HTML
+   2017-08-28T15:42:36.65+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:36.652023 #32] DEBUG -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+   2017-08-28T15:42:36.67+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:36.675185 #32]  INFO -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca]   Rendering galleries/index.html.erb within layouts/application
+   2017-08-28T15:42:36.76+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:36.765873 #32] DEBUG -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca]   [1m[36mGallery Load (1.3ms)[0m  [1m[34mSELECT "galleries".* FROM "galleries"[0m
+   2017-08-28T15:42:36.79+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:36.793915 #32] DEBUG -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca]   [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "images" WHERE "images"."gallery_id" = $1[0m  [["gallery_id", 1]]
+   2017-08-28T15:42:36.79+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:36.795058 #32]  INFO -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca]   Rendered galleries/index.html.erb within layouts/application (119.8ms)
+   2017-08-28T15:42:36.79+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:36.798272 #32]  INFO -- : [92bba1c6-2dca-49b4-bfd5-5782c132deca] Completed 200 OK in 180ms (Views: 120.8ms | ActiveRecord: 22.5ms)
+   2017-08-28T15:42:36.81+0000 [RTR/2] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:42:36.616+0000] "GET /galleries HTTP/1.0" 200 0 3086 "http://fsi.aws.ie.a9sapp.eu/galleries/new" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:52742" "10.0.102.129:60654" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"e85423ee-74ea-440d-5274-69888e233ff6" response_time:0.19480547 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:42:36.81+0000 [RTR/2] OUT 
+   2017-08-28T15:42:40.64+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:40.647616 #32]  INFO -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d] Started GET "/galleries/1" for 95.88.91.121 at 2017-08-28 15:42:40 +0000
+   2017-08-28T15:42:40.64+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:40.648446 #32]  INFO -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d] Processing by GalleriesController#show as HTML
+   2017-08-28T15:42:40.64+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:40.648523 #32]  INFO -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d]   Parameters: {"id"=>"1"}
+   2017-08-28T15:42:40.65+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:40.651602 #32] DEBUG -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+   2017-08-28T15:42:40.65+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:40.658802 #32] DEBUG -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d]   [1m[36mGallery Load (0.9ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+   2017-08-28T15:42:40.66+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:40.660431 #32]  INFO -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d]   Rendering galleries/show.html.erb within layouts/application
+   2017-08-28T15:42:40.66+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:40.668974 #32] DEBUG -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d]   [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."gallery_id" = $1[0m  [["gallery_id", 1]]
+   2017-08-28T15:42:40.66+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:40.669693 #32]  INFO -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d]   Rendered galleries/show.html.erb within layouts/application (9.2ms)
+   2017-08-28T15:42:40.67+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:40.670512 #32]  INFO -- : [955d0d15-d5a2-4f75-871f-945d9ee1bb7d] Completed 200 OK in 22ms (Views: 9.2ms | ActiveRecord: 3.8ms)
+   2017-08-28T15:42:40.69+0000 [RTR/0] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:42:40.665+0000] "GET /galleries/1 HTTP/1.0" 200 0 2827 "http://fsi.aws.ie.a9sapp.eu/galleries" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:48534" "10.0.102.129:60654" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"888663bc-040f-4c69-6412-96d96e4a8d49" response_time:0.026008696 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:42:40.69+0000 [RTR/0] OUT 
+   2017-08-28T15:42:42.34+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:42.347165 #32]  INFO -- : [8a78ce7a-485b-41a9-902b-9009261c8613] Started GET "/images/new?id=1" for 95.88.91.121 at 2017-08-28 15:42:42 +0000
+   2017-08-28T15:42:42.34+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:42.348749 #32]  INFO -- : [8a78ce7a-485b-41a9-902b-9009261c8613] Processing by ImagesController#new as HTML
+   2017-08-28T15:42:42.34+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:42.348814 #32]  INFO -- : [8a78ce7a-485b-41a9-902b-9009261c8613]   Parameters: {"id"=>"1"}
+   2017-08-28T15:42:42.35+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:42.351923 #32] DEBUG -- : [8a78ce7a-485b-41a9-902b-9009261c8613]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+   2017-08-28T15:42:42.36+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:42.362134 #32] DEBUG -- : [8a78ce7a-485b-41a9-902b-9009261c8613]   [1m[36mGallery Load (0.8ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+   2017-08-28T15:42:42.36+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:42.368044 #32]  INFO -- : [8a78ce7a-485b-41a9-902b-9009261c8613]   Rendering images/new.html.erb within layouts/application
+   2017-08-28T15:42:42.37+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:42.372682 #32]  INFO -- : [8a78ce7a-485b-41a9-902b-9009261c8613]   Rendered images/_form.html.erb (2.7ms)
+   2017-08-28T15:42:42.37+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:42.372808 #32]  INFO -- : [8a78ce7a-485b-41a9-902b-9009261c8613]   Rendered images/new.html.erb within layouts/application (4.6ms)
+   2017-08-28T15:42:42.37+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:42.373580 #32]  INFO -- : [8a78ce7a-485b-41a9-902b-9009261c8613] Completed 200 OK in 25ms (Views: 10.1ms | ActiveRecord: 3.6ms)
+   2017-08-28T15:42:42.38+0000 [RTR/1] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:42:42.353+0000] "GET /images/new?id=1 HTTP/1.0" 200 0 3634 "http://fsi.aws.ie.a9sapp.eu/galleries/1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:41850" "10.0.102.129:60654" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"bf6f87ea-8d40-43e9-59c1-0f469f476147" response_time:0.028997187 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:42:42.38+0000 [RTR/1] OUT 
+   2017-08-28T15:42:51.51+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.512533 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Started POST "/images" for 95.88.91.121 at 2017-08-28 15:42:51 +0000
+   2017-08-28T15:42:51.51+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.513410 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Processing by ImagesController#create as HTML
+   2017-08-28T15:42:51.51+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.513510 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"vYXah9vVS/G6LAM0R585iYbXPHPdGxOp1i2gq+W+1X86vQMHqQjOyap9/M9NLDgqXYFz+5jJFS4pQzpBr3xH2w==", "image"=>{"name"=>"Landschaft", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00556f0324a2f8 @tempfile=#<Tempfile:/home/vcap/tmp/RackMultipart20170828-32-1yep1a7.jpg>, @original_filename="1366_768_20100408010717799372.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[picture]\"; filename=\"1366_768_20100408010717799372.jpg\"\r\nContent-Type: image/jpeg\r\n">, "gallery_id"=>"1"}, "commit"=>"Create Image"}
+   2017-08-28T15:42:51.51+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:51.516837 #32] DEBUG -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+   2017-08-28T15:42:51.52+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.529331 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: file -b --mime '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-1qhcyws.jpg'
+   2017-08-28T15:42:51.54+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.548060 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: identify -format '%wx%h,%[exif:orientation]' '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-sfyb9y.jpg[0]' 2>/dev/null
+   2017-08-28T15:42:51.64+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.640581 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: identify -format %m '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-sfyb9y.jpg[0]'
+   2017-08-28T15:42:51.64+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.646440 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: convert '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-sfyb9y.jpg[0]' -auto-orient -resize "300x300" '/home/vcap/tmp/e613b8741c095028961a1493ab49ab1320170828-32-1618a3p'
+   2017-08-28T15:42:51.70+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.707797 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: identify -format '%wx%h,%[exif:orientation]' '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-sfyb9y.jpg[0]' 2>/dev/null
+   2017-08-28T15:42:51.73+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.733530 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: identify -format %m '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-sfyb9y.jpg[0]'
+   2017-08-28T15:42:51.73+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.739260 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: convert '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-sfyb9y.jpg[0]' -auto-orient -resize "100x100" '/home/vcap/tmp/e613b8741c095028961a1493ab49ab1320170828-32-1xbwgjx'
+   2017-08-28T15:42:51.79+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:51.797273 #32] DEBUG -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+   2017-08-28T15:42:51.80+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:51.806987 #32] DEBUG -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   [1m[36mGallery Load (1.0ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+   2017-08-28T15:42:51.80+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.808312 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Command :: file -b --mime '/home/vcap/tmp/f95b9d42fea0e7af63d85d6316909a7620170828-32-1c2hsx9.jpg'
+   2017-08-28T15:42:51.81+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:51.813408 #32] DEBUG -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "images" ("name", "picture_file_name", "picture_content_type", "picture_file_size", "picture_updated_at", "created_at", "updated_at", "gallery_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Landschaft"], ["picture_file_name", "1366_768_20100408010717799372.jpg"], ["picture_content_type", "image/jpeg"], ["picture_file_size", 331898], ["picture_updated_at", "2017-08-28 15:42:51.519117"], ["created_at", "2017-08-28 15:42:51.811299"], ["updated_at", "2017-08-28 15:42:51.811299"], ["gallery_id", 1]]
+   2017-08-28T15:42:51.81+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:51.813984 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] [paperclip] saving images/pictures/000/000/001/original/1366_768_20100408010717799372.jpg
+   [31m2017-08-28T15:42:52.21+0000 [APP/PROC/WEB/0] ERR [fog][WARNING] fog: followed redirect to s3-eu-west-1.amazonaws.com, connecting to the matching region will be more performant[0m
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT D, [2017-08-28T15:42:55.462511 #32] DEBUG -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT I, [2017-08-28T15:42:55.462980 #32]  INFO -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Completed 500 Internal Server Error in 3949ms (ActiveRecord: 5.8ms)
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT F, [2017-08-28T15:42:55.463793 #32] FATAL -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT F, [2017-08-28T15:42:55.463904 #32] FATAL -- : [1af2b65c-4a43-464f-9d33-284258e375f3] Excon::Error::Forbidden (Expected(200) <=> Actual(403 Forbidden)
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT excon.error.response
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :body          => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>E4491F636BE2E954</RequestId><HostId>JkZjN9FESOscFLzmcx2/h53GSYFjvRctgPA+qmcJ2MejAVuJ8Qlr/alIOHD4E5HPGDDrRvJ3fpE=</HostId></Error>"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :cookies       => [
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   ]
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :headers       => {
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "Connection"       => "close"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "Content-Type"     => "application/xml"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "Date"             => "Mon, 28 Aug 2017 15:42:54 GMT"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "Server"           => "AmazonS3"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "x-amz-id-2"       => "JkZjN9FESOscFLzmcx2/h53GSYFjvRctgPA+qmcJ2MejAVuJ8Qlr/alIOHD4E5HPGDDrRvJ3fpE="
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "x-amz-request-id" => "E4491F636BE2E954"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   }
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :host          => "images.s3.amazonaws.com"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :local_address => "10.254.0.18"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :local_port    => 54948
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :path          => "/images/pictures/000/000/001/original/1366_768_20100408010717799372.jpg"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :port          => 443
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :reason_phrase => "Forbidden"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :remote_ip     => "52.216.128.35"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :status        => 403
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :status_line   => "HTTP/1.1 403 Forbidden\r\n"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT ):
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT F, [2017-08-28T15:42:55.463961 #32] FATAL -- : [1af2b65c-4a43-464f-9d33-284258e375f3]   
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT F, [2017-08-28T15:42:55.464003 #32] FATAL -- : [1af2b65c-4a43-464f-9d33-284258e375f3] app/controllers/images_controller.rb:37:in `block in create'
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT [1af2b65c-4a43-464f-9d33-284258e375f3] app/controllers/images_controller.rb:36:in `create'
+   2017-08-28T15:42:55.47+0000 [RTR/1] OUT fsi.aws.ie.a9sapp.eu - [2017-08-28T15:42:51.498+0000] "POST /images HTTP/1.0" 500 332720 1635 "http://fsi.aws.ie.a9sapp.eu/images/new?id=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" "10.0.42.8:41858" "10.0.102.129:60654" x_forwarded_for:"95.88.91.121, 10.0.42.40" x_forwarded_proto:"http" vcap_request_id:"2a2e4245-b166-46e4-54ff-d4e6b31fe64c" response_time:3.974185128 app_id:"79f704e0-8a66-499e-92f7-fe2b52b1b9bb" app_index:"0"
+   2017-08-28T15:42:55.47+0000 [RTR/1] OUT 

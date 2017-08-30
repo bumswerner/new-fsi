@@ -65,6 +65,23 @@ class MaterialsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  # Create a download section
+  # def download
+  #   send_file(
+  #     material.data.url(:original, false),
+  #     filename: @material.data_file_name,
+  #     type: @material.data_content_type
+  #   )   
+  # end
+  
+  def download
+    send_file @material.data.url(:original, false),
+    :type => @material.data_content_type,
+    :x_sendfile => true
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

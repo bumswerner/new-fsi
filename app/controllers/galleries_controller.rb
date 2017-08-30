@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
-  before_action :set_gallery, only: [:show, :edit, :update, :destroy]
-  
+  before_action :set_gallery, only: [:show, :edit, :update, :destroy, :test]
+                                                                       # !!!!!!!!
   # set access roles
   access all: [:show, :index], 
   user: {except: [:destroy, :new, :create, :update, :edit]},
@@ -16,6 +16,9 @@ class GalleriesController < ApplicationController
   # GET /galleries/1
   # GET /galleries/1.json
   def show
+  end
+  
+  def test
   end
 
   # GET /galleries/new

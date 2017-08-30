@@ -495,3 +495,16 @@ gem install pry
 Inside your views you can use logged_in?(:admin, :customer, :etc) to show or hide content.
 
 <%= link_to "destroy", destroy_listing_path(listing) if logged_in?(:admin, :customer, :etc) %>
+
+
+
+cf ssh -t -c "/tmp/lifecycle/launcher /home/vcap/app 'rails c' ''"
+
+
+********************************************************************************
+ROUTING
+********************************************************************************
+Ermöglicht es eine neue Route zu generieren, wenn man test im Browser eingibt,
+wird der Controller 'galleries' mit der Avtion test aufgerufen.
+
+get 'test', to: :show, controller: 'galleries'

@@ -101,6 +101,8 @@ Rails.application.configure do
      :fog_host => "https://s3-eu-west-1.amazonaws.com/#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
 }
 
+#s3 = Fog::Storage.new(provider: 'AWS', aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], region: 'eu-west-1')
+
   config.action_mailer.default_url_options = { host: 'http://fsi.aws.ie.a9sapp.eu' }
   
   config.action_mailer.delivery_method = :letter_opener_web

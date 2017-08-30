@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :notificationtypes
   resources :profiles
   resources :materials
+  get "/materials" => "materials#download"
+  get "materials/download"
   resources :connections
   resources :assoziations
   resources :sections
@@ -15,6 +17,19 @@ Rails.application.routes.draw do
   resources :studytypes
   resources :faculties
   resources :images
+  
+  # scope module: 'faculty' do
+  #   resources :courseofstudies
+  # end
+  
+  # test ist jetzt die show action
+  get 'test', to: :show, controller: 'galleries'
+  
+  # vertecke den user_controller im admin - Ordner
+  namespace :admin do
+    resources :users 
+  end
+  
   
   # change the default routes at devise
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
@@ -26,4 +41,5 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  
 end
