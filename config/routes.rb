@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :sections
   resources :lectures
   resources :categories
-  resources :courseofstudies
+ 
  
  
   resources :images
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   namespace :moderator do
     resources :faculties
     resources :studytypes
-    
+    resources :courseofstudies
   end
   
   

@@ -1,4 +1,6 @@
-<%= form_for @courseofstudy, :html => { :class => "form-horizontal courseofstudy" } do |f| %>
+<% target_url = @courseofstudy.id.present? ? moderator_courseofstudy_url : moderator_courseofstudies_path  %>
+
+<%= form_for @courseofstudy, url: target_url, :html => { :class => "form-horizontal courseofstudy" } do |f| %>
 
   <% if @courseofstudy.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -59,7 +61,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                courseofstudies_path, :class => 'btn btn-default' %>
+                moderator_courseofstudies_path, :class => 'btn btn-default' %>
     </div>
   </div>
 

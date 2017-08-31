@@ -63,7 +63,7 @@ class Moderator::FacultiesController < ApplicationController
   def destroy
     @faculty.destroy
     respond_to do |format|
-      format.html { redirect_to moderator_faculties_path, notice: 'Faculty was successfully destroyed.' }
+      format.html { redirect_to moderator_faculties_url, notice: 'Faculty was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,4 +1,4 @@
-class CourseofstudiesController < ApplicationController
+class Moderator::CourseofstudiesController < ApplicationController
   before_action :set_courseofstudy, only: [:show, :edit, :update, :destroy]
   
   # set access roles
@@ -33,7 +33,7 @@ class CourseofstudiesController < ApplicationController
 
     respond_to do |format|
       if @courseofstudy.save
-        format.html { redirect_to @courseofstudy, notice: 'Courseofstudy was successfully created.' }
+        format.html { redirect_to moderator_courseofstudies_path, notice: 'Courseofstudy was successfully created.' }
         format.json { render :show, status: :created, location: @courseofstudy }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class CourseofstudiesController < ApplicationController
   def update
     respond_to do |format|
       if @courseofstudy.update(courseofstudy_params)
-        format.html { redirect_to @courseofstudy, notice: 'Courseofstudy was successfully updated.' }
+        format.html { redirect_to moderator_courseofstudies_path, notice: 'Courseofstudy was successfully updated.' }
         format.json { render :show, status: :ok, location: @courseofstudy }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class CourseofstudiesController < ApplicationController
   def destroy
     @courseofstudy.destroy
     respond_to do |format|
-      format.html { redirect_to courseofstudies_url, notice: 'Courseofstudy was successfully destroyed.' }
+      format.html { redirect_to moderator_courseofstudies_url, notice: 'Courseofstudy was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

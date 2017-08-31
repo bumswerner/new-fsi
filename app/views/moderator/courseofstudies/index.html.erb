@@ -23,13 +23,13 @@
         <td><%= current_studytype.name if current_studytype.present? %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      courseofstudy_path(courseofstudy), :class => 'btn btn-default btn-xs' %>
+                      moderator_courseofstudy_path(courseofstudy), :class => 'btn btn-default btn-xs' %>
                       
           <% if logged_in?(:admin, :moderator) %>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                        edit_courseofstudy_path(courseofstudy), :class => 'btn btn-default btn-xs' %>
+                        edit_moderator_courseofstudy_path(courseofstudy), :class => 'btn btn-default btn-xs' %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                        courseofstudy_path(courseofstudy),
+                        moderator_courseofstudy_path(courseofstudy),
                         :method => :delete,
                         :data => { :confirm => t('.confirm', 
                         :default => t("helpers.links.confirm", 
@@ -44,6 +44,6 @@
 
 <% if logged_in?(:admin, :moderator) %>
   <%= link_to t('.new', :default => t("helpers.links.new")),
-              new_courseofstudy_path,
+              new_moderator_courseofstudy_path,
               :class => 'btn btn-primary' %>
 <% end %>
