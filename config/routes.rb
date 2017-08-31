@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :lectures
   resources :categories
   resources :courseofstudies
-  resources :studytypes
+ 
  
   resources :images
   
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   # routes only for moderator and admin
   namespace :moderator do
     resources :faculties
+    resources :studytypes
     
   end
   

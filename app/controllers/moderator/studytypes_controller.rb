@@ -1,4 +1,4 @@
-class StudytypesController < ApplicationController
+class Moderator::StudytypesController < ApplicationController
   before_action :set_studytype, only: [:show, :edit, :update, :destroy]
   
   # set access roles
@@ -33,7 +33,7 @@ class StudytypesController < ApplicationController
 
     respond_to do |format|
       if @studytype.save
-        format.html { redirect_to @studytype, notice: 'Studytype was successfully created.' }
+        format.html { redirect_to moderator_studytypes_path, notice: 'Studytype was successfully created.' }
         format.json { render :show, status: :created, location: @studytype }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class StudytypesController < ApplicationController
   def update
     respond_to do |format|
       if @studytype.update(studytype_params)
-        format.html { redirect_to @studytype, notice: 'Studytype was successfully updated.' }
+        format.html { redirect_to moderator_studytypes_path, notice: 'Studytype was successfully updated.' }
         format.json { render :show, status: :ok, location: @studytype }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class StudytypesController < ApplicationController
   def destroy
     @studytype.destroy
     respond_to do |format|
-      format.html { redirect_to studytypes_url, notice: 'Studytype was successfully destroyed.' }
+      format.html { redirect_to moderator_studytypes_url, notice: 'Studytype was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
