@@ -1,4 +1,6 @@
-<%= form_for @category, :html => { :class => "form-horizontal category" } do |f| %>
+<% target_url = @category.id.present? ? moderator_category_url : moderator_categories_path  %>
+
+<%= form_for @category, url:target_url, :html => { :class => "form-horizontal category" } do |f| %>
 
   <% if @category.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -30,7 +32,7 @@
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_area :description, rows: 10, :class => 'form-control', placeholder: 'Description of category' %>
+      <%= f.text_area :description, rows: 6, :class => 'form-control', placeholder: 'Description of category' %>
     </div>
   </div>
 
@@ -38,7 +40,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                categories_path, :class => 'btn btn-default' %>
+                moderator_categories_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
