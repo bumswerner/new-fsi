@@ -198,8 +198,8 @@ Retrieving logs for app [36;1mfsi[0m in org [36;1mmiketheman_t-online_de[0m 
    2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "Content-Type"     => "application/xml"
    2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "Date"             => "Mon, 28 Aug 2017 15:42:54 GMT"
    2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "Server"           => "AmazonS3"
-   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "x-amz-id-2"       => "JkZjN9FESOscFLzmcx2/h53GSYFjvRctgPA+qmcJ2MejAVuJ8Qlr/alIOHD4E5HPGDDrRvJ3fpE="
-   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "x-amz-request-id" => "E4491F636BE2E954"
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "x-amz-id-2"       => 
+   2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT     "x-amz-request-id" => 
    2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   }
    2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :host          => "images.s3.amazonaws.com"
    2017-08-28T15:42:55.46+0000 [APP/PROC/WEB/0] OUT   :local_address => "10.254.0.18"
