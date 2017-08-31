@@ -1,10 +1,10 @@
-class ConnectionsController < ApplicationController
+class Moderator::ConnectionsController < ApplicationController
   before_action :set_connection, only: [:show, :edit, :update, :destroy]
   
   # set access roles
-  access user: {except: [:destroy, :new, :create, :update, :edit]},
-  moderator:   :all,
-  admin:       :all
+  # access user: {except: [:destroy, :new, :create, :update, :edit]},
+  access moderator:   :all,
+  admin:              :all
   
 
   # GET /connections
@@ -34,7 +34,7 @@ class ConnectionsController < ApplicationController
 
     respond_to do |format|
       if @connection.save
-        format.html { redirect_to @connection, notice: 'Connection was successfully created.' }
+        format.html { redirect_to moderator_connections_path, notice: 'Connection was successfully created.' }
         format.json { render :show, status: :created, location: @connection }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class ConnectionsController < ApplicationController
   def update
     respond_to do |format|
       if @connection.update(connection_params)
-        format.html { redirect_to @connection, notice: 'Connection was successfully updated.' }
+        format.html { redirect_to moderator_connections_path, notice: 'Connection was successfully updated.' }
         format.json { render :show, status: :ok, location: @connection }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class ConnectionsController < ApplicationController
   def destroy
     @connection.destroy
     respond_to do |format|
-      format.html { redirect_to connections_url, notice: 'Connection was successfully destroyed.' }
+      format.html { redirect_to moderator_connections_url, notice: 'Connection was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

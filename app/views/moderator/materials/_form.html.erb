@@ -1,4 +1,6 @@
-<%= form_for @material, :html => { multipart: true, :class => "form-horizontal material" } do |f| %>
+<% target_url = @material.id.present? ? moderator_material_url : moderator_materials_path %>
+
+<%= form_for @material, url: target_url, :html => { multipart: true, :class => "form-horizontal material" } do |f| %>
 
   <% if @material.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -58,7 +60,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                materials_path, :class => 'btn btn-default' %>
+                moderator_materials_path, :class => 'btn btn-default' %>
     </div>
   </div>
 

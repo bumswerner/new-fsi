@@ -2,18 +2,14 @@ Rails.application.routes.draw do
   
   # all routes 
   resources :galleries
-  resources :notifications
-  resources :notificationtypes
-  resources :profiles
-
   resources :images
   
-  
-   resources :materials
- 
-  resources :connections
-  
-  # routes only for moderator and admin
+  resources :notifications
+  resources :notificationtypes
+
+
+
+  # material routes only for moderator and admin
   namespace :moderator do
     resources :faculties
     resources :studytypes
@@ -22,7 +18,26 @@ Rails.application.routes.draw do
     resources :assoziations
     resources :lectures
     resources :sections
+    resources :connections
+    resources :materials
   end
+  
+  
+  # material routes for user 
+  namespace :user do
+    resources :faculties do
+      resources :courseofstudies do
+        resources :assoziations
+      end
+    end    
+    resources :lectures, :sections do
+      resources :connections
+      resources :materials
+    end  
+    resources :categories, :studytypes
+  end
+  
+  
   
   
   get "/materials" => "materials#download"
@@ -40,6 +55,7 @@ Rails.application.routes.draw do
     resources :users 
   end
   
+  resources :profiles
   
   # change the default routes at devise
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }

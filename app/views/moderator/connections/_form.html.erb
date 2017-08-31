@@ -1,4 +1,6 @@
-<%= form_for @connection, :html => { :class => "form-horizontal connection" } do |f| %>
+<% target_url = @connection.id.present? ? moderator_connection_url : moderator_connections_url %>
+
+<%= form_for @connection, url: target_url, :html => { :class => "form-horizontal connection" } do |f| %>
 
   <% if @connection.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -46,7 +48,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                connections_path, :class => 'btn btn-default' %>
+                moderator_connections_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
