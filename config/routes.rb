@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :connections
  
   resources :sections
-  resources :lectures
+  
 
  
  
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :courseofstudies
     resources :categories
     resources :assoziations
+    resources :lectures
   end
   
   

@@ -1,4 +1,4 @@
-<% target_url = @faculty.id.present? ? moderator_faculty_url : moderator_faculties_path  %>
+<% target_url = @faculty.id.present? ? moderator_faculty_url : moderator_faculties_path %>
 
 <%= form_for(@faculty, url: target_url, :html => { :class => "form-horizontal faculty" }) do |f| %>
 

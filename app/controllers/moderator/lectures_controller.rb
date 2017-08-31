@@ -1,10 +1,10 @@
-class LecturesController < ApplicationController
+class Moderator::LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
   
   # set access roles
-  access user: {except: [:destroy, :new, :create, :update, :edit]},
-  moderator:   :all,
-  admin:       :all
+  # access user: {except: [:destroy, :new, :create, :update, :edit]},
+  access moderator:   :all,
+  admin:              :all
 
   # GET /lectures
   # GET /lectures.json
@@ -33,7 +33,7 @@ class LecturesController < ApplicationController
 
     respond_to do |format|
       if @lecture.save
-        format.html { redirect_to @lecture, notice: 'Lecture was successfully created.' }
+        format.html { redirect_to moderator_lectures_path, notice: 'Lecture was successfully created.' }
         format.json { render :show, status: :created, location: @lecture }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class LecturesController < ApplicationController
   def update
     respond_to do |format|
       if @lecture.update(lecture_params)
-        format.html { redirect_to @lecture, notice: 'Lecture was successfully updated.' }
+        format.html { redirect_to moderator_lectures_path, notice: 'Lecture was successfully updated.' }
         format.json { render :show, status: :ok, location: @lecture }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class LecturesController < ApplicationController
   def destroy
     @lecture.destroy
     respond_to do |format|
-      format.html { redirect_to lectures_url, notice: 'Lecture was successfully destroyed.' }
+      format.html { redirect_to moderator_lectures_url, notice: 'Lecture was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

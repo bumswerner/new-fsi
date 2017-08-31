@@ -19,13 +19,13 @@
         <td><%= truncate(lecture.description, length: 100) %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      lecture_path(lecture), :class => 'btn btn-default btn-xs' %>
+                      moderator_lecture_path(lecture), :class => 'btn btn-default btn-xs' %>
                       
           <% if logged_in?(:admin, :moderator) %>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                        edit_lecture_path(lecture), :class => 'btn btn-default btn-xs' %>
+                        edit_moderator_lecture_path(lecture), :class => 'btn btn-default btn-xs' %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                        lecture_path(lecture),
+                        moderator_lecture_path(lecture),
                         :method => :delete,
                         :data => { :confirm => t('.confirm',
                         :default => t("helpers.links.confirm",
@@ -41,6 +41,6 @@
 
 <% if logged_in?(:admin, :moderator) %>
   <%= link_to t('.new', :default => t("helpers.links.new")),
-              new_lecture_path,
+              new_moderator_lecture_path,
               :class => 'btn btn-primary' %>
 <% end %>

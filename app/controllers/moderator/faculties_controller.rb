@@ -3,9 +3,9 @@ class Moderator::FacultiesController < ApplicationController
   
   
   # set access roles
- # access user: {except: [:destroy, :new, :create, :update, :edit]},
+  # access user: {except: [:destroy, :new, :create, :update, :edit]},
   access moderator:   :all,
-  admin:       :all
+  admin:              :all
 
   # GET /faculties
   # GET /faculties.json
