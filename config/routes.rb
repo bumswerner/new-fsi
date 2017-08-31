@@ -5,18 +5,13 @@ Rails.application.routes.draw do
   resources :notifications
   resources :notificationtypes
   resources :profiles
-  resources :materials
- 
-  resources :connections
- 
-  resources :sections
-  
 
- 
- 
- 
   resources :images
   
+  
+   resources :materials
+ 
+  resources :connections
   
   # routes only for moderator and admin
   namespace :moderator do
@@ -26,6 +21,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :assoziations
     resources :lectures
+    resources :sections
   end
   
   

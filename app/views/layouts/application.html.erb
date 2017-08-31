@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <% @route_extend = "moderator_" %>
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-static-top">
@@ -41,7 +42,7 @@
                  <li><%= link_to "Assoziations", moderator_assoziations_path %></li>
                  <li role="separator" class="divider"></li>
                  <li><%= link_to "Lectures", moderator_lectures_path %></li>
-                 <li><%= link_to "Sections", sections_path %></li>
+                 <li><%= link_to "Sections", moderator_sections_path %></li>
                  <li role="separator" class="divider"></li>
                  <li><%= link_to "Connections", connections_path %></li>
                  <li role="separator" class="divider"></li>

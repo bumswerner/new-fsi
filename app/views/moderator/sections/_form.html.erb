@@ -1,4 +1,6 @@
-<%= form_for @section, :html => { :class => "form-horizontal section" } do |f| %>
+<% target_url = @section.id.present? ? moderator_section_url : moderator_sections_url %>
+
+<%= form_for @section, url: target_url, :html => { :class => "form-horizontal section" } do |f| %>
 
   <% if @section.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -32,7 +34,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                sections_path, :class => 'btn btn-default' %>
+                moderator_sections_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
