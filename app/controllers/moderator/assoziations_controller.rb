@@ -1,9 +1,9 @@
-class AssoziationsController < ApplicationController
+class Moderator::AssoziationsController < ApplicationController
   before_action :set_assoziation, only: [:show, :edit, :update, :destroy]
   
    # set access roles
-  access user: {except: [:destroy, :new, :create, :update, :edit]},
-  moderator:   :all,
+  # access user: {except: [:destroy, :new, :create, :update, :edit]},
+  access moderator:   :all,
   admin:       :all
 
   # GET /assoziations
@@ -33,7 +33,7 @@ class AssoziationsController < ApplicationController
 
     respond_to do |format|
       if @assoziation.save
-        format.html { redirect_to @assoziation, notice: 'Assoziation was successfully created.' }
+        format.html { redirect_to moderator_assoziations_path, notice: 'Assoziation was successfully created.' }
         format.json { render :show, status: :created, location: @assoziation }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class AssoziationsController < ApplicationController
   def update
     respond_to do |format|
       if @assoziation.update(assoziation_params)
-        format.html { redirect_to @assoziation, notice: 'Assoziation was successfully updated.' }
+        format.html { redirect_to moderator_assoziations_path, notice: 'Assoziation was successfully updated.' }
         format.json { render :show, status: :ok, location: @assoziation }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class AssoziationsController < ApplicationController
   def destroy
     @assoziation.destroy
     respond_to do |format|
-      format.html { redirect_to assoziations_url, notice: 'Assoziation was successfully destroyed.' }
+      format.html { redirect_to moderator_assoziations_url, notice: 'Assoziation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

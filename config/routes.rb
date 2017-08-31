@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :materials
  
   resources :connections
-  resources :assoziations
+ 
   resources :sections
   resources :lectures
 
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :studytypes
     resources :courseofstudies
     resources :categories
+    resources :assoziations
   end
   
   
