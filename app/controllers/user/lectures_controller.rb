@@ -1,4 +1,4 @@
-class User::CategoriesController < ApplicationController
+class User::LecturesController < ApplicationController
   
   before_action :set_category, only: [:show]
   
@@ -7,6 +7,7 @@ class User::CategoriesController < ApplicationController
   
   #GET /user/
   def index
+    
   end
   
   def show

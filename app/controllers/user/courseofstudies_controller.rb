@@ -5,12 +5,12 @@ class User::CourseofstudiesController < ApplicationController
   # set access roles
   access user: {except: [:destroy, :new, :create, :update, :edit]}
     
-  # GET /user/faculty/courseofstudies
+  # GET /user/faculties/1/courseofstudies
   def index
-    @courseofstudies = Courseofstudy.all
+    @courseofstudies = Faculty.find(params[:faculty_id]).courseofstudies
   end
   
-  # GET user/faculty/courseofstudies/1
+  # GET user/faculties/1/courseofstudies/1
   def show
   end
   
@@ -20,7 +20,8 @@ class User::CourseofstudiesController < ApplicationController
   private
   
     def set_courseofstudy
-      @courseofstudy = Courseofstudy.find(params[:id])
+      @courseofstudy = Faculty.find(params[:faculty_id])
+                               .courseofstudies.find(params[:id])
     end
   
 end

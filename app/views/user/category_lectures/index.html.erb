@@ -1,27 +1,30 @@
 <div class="row">
-  <% @courseofstudies.each do |courseofstudy| %>
+  <% @lectures.each do |lecture| %>
     <% 
-      studytype = Studytype.find(courseofstudy.studytype_id)
-      categories = courseofstudy.categories.uniq
+      assoziation = lecture.assoziations.first
+      materials = lecture.materials
+     
     %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
         <div class="user-show-title">
-          <h2><%= courseofstudy.name %></h2>
+         <%= lecture.name %> -
+         <%= assoziation.code %> -
+         <%= assoziation.instructor %> 
         </div>
         <div class="user-show-body">
-          <h3><%= courseofstudy.symbol + studytype.symbol %>
-              (<%= studytype.name %>)
-          </h3>
+          <%= lecture.description %>
+         
         </div>
         <div class="user-show-actions">
-          <% categories.each do |category| %>
+          <% materials.each do |material| %>
             <span class="badge">
-              <%= link_to category.name, user_category_lectures_path(category) %> &nbsp;
+              <%= material.name %>
+              <%#= link_to material.name, user_category_lectures_path(category) %> &nbsp;
             </span>
           
           <% end %>
-          <%= link_to 'Show Categories', 
+          <%#= link_to 'Show Show all Sections', 
               user_faculty_courseofstudy_path(params[:faculty_id], courseofstudy),
              class: "btn btn-primary" %>
         </div>
@@ -29,6 +32,6 @@
     </div> 
   <% end %>
 </div>
- <%= link_to 'Back', user_faculties_path, 
+ <%#= link_to 'Back', user_faculties_path(), 
               class: "btn btn-default" %></h2>
 <%= params.inspect %>

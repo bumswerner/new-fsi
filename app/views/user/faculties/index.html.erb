@@ -2,13 +2,14 @@
   <% @faculties.each do |faculty| %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
-          <h2><%= faculty.name %> (<%= faculty.courseofstudies.count %>) 
+          <h2><%= faculty.name %> (<%= faculty.courseofstudies.count %>) </h2>
           <%= link_to 'more' ,user_faculty_courseofstudies_path(faculty), 
-              class: "btn btn-primary" %></h2>
+              class: "btn btn-primary" %>
+          <%= link_to 'details' ,user_faculty_path(faculty), 
+              class: "btn btn-primary" %>
       </div>
     </div> 
   <% end %>
 </div>
 
-  
 

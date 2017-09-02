@@ -16,3 +16,73 @@
   color: #fff;
   text-decoration: none;
 }
+
+.center {
+  text-align: center;
+}
+
+
+// User-Show-Material-Section
+
+.user-show-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.user-show-body {
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.user-show-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+
+.badge {
+  background-color: #CEF6F5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  border: 2px solid #CEF6e0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  background-color: gainsboro;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}

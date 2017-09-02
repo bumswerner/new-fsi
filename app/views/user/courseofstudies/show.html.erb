@@ -1,0 +1,26 @@
+
+<div class="row">
+   <h2><%= @courseofstudy.name %></h2>
+  
+  <% categories.each do |category| %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="user-show-title">
+          <h2><%= category.name %>(<%= category.symbol %>)</h2>
+        </div>
+        <div class="user-show-body">
+          <hr />
+          <h4><%= category.description%></h4>
+        </div>
+        <div class="user-show-actions">
+          <%#= link_to 'Show Categories', 
+              user_faculty_courseofstudy_path(params[:faculty_id], courseofstudy),
+             class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div> 
+  <% end %>
+</div>
+ <%= link_to 'Back',user_faculty_courseofstudies_path, 
+              class: "btn btn-default" %></h2>
+<%= params.inspect %>
