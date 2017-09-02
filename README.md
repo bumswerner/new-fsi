@@ -508,3 +508,16 @@ Ermöglicht es eine neue Route zu generieren, wenn man test im Browser eingibt,
 wird der Controller 'galleries' mit der Avtion test aufgerufen.
 
 get 'test', to: :show, controller: 'galleries'
+
+
+
+********************************************************************************
+Table 2 --> Studiengang, Symbol, Abschluss, Symbol
+********************************************************************************
+index route --> /user/faculties/:faculty_id/courseofstudies
+show  route --> /user/faculties/:faculty_id/courseofstudies/:id
+
+********************************************************************************
+Table 3 --> Studiengang, Symbol, Abschluss, Symbol
+********************************************************************************
+

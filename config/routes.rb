@@ -25,16 +25,21 @@ Rails.application.routes.draw do
   
   # material routes for user 
   namespace :user do
-    resources :faculties do
-      resources :courseofstudies do
-        resources :assoziations
-      end
-    end    
-    resources :lectures, :sections do
-      resources :connections
-      resources :materials
-    end  
-    resources :categories, :studytypes
+    resources :faculties, only: [:index, :show] do
+      resources :courseofstudies, only: [:index, :show]
+  end
+    # resources :faculties do
+           
+    #   resources :courseofstudies do
+    #     resources :assoziations, only: [:show, :index]
+    #   end
+    # end    
+    # resources :lectures, :sections do
+    #   resources :connections, only: [:show, :index]
+    #   resources :materials, only: [:show, :index]
+    # end  
+   # resources :categories, only: [:show, :index]
+   #resources studytypes
   end
   
   
@@ -52,7 +57,7 @@ Rails.application.routes.draw do
   
   # vertecke den user_controller im admin - Ordner
   namespace :admin do
-    resources :users 
+    resources :users, only: [:edit, :update, :destroy, :index] 
   end
   
   resources :profiles

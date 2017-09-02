@@ -1,0 +1,24 @@
+<div class="row">
+  <% @courseofstudies.each do |courseofstudy| %>
+    <% 
+      studytype = Studytype.find(courseofstudy.studytype_id)
+      
+      assoziations = courseofstudy.assoziations
+    %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="user-show-title">
+          <h2><%= courseofstudy.name %></h2>
+        </div>
+        <div class="user-show-body">
+          <h3><%= courseofstudy.symbol + studytype.symbol %>
+              (<%= studytype.name %>)
+              <%= assoziations.count %></h3>
+        </div>
+        <div class="user-show-actions">
+          <!-- TODO -->
+        </div>
+      </div>
+    </div> 
+  <% end %>
+</div>

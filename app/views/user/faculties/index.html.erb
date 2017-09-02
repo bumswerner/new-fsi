@@ -1,1 +1,14 @@
-<%= @faculties.inspect %>
+<div class="row">
+  <% @faculties.each do |faculty| %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+          <h2><%= faculty.name %> (<%= faculty.courseofstudies.count %>) 
+          <%= link_to 'more' ,user_faculty_courseofstudies_path(faculty), 
+              class: "btn btn-primary" %></h2>
+      </div>
+    </div> 
+  <% end %>
+</div>
+
+  
+
