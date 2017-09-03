@@ -11,8 +11,7 @@ class User::CategoryLecturesController < ApplicationController
   
   # GET user/category_lectures/1/1
   def show
-    @lecture = Category.find(params[:category_id])
-                       .lecture.find(params[:id])
+    @lecture = Category.find(params[:category_id]).lectures.find(params[:id])
   end
   
   

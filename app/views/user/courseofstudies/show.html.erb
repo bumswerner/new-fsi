@@ -1,7 +1,9 @@
 
 <div class="row">
    <h2><%= @courseofstudy.name %></h2>
-  
+  <%
+    categories = @courseofstudy.categories
+  %>
   <% categories.each do |category| %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">

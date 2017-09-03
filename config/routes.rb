@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     end
     
     resources :categories, only: [:index, :show]
+    
+    # get 'faculty_courseofstudies/:faculty_id',
+    #     to: 'faculty_courseofstudies#index',
+    #     :as => 'faculty_courseofstudies'
    
     get 'category_lectures/:category_id',
          to: 'category_lectures#index',
@@ -38,9 +42,9 @@ Rails.application.routes.draw do
          to: 'category_lectures#show', 
          :as => 'category_lecture'
          
-    get 'section_materials/:category_id/:lecture_id:/:id',
+    get 'section_materials/:lecture_id/:id',
          to: 'section_materials#index',
-         :as => 'section_material'
+         :as => 'section_materials'
   
   end
   

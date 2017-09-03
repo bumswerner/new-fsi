@@ -20,8 +20,7 @@ class User::CourseofstudiesController < ApplicationController
   private
   
     def set_courseofstudy
-      @courseofstudy = Faculty.find(params[:faculty_id])
-                               .courseofstudies.find(params[:id])
+      @courseofstudy = Faculty.find(params[:faculty_id]).courseofstudies.find(params[:id])
     end
   
 end
