@@ -5,15 +5,17 @@ class User::SectionMaterialsController < ApplicationController
     
   # GET /user/section_materials/1/1
   def index
-  @materials = Material.where("lecture_id = ? AND section_id = ?",
-                               params[:lecture_id], params[:id ])
-    
-    
+    @materials = Material.where("lecture_id = ? AND section_id = ?",
+                                 params[:lecture_id],
+                                 params[:id ])
   end
   
   # GET /user/section_materials/1/1/1
   def show
-    
+    @material = Material.where("lecture_id = ? AND section_id = ? AND id = ?",
+                                params[:lecture_id],
+                                params[:section_id],
+                                params[:id])
   end
   
 end
