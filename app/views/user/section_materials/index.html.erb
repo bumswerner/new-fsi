@@ -1,9 +1,5 @@
 <div class="row">
   <% @materials.each do |material| %>
-    <% 
-     # studytype = Studytype.find(courseofstudy.studytype_id)
-     # categories = courseofstudy.categories.uniq
-    %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
         <div class="user-show-title">
@@ -15,12 +11,21 @@
           
         </div>
         <div class="user-show-actions">
-        
+        <%= link_to 'Details',
+            user_section_material_path(params[:category_id],
+                                        params[:lecture_id],
+                                       params[:section_id],
+                                       material),
+            class: "btn btn-info" %>
         </div>
       </div>
     </div> 
   <% end %>
 </div>
- <%= link_to 'Back', user_category_lectures_path(params[:lecture_id]), 
-              class: "btn btn-default" %></h2>
+ <%= link_to 'Back', 
+     user_category_lectures_url(params[:category_id],
+                                params[:lecture_id],
+                                params[:section_id]),
+     class: "btn btn-default" %>
+     
 <%= params.inspect %>

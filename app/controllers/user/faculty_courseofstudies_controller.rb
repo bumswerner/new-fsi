@@ -12,7 +12,7 @@ class User::FacultyCourseofstudiesController < ApplicationController
   
   # GET /user/faculty_courseofstudies/1/1
   def show
-   @faculty_courseofstudy = @courseofstudies.find(params[:id])
+   @faculty_courseofstudy = @courseofstudies.find(params[:courseofstudies_id])
   end
   
   

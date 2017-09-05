@@ -18,7 +18,7 @@
         <div class="user-show-actions">
           <% categories.each do |category| %>
             <span class="badge">
-              <%= link_to category.name, user_category_lectures_path(category) %> &nbsp;
+              <%= link_to category.name, user_category_lectures_path(params[:faculty_id], categories) %> &nbsp;
             </span>
           
           <% end %>

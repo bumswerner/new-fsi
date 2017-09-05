@@ -33,16 +33,16 @@ Rails.application.routes.draw do
         to: 'faculty_courseofstudies#index',
         :as => 'faculty_courseofstudies'
     # route 4
-    get 'faculty_courseofstudies/:faculty_id/:id',
+    get 'faculty_courseofstudies/:faculty_id/:courseofstudies_id',
         to: 'faculty_courseofstudies#show',
         :as => 'faculty_courseofstudy'
         
     # route 5
-    get 'category_lectures/:category_id',
+    get 'category_lectures/:faculty_id/:category_id',
          to: 'category_lectures#index',
          :as => 'category_lectures'
     # route 6
-    get 'category_lectures/:category_id/:id',
+    get 'category_lectures/:faculty_id/:category_id/:id',
          to: 'category_lectures#show', 
          :as => 'category_lecture'
          
@@ -56,11 +56,11 @@ Rails.application.routes.draw do
         :as => 'courseofstudy_categorie'
     
     # route 9     
-    get 'section_materials/:lecture_id/:id',
+    get 'section_materials/:category_id/:lecture_id/:section_id',
          to: 'section_materials#index',
          :as => 'section_materials'
     # route 10     
-    get 'section_materials/:lecture_id/:section_id/:id',
+    get 'section_materials/:category_id/:lecture_id/:section_id/:material_id',
          to: 'section_materials#show',
          :as => 'section_material'
          

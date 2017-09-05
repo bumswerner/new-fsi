@@ -2,9 +2,7 @@
   <% @lectures.each do |lecture| %>
     <% 
       assoziation = lecture.assoziations.first
-   
       sections = lecture.materials
-     
     %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
@@ -17,22 +15,26 @@
           <%= lecture.description %>
          
         </div>
-        <div class="user-show-actions">
+        <div class="user-show-links">
           <% sections.each do |section| %>
             <span class="badge">
-              <%= link_to section.name, user_section_materials_path(lecture, section) %> &nbsp;
+              <%= link_to section.name,
+                  user_section_materials_path(params[:category_id], lecture, section) %> 
+                  &nbsp;
             </span>
-          
           <% end %>
-          <%#= link_to 'Show Show all Sections', 
-              user_faculty_courseofstudy_path(params[:faculty_id], courseofstudy),
-             class: "btn btn-primary" %>
         </div>
+         <div class="user-show-actions">
+           <%= link_to 'Details', 
+               user_category_lecture_path(params[:faculty_id],
+                                          params[:category_id], lecture),
+               class: "btn btn-info" %>
+      </div>
       </div>
     </div> 
   <% end %>
-</div>              <!-- TODO -->
- <%= link_to 'Back', user_faculty_courseofstudies_path(1), 
+</div>            
+ <%= link_to 'Back to ', user_faculty_courseofstudies_path(params[:faculty_id]), 
               class: "btn btn-default" %></h2>
 
 <%= params.inspect %>

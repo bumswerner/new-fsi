@@ -1,2 +1,22 @@
-<h1>Show</h1>
-<%= params.inspect %>
+<% 
+  assoziation = @lecture.assoziations.first
+  sections = @lecture.materials
+%>
+
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="user-show-title">
+        <%= @lecture.name %> -
+         <%= assoziation.code %> -
+         <%= assoziation.instructor %> 
+         (<%= @lecture.symbol %>)
+      </div>
+      <div class="user-show-body">
+        <%= @lecture.description %>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<%= link_to 'Back', user_category_lectures_url, class: "btn btn-default" %>
