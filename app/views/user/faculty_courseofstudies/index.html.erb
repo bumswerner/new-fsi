@@ -1,0 +1,38 @@
+<div class="row">
+  <% @faculty_courseofstudies.each do |faculty_courseofstudy| %>
+    <% 
+      studytype = Studytype.find(faculty_courseofstudy.studytype_id)
+      categories = faculty_courseofstudy.categories.uniq
+    %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="user-show-title">
+          <h2><%= faculty_courseofstudy.name %></h2>
+        </div>
+        <div class="user-show-body">
+          <h3><%= faculty_courseofstudy.symbol + 
+                  studytype.symbol %>
+             (<%= studytype.name %>)
+          </h3>
+        </div>
+        <div class="user-show-actions">
+          <% categories.each do |category| %>
+            <span class="badge">
+              <%= link_to category.name, user_category_lectures_path(category) %> &nbsp;
+            </span>
+          
+          <% end %>
+          <%#= link_to 'Show Categories', 
+              user_faculty_courseofstudy_path(params[:faculty_id], faculty_courseofstudy),
+             class: "btn btn-primary" %>
+          <%= link_to 'Details',
+              user_faculty_courseofstudy_path(params[:faculty_id], faculty_courseofstudy),
+              class: "btn btn-info" %>
+        </div>
+      </div>
+    </div> 
+  <% end %>
+</div>
+ <%= link_to 'Back', user_faculties_path, 
+              class: "btn btn-default" %></h2>
+<%= params.inspect %>

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="user-show-title">
+        <h2><%= @faculty_courseofstudy.name %>
+            <%= @faculty_courseofstudy.symbol %></h2>
+      </div>
+      <div class="user-show-body">
+        <hr />
+        <%= @faculty_courseofstudy.description %>
+      </div>
+      <div class="user-show-actions">
+      
+      </div>
+    </div>
+  </div> 
+ 
+</div>
+<%= link_to 'Back',user_faculty_courseofstudies_path, 
+             class: "btn btn-default" %>
+<%= link_to 'Back to Categories', 
+            user_faculties_url(params[:faculty_id]),
+            class: "btn btn-primary" %>

@@ -1,8 +1,15 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="user-show-title">
+        <h2><%= @faculty.name %>
+            (<%= @faculty.symbol %>)</h2>
+      </div>
+      <div class="user-show-body">
+        <%= @faculty.description %>
+      </div>
+    </div>
+  </div> 
+</div>
 
-<h1><%= @faculty.inspect %></h1>
-
- <%= link_to 'Back', user_faculties_path, 
-              class: "btn btn-default" %>
-              
-              
-<%= params.inspect %>
+<%= link_to 'Back', user_faculties_path, class: "btn btn-default" %>
