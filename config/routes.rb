@@ -60,7 +60,7 @@ Rails.application.routes.draw do
          to: 'section_materials#index',
          :as => 'section_materials'
     # route 10     
-    get 'section_materials/:category_id/:lecture_id/:section_id/:material_id',
+    get 'section_materials/:category_id/:lecture_id/:section_id/:id',
          to: 'section_materials#show',
          :as => 'section_material'
          

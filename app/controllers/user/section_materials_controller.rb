@@ -15,7 +15,7 @@ class User::SectionMaterialsController < ApplicationController
     @material = Material.where("lecture_id = ? AND section_id = ? AND id = ?",
                                 params[:lecture_id],
                                 params[:section_id],
-                                params[:material_id])
+                                params[:id]).first
   end
   
 end

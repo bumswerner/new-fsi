@@ -1,4 +1,24 @@
-<%= @material.inspect %>
-<hr />
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="user-show-title">
+        <h2><%= @material.name %>  </h2>
+         Name:  <%= @material.data_file_name %><br />
+          Type: <%= @material.data_content_type %><br />
+          Size: <%= @material.data_file_size %>
+         
+      </div>
+      <div class="user-show-body">
+        <%= @material.discription %>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<%= link_to 'Back', 
+    user_section_materials_path(params[:category_id],
+                               params[:lecture_id],
+                               params[:section_id]), 
+    class: "btn btn-default" %>
 <%= params.inspect %>
 
