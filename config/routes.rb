@@ -73,16 +73,7 @@ Rails.application.routes.draw do
          to: 'lecture_sections#show',
          :as => 'lecture_section'
   end
-  
-  
-  
-  
-  #get "/materials" => "materials#download"
- # get "materials/download"
-  
-  # scope module: 'faculty' do
-  #   resources :courseofstudies
-  # end
+
   
   # test ist jetzt die show action
   get 'test', to: :show, controller: 'galleries'

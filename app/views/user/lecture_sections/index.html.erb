@@ -1,0 +1,41 @@
+<div class="row">
+  <% @sections.each do |section| %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="user-show-title">
+         <%= @category.name %> -
+         <%= section.name %>
+        </div>
+        <div class="user-show-body">
+          <%= section.description %>
+        </div>
+        <% materials = Material.where("lecture_id = ? AND section_id = ?",
+                                       params[:lecture_id], section)
+        %>
+        <div class="user-show-links">
+          <% materials.each do |material| %>
+            <span class="badge">
+              <%= link_to material.name,
+                  user_section_material_path(params[:category_id], 
+                                             params[:lecture_id],
+                                             section,
+                                             material) %> 
+                  &nbsp;
+            </span>
+          <% end %>
+        </div>
+         <div class="user-show-actions">
+           <%= link_to 'Details', 
+               user_lecture_section_path(params[:category_id],
+                                         params[:lecture_id], section),
+               class: "btn btn-info" %>
+      </div>
+      </div>
+    </div> 
+  <% end %>
+</div>            
+ <%= link_to 'Back', user_category_lectures_path(params[:category_id],
+                                                     params[:lecture_id]), 
+              class: "btn btn-default" %></h2>
+
+<%= params.inspect %>

@@ -15,10 +15,16 @@
   </div> 
 </div>
 
-<%= link_to 'Back', 
-    user_section_materials_path(params[:category_id],
-                               params[:lecture_id],
-                               params[:section_id]), 
+<%= link_to 'Back to Section', 
+    user_section_materials_url(params[:category_id],
+                                params[:lecture_id],
+                                params[:section_id]), 
+    class: "btn btn-default" %>
+    
+<%= link_to 'Back to Lecture' ,   
+    user_lecture_sections_url(params[:category_id],
+                                params[:lecture_id],
+                                params[:section_id]),
     class: "btn btn-default" %>
 <%= params.inspect %>
 

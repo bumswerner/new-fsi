@@ -25,6 +25,10 @@
           <% end %>
         </div>
          <div class="user-show-actions">
+           <%= link_to 'Show all Sections',
+               user_lecture_sections_path(params[:category_id], lecture),
+               class: "btn btn-primary" %>
+           
            <%= link_to 'Details', 
                user_category_lecture_path(params[:faculty_id],
                                           params[:category_id], lecture),
