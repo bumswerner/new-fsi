@@ -1,26 +1,28 @@
 class User::CategoryLecturesController < ApplicationController
   
-  before_action :get_lectures, only: [:index, :show]
+  before_action :get_assoziations, only: [:index, :show]
   
   # set access roles
   access user: {except: [:destroy, :new, :create, :update, :edit]}
     
-  # GET user/category_lectures/1
+  # GET user/category_lectures/faculty_id/category_id/courseofstudy_id
   def index
     @lectures 
   end
   
-  # GET user/category_lectures/1/1
+  # GET user/category_lectures/faculty_id/category_id//courseofstudy_id/lecture_id
   def show
-    @lecture = @lectures.find(params[:id])
+    @lecture = Lecture.find(params[:id])
   end
   
   
   # the private section
   private
   
-    def get_lectures
-      @lectures = Faculty.find(params[:faculty_id]).courseofstudies.find(params[:category_id]).lectures
-    
+    def get_assoziations    
+      @assoziations = Assoziation.where("courseofstudy_id = ? AND category_id = ?",
+                                        params[:courseofstudy_id],
+                                        params[:category_id])
     end
+    
 end

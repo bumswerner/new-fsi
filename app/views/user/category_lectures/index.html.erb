@@ -1,9 +1,9 @@
 <div class="row">
-  <% @lectures.each do |lecture| %>
-    <% 
-      assoziation = lecture.assoziations.first
-      sections = lecture.materials
-    %>
+ <% @assoziations.each do |assoziation| %>
+  <%
+    lecture =  Lecture.find(assoziation.lecture_id)
+    sections = lecture.materials
+  %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
         <div class="user-show-title">
@@ -19,7 +19,9 @@
           <% sections.each do |section| %>
             <span class="badge">
               <%= link_to section.name,
-                  user_section_materials_path(params[:category_id], lecture, section) %> 
+                  user_section_materials_path(params[:category_id], 
+                                              params[:courseofstudy_id],
+                                              lecture, section) %> 
                   &nbsp;
             </span>
           <% end %>
@@ -31,7 +33,8 @@
            
            <%= link_to 'Details', 
                user_category_lecture_path(params[:faculty_id],
-                                          params[:category_id], lecture),
+                                          params[:category_id],
+                                          params[:courseofstudy_id], lecture),
                class: "btn btn-info" %>
       </div>
       </div>
@@ -40,5 +43,5 @@
 </div>            
  <%= link_to 'Back to ', user_faculty_courseofstudies_path(params[:faculty_id]), 
               class: "btn btn-default" %></h2>
-
+              
 <%= params.inspect %>

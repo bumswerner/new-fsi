@@ -15,15 +15,20 @@
              (<%= studytype.name %>)
           </h3>
         </div>
-        <div class="user-show-actions">
-          <% categories.each do |category| %>
+        <div class="user-show-links">
+           <% categories.each do |category| %>
             <span class="badge">
-              <%= link_to category.name, user_category_lectures_path(params[:faculty_id], categories) %> &nbsp;
+              <%= link_to category.name,
+                  user_category_lectures_path(params[:faculty_id], 
+                                              category,
+                                              faculty_courseofstudy) %>
+                  &nbsp;
             </span>
-          
           <% end %>
-          <%#= link_to 'Show Categories', 
-              user_faculty_courseofstudy_path(params[:faculty_id], faculty_courseofstudy),
+        </div>  
+        <div class="user-show-actions">
+          <%= link_to 'Show all Categories', 
+              user_courseofstudy_categories_path(params[:faculty_id], faculty_courseofstudy),
              class: "btn btn-primary" %>
           <%= link_to 'Details',
               user_faculty_courseofstudy_path(params[:faculty_id], faculty_courseofstudy),

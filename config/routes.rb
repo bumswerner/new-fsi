@@ -33,43 +33,43 @@ Rails.application.routes.draw do
         to: 'faculty_courseofstudies#index',
         :as => 'faculty_courseofstudies'
     # route 4
-    get 'faculty_courseofstudies/:faculty_id/:courseofstudies_id',
+    get 'faculty_courseofstudies/:faculty_id/:courseofstudy_id',
         to: 'faculty_courseofstudies#show',
         :as => 'faculty_courseofstudy'
         
     # route 5
-    get 'category_lectures/:faculty_id/:category_id',
+    get 'category_lectures/:faculty_id/:category_id/:courseofstudy_id',
          to: 'category_lectures#index',
          :as => 'category_lectures'
     # route 6
-    get 'category_lectures/:faculty_id/:category_id/:id',
+    get 'category_lectures/:faculty_id/:category_id/:courseofstudy_id/:id',
          to: 'category_lectures#show', 
          :as => 'category_lecture'
          
     # route 7
-    get 'courseofstudy_categories/:faculty_id/:courseofstudies_id',
+    get 'courseofstudy_categories/:faculty_id/:courseofstudy_id',
         to: 'courseofstudy_categories#index',
         :as => 'courseofstudy_categories'
     # route 8
-    get 'courseofstudy_categories/:faculty_id/:courseofstudies_id/:id',
+    get 'courseofstudy_categories/:faculty_id/:courseofstudy_id/:id',
         to: 'courseofstudy_categories#show',
-        :as => 'courseofstudy_categorie'
+        :as => 'courseofstudy_category'
     
     # route 9     
-    get 'section_materials/:category_id/:lecture_id/:section_id',
+    get 'section_materials/:category_id/:courseofstudy_id/:lecture_id/:section_id',
          to: 'section_materials#index',
          :as => 'section_materials'
     # route 10     
-    get 'section_materials/:category_id/:lecture_id/:section_id/:id',
+    get 'section_materials/:category_id/:courseofstudy_id/:lecture_id/:section_id/:id',
          to: 'section_materials#show',
          :as => 'section_material'
          
     # route 11
-    get 'lecture_sections/:category_id/:lecture_id',
+    get 'lecture_sections/:category_id/:lecture_id/:courseofstudy_id',
          to: 'lecture_sections#index',
          :as => 'lecture_sections'
     # route 12
-    get 'lecture_sections/:category_id/:lecture_id/:id',
+    get 'lecture_sections/:category_id/:lecture_id/:courseofstudy_id/:id',
          to: 'lecture_sections#show',
          :as => 'lecture_section'
   end

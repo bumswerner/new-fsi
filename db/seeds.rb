@@ -160,8 +160,9 @@ Category.create!(
 puts "Created 1 Category of Wahlpflichtfächer"
 
 
+
 Lecture.create!(
-  name: "Mathe 3"
+  name: "Mathe 1"
   )
 
 Lecture.create!(
@@ -177,3 +178,28 @@ Lecture.create!(
   )
   
 puts "Created 4 Lectures"
+
+
+Assoziation.create!(
+  name: "PIB4711",
+  instructor: "Herr Braun",
+  category_id: 1,
+  courseofstudy_id: 1,
+  lecture_id: 1
+  )
+  
+Assoziation.create!(
+  name: "PIB4812",
+  instructor: "Herr Folz",
+  category_id: 1,
+  courseofstudy_id: 1,
+  lecture_id: 2
+  )
+  
+Assoziation.create!(
+  name: "PIB4711",
+  instructor: "Herr Pauly and the Pick",
+  category_id: 1,
+  courseofstudy_id: 1,
+  lecture_id: 4
+  )

@@ -23,8 +23,9 @@
     
 <%= link_to 'Back to Lecture' ,   
     user_lecture_sections_url(params[:category_id],
-                                params[:lecture_id],
-                                params[:section_id]),
+    
+                              params[:courseofstudy_id],
+                                params[:lecture_id]),
     class: "btn btn-default" %>
 <%= params.inspect %>
 

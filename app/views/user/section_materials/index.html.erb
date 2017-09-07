@@ -13,6 +13,7 @@
         <div class="user-show-actions">
         <%= link_to 'Details',
             user_section_material_path(params[:category_id],
+                                       params[:courseofstudy_id],
                                         params[:lecture_id],
                                        params[:section_id],
                                        material),
@@ -23,9 +24,7 @@
   <% end %>
 </div>
  <%= link_to 'Back', 
-     user_category_lectures_path(params[:category_id],
-                                params[:lecture_id],
-                                params[:section_id]),
+     user_category_lectures_path(@faculty_id,
+                                 params[:category_id],
+                                 params[:courseofstudy_id]),
      class: "btn btn-default" %>
-     
-<%= params.inspect %>

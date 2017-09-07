@@ -1,0 +1,39 @@
+<div class="row">
+  <% @categories.each do |category| %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="user-show-title">
+         <%= @courseofstudy.name %> -
+         <%= category.name %>
+        </div>
+        <div class="user-show-body">
+          <%= category.description %>
+        </div>
+        <% 
+         assoziations = @assoziations.where("category_id = ?", category.id)
+          
+        %>
+        <div class="user-show-links">
+          <% assoziations.each do |assoziation| %>
+            <span class="badge">
+              <%= link_to Lecture.find(assoziation.lecture_id).name, 
+                  user_lecture_sections_path(category, assoziation.lecture_id) %>
+                  &nbsp;
+            </span>
+          <% end %>
+        </div>
+         <div class="user-show-actions">
+           <%= link_to 'Details', 
+               user_courseofstudy_category_path(params[:faculty_id],
+                                                params[:courseofstudy_id],
+                                                category.id),
+               class: "btn btn-info" %>
+      </div>
+      </div>
+    </div> 
+  <% end %>
+</div>            
+ <%= link_to 'Back', user_faculty_courseofstudies_path(params[:faculty_id]), 
+              class: "btn btn-default" %>
+
+<%= params.inspect %>
