@@ -1,3 +1,17 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="user-show-title">
+        <h2><%= @category.name %>  </h2>
+       
+      </div>
+      <div class="user-show-body">
+        <%= @category.description %>
+      </div>
+    </div>
+  </div> 
+</div>
 <%= link_to 'Back', user_courseofstudy_categories_path(params[:faculty_id],
                                                        params[:courseofstudy_id]),
     class: "btn btn-default" %>
+    

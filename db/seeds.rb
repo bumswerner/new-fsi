@@ -160,25 +160,42 @@ Category.create!(
 puts "Created 1 Category of Wahlpflichtfächer"
 
 
-
+# id 1
 Lecture.create!(
   name: "Mathe 1"
   )
 
+# id 2
 Lecture.create!(
   name: "Programmieren 1"
   )
   
-Lecture.create!(
-  name: "Programmieren 2"
-  )
-  
+# id 3
 Lecture.create!(
   name: "BSE"
   )
   
-puts "Created 4 Lectures"
-
+# id 4
+Lecture.create!(
+  name: "Programmieren 2"
+  )
+  
+# id 5
+Lecture.create!(
+  name: "Graphentheorie" 
+  )
+  
+# id 6
+Lecture.create!(
+  name: "Theoretische Informatik"
+  )
+  
+# id 7
+Lecture.crate!(
+  name: "Rechnerarchitektur"
+  )
+  
+puts "Created 7 Lectures"
 
 Assoziation.create!(
   name: "PIB4711",
@@ -196,10 +213,137 @@ Assoziation.create!(
   lecture_id: 2
   )
   
+# Semester 1 - Praktische Informatik - BSE
 Assoziation.create!(
-  name: "PIB4711",
+  name: "PIB9713",
   instructor: "Herr Pauly and the Pick",
   category_id: 1,
   courseofstudy_id: 1,
   lecture_id: 4
+  )
+  
+# Semester 2 - Praktische Informatk - Programmieren 2
+Assoziation.create!(
+  name: "PIB1151",
+  instructor: "Eschi",
+  category_id: 2,
+  courseofstudy_id: 1,
+  lecture_id: 4
+  )
+  
+# Semester 2 - Praktische Informatk - Graphentheorie
+Assoziation.create!(
+  name: "PIB1252",
+  instructor: "Berberisch",
+  category_id: 2,
+  courseofstudy_id: 1,
+  lecture_id: 5
+  )
+  
+# Semester 3 - Praktische Informatik - Theoretische Informatik
+Assoziation.create!(
+  name: "PIB3253",
+  instructor: "Kretchmer",
+  category_id: 3,
+  courseofstudy_id: 1,
+  lecture_id: 6
+  )
+
+# Semester 3 - Praktische Informatik - Rechnerarchitektur
+Assoziation.create!(
+  name: "PIB3354",
+  instructor: "Leiner",
+  category_id: 3,
+  courseofstudy_id: 1,
+  lecture_id: 7
+  )
+  
+puts "Created 7 Assoziations"
+
+# id 1
+Section.create!(
+  name: "Klausuren",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et"
+  )
+
+# id 2
+Section.create!(
+  name: "Übungen",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo"
+  )
+
+# id 3
+Section.create!(
+  name: "Skripte",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo"
+  )
+  
+# id 4
+Section.create!(
+  name: "Lösungen",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo"
+  )
+  
+puts "Created 4 Sections"
+
+Connection.create!(
+  name: "Klausuren --> Mathe 1",
+  section_id: 1,
+  lecture_id: 1
+  )
+  
+Connection.create!(
+  name: "Übungen --> Mathe 1",
+  section_id: 2,
+  lecture_id: 1
+  )
+  
+Connection.create!(
+  name: "Skripte --> Mathe 1",
+  section_id: 3,
+  lecture_id: 1
+  )
+
+Connection.create!(
+  name: "Lösungen --> Mathe 1",
+  section_id: 4,
+  lecture_id: 1
+  )
+  
+puts "Created 4 Connections"
+
+Material.create!(
+  name: "SS 2010",
+  discription: "",
+  section_id: 1,
+  lecture_id: 1
+  )
+  
+Material.create!(
+  name: "SS 2011",
+  discription: "",
+  section_id: 1,
+  lecture_id: 1
+  )
+  
+Material.create!(
+  name: "SS 2012",
+  discription: "",
+  section_id: 1,
+  lecture_id: 1
+  )
+  
+Material.create!(
+  name: "SS 2013",
+  discription: "",
+  section_id: 1,
+  lecture_id: 1
   )

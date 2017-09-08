@@ -1,6 +1,6 @@
 class User::CourseofstudyCategoriesController < ApplicationController
 
-  before_action :get_categories, only: [:index, :show]
+  before_action :get_categories, only: [:index]
   
   # set access roles
   access user: {except: [:destroy, :new, :create, :update, :edit]}
@@ -14,7 +14,8 @@ class User::CourseofstudyCategoriesController < ApplicationController
   
   # GET /user/courseofstudies_categories/faculty_id/courseofstudy_id/category_id
   def show
-  @category = @categories.find(params[:id])
+  #@category = @categories.find(params[:id])
+   @category = Category.find(params[:id])
   end
   
   # the private section
