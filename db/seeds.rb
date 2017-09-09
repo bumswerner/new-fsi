@@ -1,6 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
+
 # generated objects Faculty
 
 
@@ -140,8 +141,8 @@ puts "Created 5 Courseofstudy"
 
 8.times do |number|
 Category.create!(
-  name: 'Semester #{number+1}',
-  symbol: 'S #{number+1}',
+  name: "Semester #{number+1}",
+  symbol: "S #{number+1}",
   description: 'Ein Semester (lateinisch semestris ‚sechsmonatig‘, ‚halbjährig‘
                 von sex ‚sechs‘ und mensis ‚monat‘[1]) ist eine seit dem 
                 15. Jahrhundert gebräuchliche Bezeichnung für ein Studienhalbjahr
@@ -162,43 +163,78 @@ puts "Created 1 Category of Wahlpflichtfächer"
 
 # id 1
 Lecture.create!(
-  name: "Mathe 1"
+  name: "Mathe 1",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet."
   )
 
 # id 2
 Lecture.create!(
-  name: "Programmieren 1"
+  name: "Programmieren 1",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet."
   )
   
 # id 3
 Lecture.create!(
-  name: "BSE"
+  name: "BSE",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet."
   )
   
 # id 4
 Lecture.create!(
-  name: "Programmieren 2"
+  name: "Programmieren 2",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet."
   )
   
 # id 5
 Lecture.create!(
-  name: "Graphentheorie" 
+  name: "Graphentheorie",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet."
   )
   
 # id 6
 Lecture.create!(
-  name: "Theoretische Informatik"
+  name: "Theoretische Informatik",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet."
   )
   
 # id 7
-Lecture.crate!(
-  name: "Rechnerarchitektur"
+Lecture.create!(
+  name: "Rechnerarchitektur",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                no sea takimata sanctus est Lorem ipsum dolor sit amet."
   )
   
 puts "Created 7 Lectures"
 
 Assoziation.create!(
-  name: "PIB4711",
+  code: "PIB4711",
   instructor: "Herr Braun",
   category_id: 1,
   courseofstudy_id: 1,
@@ -206,7 +242,7 @@ Assoziation.create!(
   )
   
 Assoziation.create!(
-  name: "PIB4812",
+  code: "PIB4812",
   instructor: "Herr Folz",
   category_id: 1,
   courseofstudy_id: 1,
@@ -215,16 +251,16 @@ Assoziation.create!(
   
 # Semester 1 - Praktische Informatik - BSE
 Assoziation.create!(
-  name: "PIB9713",
+  code: "PIB9713",
   instructor: "Herr Pauly and the Pick",
   category_id: 1,
   courseofstudy_id: 1,
-  lecture_id: 4
+  lecture_id: 3
   )
   
 # Semester 2 - Praktische Informatk - Programmieren 2
 Assoziation.create!(
-  name: "PIB1151",
+  code: "PIB1151",
   instructor: "Eschi",
   category_id: 2,
   courseofstudy_id: 1,
@@ -233,7 +269,7 @@ Assoziation.create!(
   
 # Semester 2 - Praktische Informatk - Graphentheorie
 Assoziation.create!(
-  name: "PIB1252",
+  code: "PIB1252",
   instructor: "Berberisch",
   category_id: 2,
   courseofstudy_id: 1,
@@ -242,7 +278,7 @@ Assoziation.create!(
   
 # Semester 3 - Praktische Informatik - Theoretische Informatik
 Assoziation.create!(
-  name: "PIB3253",
+  code: "PIB3253",
   instructor: "Kretchmer",
   category_id: 3,
   courseofstudy_id: 1,
@@ -251,7 +287,7 @@ Assoziation.create!(
 
 # Semester 3 - Praktische Informatik - Rechnerarchitektur
 Assoziation.create!(
-  name: "PIB3354",
+  code: "PIB3354",
   instructor: "Leiner",
   category_id: 3,
   courseofstudy_id: 1,
@@ -347,3 +383,5 @@ Material.create!(
   section_id: 1,
   lecture_id: 1
   )
+  
+puts "Created 4 Materials"

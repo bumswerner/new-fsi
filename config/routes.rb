@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   resources :galleries
   resources :images
   
-  resources :notifications
-  resources :notificationtypes
+  #resources :notifications
+  #resources :notificationtypes
+  
+  resources :notifications do
+    resources :notificationtypes, shallow: true
+  end
 
 
 

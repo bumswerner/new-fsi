@@ -521,3 +521,8 @@ show  route --> /user/faculties/:faculty_id/courseofstudies/:id
 Table 3 --> Studiengang, Symbol, Abschluss, Symbol
 ********************************************************************************
 
+
+create sample data
+
+rails db:setup
+
