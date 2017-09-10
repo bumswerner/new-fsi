@@ -358,30 +358,171 @@ puts "Created 4 Connections"
 
 Material.create!(
   name: "SS 2010",
-  discription: "",
+  discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   section_id: 1,
   lecture_id: 1
   )
   
 Material.create!(
   name: "SS 2011",
-  discription: "",
+  discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   section_id: 1,
   lecture_id: 1
   )
   
 Material.create!(
   name: "SS 2012",
-  discription: "",
+  discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   section_id: 1,
   lecture_id: 1
   )
   
 Material.create!(
   name: "SS 2013",
-  discription: "",
+  discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   section_id: 1,
   lecture_id: 1
   )
   
 puts "Created 4 Materials"
+
+
+
+# Noticationtypes and Notifications
+
+Notificationtype.create!(
+  name: "Neuigkeiten",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet."
+  )
+
+Notificationtype.create!(
+  name: "Veranstaltungen",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet."
+  )
+  
+Notificationtype.create!(
+  name: "Termine",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet."
+  )
+  
+puts "3 Notificationtypea created"
+
+Notification.create!(
+  title: "Neu an der htw saar?",
+  message: "Wir haben für Sie die wichtigsten Anlaufstellen und interessantesten 
+            Angebote an der htw saar zusammen getragen, damit Sie sich in den ersten
+            Tagen im Hochschuldschungel besser zurechtfinden. ",
+  image: "http://placehold.it/150x150",
+  notificationtype_id: 1)
+  
+Notification.create!(
+  title: "Projektleitertag der htw saar am 28. September 2017",
+  message: "Am. 28. September 2017 findet zum 14. Mal der Projektleitertag an 
+            der htw saar statt. Im Rahmen der Veranstaltung werden hochschulinterne
+            Forschungsanträge für das Jahr 2018 präsentiert.",
+  image: "http://placehold.it/150x150",
+  notificationtype_id: 1)
+
+Notification.create!(
+  title: "Kinder-Ferien-Programm in den Herbstferien",
+  message: "In den Herbstferien bietet die htw saar wieder gemeinsam mit dem NABU
+            Saarland ein Ferienangebot für Grundschulkinder von Studierenden und 
+            Beschäftigten im Wald am Campus Rotenbühl an. Viele spannende Aktivitäten 
+            lassen keine Langeweile aufkommen. Die Anmeldung ist bis 1. Oktober 2017 möglich. ",
+  image: "http://placehold.it/150x150",
+  notificationtype_id: 1)
+  
+puts "4 Notification created"
+
+
+
+# create Galleries and Images
+
+Gallery.create!(
+  name: "Mitglieder",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
+
+Gallery.create!(
+  name: "Sommerfest 2016",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
+                
+Gallery.create!(
+  name: "Robonights 2017",
+  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
+                
+puts "3 Galleries created"
+
+
+Image.create!(
+  name: "Werner",
+  picture_file_name: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+  
+Image.create!(
+  name: "Karsten",
+  picture_file_name: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+
+Image.create!(
+  name: "Hans",
+  picture_file_name: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+  
+Image.create!(
+  name: "Karl",
+  picture_file_name: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+  
+Image.create!(
+  name: "Franz",
+  picture_file_name: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+  
+puts "5 Images created"
