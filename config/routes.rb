@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #resources :notificationtypes
   
   resources :notificationtypes do
-    resources :notifications, shallow: true
+    resources :notifications
   end
 
 

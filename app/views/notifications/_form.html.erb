@@ -1,4 +1,11 @@
-<%= form_for notificationtype_notifications_url(params[:notificationtype_id]), :html => { multipart: true, :class => "form-horizontal notification" } do |f| %>
+<%
+   @notification.id.present? ? 
+      path_url = notificationtype_notification_path(params[:notificationtype_id], @notification)
+      :  path_url = notificationtype_notifications_path(params[:notificationtype_id])
+%>
+
+<%= form_for @notification, url: path_url,
+    :html => { multipart: true, :class => "form-horizontal notification" } do |f| %>
 
   <% if @notification.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -50,7 +57,8 @@
       <%= f.submit nil, :class => 'btn btn-primary' %>
       
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                 notificationtype_notifications_path(params[:notificationtype_id]), :class => 'btn btn-default' %>
+                 notificationtype_notifications_path(params[:notificationtype_id]),
+                 :class => 'btn btn-default' %>
     </div>
   </div>
 
