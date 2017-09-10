@@ -4,7 +4,7 @@ class NotificationsController < ApplicationController
   # GET /notifications
   # GET /notifications.json
   def index
-    @notifications = Notification.all
+    @notifications = Notificationtype.find(params[:notificationtype_id]).notifications
   end
 
   # GET /notifications/1

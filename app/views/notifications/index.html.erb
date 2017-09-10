@@ -5,13 +5,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:message) %></th>
       <th><%= model_class.human_attribute_name(:image_file_name) %></th>
-      <th><%= model_class.human_attribute_name(:image_content_type) %></th>
-      <th><%= model_class.human_attribute_name(:image_file_size) %></th>
-      <th><%= model_class.human_attribute_name(:image_updated_at) %></th>
       <th><%= model_class.human_attribute_name(:notificationtype_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,13 +16,9 @@
   <tbody>
     <% @notifications.each do |notification| %>
       <tr>
-        <td><%= link_to notification.id, notification_path(notification) %></td>
         <td><%= notification.title %></td>
         <td><%= notification.message %></td>
         <td><%= notification.image_file_name %></td>
-        <td><%= notification.image_content_type %></td>
-        <td><%= notification.image_file_size %></td>
-        <td><%= notification.image_updated_at %></td>
         <td><%= notification.notificationtype_id %></td>
         <td><%=l notification.created_at %></td>
         <td>
@@ -44,7 +36,10 @@
     <% end %>
   </tbody>
 </table>
-
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_notification_path,
+            new_notificationtype_notification_path,
             :class => 'btn btn-primary' %>
+            
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              notificationtypes_path, :class => 'btn btn-default'  %>

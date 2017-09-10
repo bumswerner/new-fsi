@@ -1,9 +1,10 @@
-<%= form_for @notification, :html => { :class => "form-horizontal notification" } do |f| %>
+<%= form_for notificationtype_notifications_url(params[:notificationtype_id]), :html => { multipart: true, :class => "form-horizontal notification" } do |f| %>
 
   <% if @notification.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@notification.errors.count, "error") %> prohibited this notification from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@notification.errors.count, "error") %>
+         prohibited this notification from being saved:</h3>
       </div>
       <div class="panel-body">
         <ul>
@@ -20,56 +21,36 @@
     <div class="col-lg-10">
       <%= f.text_field :title, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:title) %>
   </div>
   <div class="form-group">
     <%= f.label :message, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :message, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:message) %>
   </div>
   <div class="form-group">
     <%= f.label :image_file_name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :image_file_name, :class => 'form-control' %>
+      <%= f.file_field :image, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:image_file_name) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image_content_type, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :image_content_type, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:image_content_type) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image_file_size, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :image_file_size, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:image_file_size) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image_updated_at, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :image_updated_at, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:image_updated_at) %>
   </div>
   <div class="form-group">
     <%= f.label :notificationtype_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :notificationtype_id, :class => 'form-control' %>
+        <%= select_tag "notification[notificationtype_id]", 
+          options_from_collection_for_select(Notificationtype.all, "id", "name",
+          :selected => @notification.notificationtype_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
-    <%=f.error_span(:notificationtype_id) %>
   </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
+      
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                notifications_path, :class => 'btn btn-default' %>
+                 notificationtype_notifications_path(params[:notificationtype_id]), :class => 'btn btn-default' %>
     </div>
   </div>
 

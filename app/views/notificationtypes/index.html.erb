@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>#Count</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= link_to notificationtype.id, notificationtype_path(notificationtype) %></td>
         <td><%= notificationtype.name %></td>
         <td><%= notificationtype.description %></td>
-        <td><%=l notificationtype.created_at %></td>
+        <td><%= notificationtype.notifications.count %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       notificationtype_path(notificationtype), :class => 'btn btn-default btn-xs' %>
@@ -29,6 +29,8 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
+          <%= link_to 'Notifications', notificationtype_notifications_path(notificationtype),
+                      :class => "btn btn-info btn-xs" %>
         </td>
       </tr>
     <% end %>
