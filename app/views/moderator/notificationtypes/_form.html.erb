@@ -1,13 +1,21 @@
-<%= form_for @gallery, :html => { :class => "form-horizontal gallery" } do |f| %>
+<%
+  @notificationtype.id.present? ?
+      path_url = moderator_notificationtype_path(@notificationtype)
+    : path_url = moderator_notificationtypes_path(@notificationtype)
+%>
 
-  <% if @gallery.errors.any? %>
+<%= form_for @notificationtype, url: path_url,
+             :html => { :class => "form-horizontal notificationtype" } do |f| %>
+
+  <% if @notificationtype.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@notificationtype.errors.count, "error") %>
+          prohibited this notificationtype from being saved:</h3>
       </div>
       <div class="panel-body">
         <ul>
-        <% @gallery.errors.full_messages.each do |msg| %>
+        <% @notificationtype.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
         </ul>
@@ -24,7 +32,7 @@
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :description, :class => 'form-control' %>
+      <%= f.text_area :description, rows: 6, :class => 'form-control' %>
     </div>
   </div>
 
@@ -32,8 +40,9 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                galleries_path, :class => 'btn btn-default' %>
+               moderator_notificationtypes_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
 <% end %>
+

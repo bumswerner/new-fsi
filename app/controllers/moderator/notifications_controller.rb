@@ -1,4 +1,4 @@
-class NotificationsController < ApplicationController
+class Moderator::NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
   
    # set access roles
@@ -32,7 +32,7 @@ class NotificationsController < ApplicationController
 
     respond_to do |format|
       if @notification.save
-        format.html { redirect_to notificationtype_notifications_url(@notification.notificationtype_id),
+        format.html { redirect_to moderator_notificationtype_notifications_url(@notification.notificationtype_id),
            notice: 'Notification was successfully created.' }
         format.json { render :show, status: :created, location: @notification }
       else
@@ -47,7 +47,7 @@ class NotificationsController < ApplicationController
   def update
     respond_to do |format|
       if @notification.update(notification_params)
-        format.html { redirect_to notificationtype_notifications_url(@notification.notificationtype_id),
+        format.html { redirect_to moderator_notificationtype_notifications_url(@notification.notificationtype_id),
         notice: 'Notification was successfully updated.' }
         format.json { render :show, status: :ok, location: @notification }
       else
@@ -62,7 +62,7 @@ class NotificationsController < ApplicationController
   def destroy
     @notification.destroy
     respond_to do |format|
-      format.html { redirect_to notificationtype_notifications_url(@notification.notificationtype_id),
+      format.html { redirect_to moderator_notificationtype_notifications_url(@notification.notificationtype_id),
       notice: 'Notification was successfully destroyed.' }
       format.json { head :no_content }
     end

@@ -1,7 +1,7 @@
 <%
-  @notification.id.present? ? 
-    path_url = notificationtype_notification_path(params[:notificationtype_id], @notification)
-    : path_url = notificationtype_notifications_path(params[:notificationtype_id])
+  @notification.id.present? ?
+      path_url = moderator_notificationtype_notification_path(params[:notificationtype_id], @notification)
+    : path_url = moderator_notificationtype_notifications_path(params[:notificationtype_id])
 %>
 
 <%= form_for @notification, url: path_url,
@@ -57,7 +57,7 @@
       <%= f.submit nil, :class => 'btn btn-primary' %>
       
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                 notificationtype_notifications_path(params[:notificationtype_id]),
+                 moderator_notificationtype_notifications_path(params[:notificationtype_id]),
                  :class => 'btn btn-default' %>
     </div>
   </div>

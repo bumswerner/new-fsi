@@ -1,4 +1,5 @@
-class ImagesController < ApplicationController
+class Moderator::ImagesController < ApplicationController
+  
   before_action :set_image, only: [:show, :edit, :update, :destroy]
   
    # set access roles
@@ -35,7 +36,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to moderator_image_path, notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
@@ -49,7 +50,7 @@ class ImagesController < ApplicationController
   def update
     respond_to do |format|
       if @image.update(image_params)
-        format.html { redirect_to @image, notice: 'Image was successfully updated.' }
+        format.html { redirect_to moderator_image_path, notice: 'Image was successfully updated.' }
         format.json { render :show, status: :ok, location: @image }
       else
         format.html { render :edit }
@@ -63,7 +64,7 @@ class ImagesController < ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to moderator_images_url, notice: 'Image was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

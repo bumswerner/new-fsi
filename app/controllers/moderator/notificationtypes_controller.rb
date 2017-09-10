@@ -1,4 +1,4 @@
-class NotificationtypesController < ApplicationController
+class Moderator::NotificationtypesController < ApplicationController
   before_action :set_notificationtype, only: [:show, :edit, :update, :destroy]
 
   # set access roles
@@ -32,7 +32,7 @@ class NotificationtypesController < ApplicationController
 
     respond_to do |format|
       if @notificationtype.save
-        format.html { redirect_to @notificationtype, notice: 'Notificationtype was successfully created.' }
+        format.html { redirect_to moderator_notificationtypes_path, notice: 'Notificationtype was successfully created.' }
         format.json { render :show, status: :created, location: @notificationtype }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class NotificationtypesController < ApplicationController
   def update
     respond_to do |format|
       if @notificationtype.update(notificationtype_params)
-        format.html { redirect_to @notificationtype, notice: 'Notificationtype was successfully updated.' }
+        format.html { redirect_to moderator_notificationtypes_path, notice: 'Notificationtype was successfully updated.' }
         format.json { render :show, status: :ok, location: @notificationtype }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class NotificationtypesController < ApplicationController
   def destroy
     @notificationtype.destroy
     respond_to do |format|
-      format.html { redirect_to notificationtypes_url, notice: 'Notificationtype was successfully destroyed.' }
+      format.html { redirect_to moderator_notificationtypes_url, notice: 'Notificationtype was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

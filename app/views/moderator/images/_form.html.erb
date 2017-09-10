@@ -1,4 +1,10 @@
-<%= form_for @image, :html => { multipart: true, :class => "form-horizontal image" } do |f| %>
+<%
+  @image.id.present? ?
+      path_url = moderator_image_path(@image)
+    : path_url = moderator_images_path(@image)
+%>
+
+<%= form_for @image, url: path_url, :html => { multipart: true, :class => "form-horizontal image" } do |f| %>
 
   <% if @image.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -30,7 +36,11 @@
   <div class="form-group">
     <%= f.label :gallery_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :gallery_id, :readonly => true, :class => 'form-control' %>
+       <%= select_tag "image[gallery_id]", 
+          options_from_collection_for_select(Gallery.all, "id", "name",
+          :selected => @image.gallery_id),
+          :prompt => "Please select",
+          :class => 'form-control' %>
     </div>
   </div>
 
@@ -40,10 +50,10 @@
       
       <% if @image.gallery_id %>
           <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
+                moderator_gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
       <% else %>
         <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
+                moderator_gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
       <% end %>
     
     </div>

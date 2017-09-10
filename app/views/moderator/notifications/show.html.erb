@@ -15,14 +15,14 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              notificationtype_notifications_path(params[:notificationtype_id],
+              moderator_notificationtype_notifications_path(params[:notificationtype_id],
               @notification),
               :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_notificationtype_notification_path(params[:notificationtype_id],
+              edit_moderator_notificationtype_notification_path(params[:notificationtype_id],
               @notification), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              notificationtype_notification_path(params[:notificationtype_id],
+              moderator_notificationtype_notification_path(params[:notificationtype_id],
               @notification),
               :method => 'delete',
               :data => { :confirm => t('.confirm',

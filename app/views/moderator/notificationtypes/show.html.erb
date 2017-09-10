@@ -11,11 +11,11 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              notificationtypes_path, :class => 'btn btn-default'  %>
+              moderator_notificationtypes_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_notificationtype_path(@notificationtype), :class => 'btn btn-default' %>
+              edit_moderator_notificationtype_path(@notificationtype), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              notificationtype_path(@notificationtype),
+              moderator_notificationtype_path(@notificationtype),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
