@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
   before_action :authenticate_user!
   
+  include SetRole
   include DeviseWhitelist
   include SetSource
   include CurrentUserConcern
