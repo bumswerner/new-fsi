@@ -76,6 +76,15 @@ Rails.application.routes.draw do
     get 'lecture_sections/:category_id/:lecture_id/:courseofstudy_id/:id',
          to: 'lecture_sections#show',
          :as => 'lecture_section'
+         
+    # Gallery Section
+    resources :galleries, only: [:index, :show]
+    get 'gallery_images/:gallery_id',
+         to: 'gallery_images#index',
+         as: 'gallery_images'
+    get 'gallery_images/:gallery_id/:id',
+         to: 'gallery_images#show',
+         as: 'gallery_image'
   end
 
   

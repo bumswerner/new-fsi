@@ -5,7 +5,7 @@ class User::LectureSectionsController < ApplicationController
   
   # GET  /user/lecture_sections/1/1
   def index
-      @faculty_id = Courseofstudy.find(params[:courseofstudy_id]).faculty_id
+    @faculty_id = Courseofstudy.find(params[:courseofstudy_id]).faculty_id
     @sections = Lecture.find(params[:lecture_id]).materials
     @category = Category.find(params[:category_id])
   end
