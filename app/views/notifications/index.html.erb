@@ -9,7 +9,6 @@
       <th><%= model_class.human_attribute_name(:message) %></th>
       <th><%= model_class.human_attribute_name(:image_file_name) %></th>
       <th><%= model_class.human_attribute_name(:notificationtype_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,9 +17,8 @@
       <tr>
         <td><%= notification.title %></td>
         <td><%= notification.message %></td>
-        <td><%= notification.image_file_name %></td>
-        <td><%= notification.notificationtype_id %></td>
-        <td><%=l notification.created_at %></td>
+        <td><%= image_tag notification.image.url(:thumb) if notification.image %></td>
+        <td><%= Notificationtype.find(notification.notificationtype_id).name %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       notificationtype_notification_path(params[:notificationtype_id],

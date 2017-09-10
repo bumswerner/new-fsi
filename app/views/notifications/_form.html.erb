@@ -1,7 +1,7 @@
 <%
-   @notification.id.present? ? 
-      path_url = notificationtype_notification_path(params[:notificationtype_id], @notification)
-      :  path_url = notificationtype_notifications_path(params[:notificationtype_id])
+  @notification.id.present? ? 
+    path_url = notificationtype_notification_path(params[:notificationtype_id], @notification)
+    : path_url = notificationtype_notifications_path(params[:notificationtype_id])
 %>
 
 <%= form_for @notification, url: path_url,
@@ -32,13 +32,13 @@
   <div class="form-group">
     <%= f.label :message, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :message, :class => 'form-control' %>
+      <%= f.text_area :message, rows: 4, :class => 'form-control' %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :image_file_name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.file_field :image, :class => 'form-control' %>
+      <%= f.file_field :image, :class => '' %>
     </div>
   </div>
   <div class="form-group">

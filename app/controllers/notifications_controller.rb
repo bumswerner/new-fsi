@@ -1,5 +1,9 @@
 class NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
+  
+   # set access roles
+  access moderator: :all,
+         admin: :all
 
   # GET /notifications
   # GET /notifications.json

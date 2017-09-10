@@ -1,6 +1,10 @@
 class NotificationtypesController < ApplicationController
   before_action :set_notificationtype, only: [:show, :edit, :update, :destroy]
 
+  # set access roles
+  access moderator: :all,
+         admin: :all
+  
   # GET /notificationtypes
   # GET /notificationtypes.json
   def index
