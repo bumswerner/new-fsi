@@ -23,7 +23,7 @@
           
            <!-- User - Menu - Section -->
           <% if logged_in?(:admin, :moderator, :user) and !current_user.is_a?(GuestUser) %>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="background-color: rgb(26, 0, 0)">
                <li><%= link_to "News", user_faculties_path %></li>
                <li><%= link_to "Galleries", user_galleries_path %></li>
                <li><%= link_to "Materials", user_faculties_path %></li>
@@ -32,7 +32,7 @@
           
           <!-- Moderator - Menu - Section -->
           <% if logged_in?(:admin, :moderator) %>
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" style="background-color: rgb(0, 26, 0)">
             <li><%= link_to "Gallery", moderator_galleries_path  %></li>
             <li><%= link_to "News", moderator_notificationtypes_path %></li>
             <li class="dropdown">
@@ -64,8 +64,8 @@
            <% end %>
           <!-- Admin - Menu - Section -->
           <% if logged_in?(:admin) %>
-            <ul class="nav navbar-nav">
-             <li><%= link_to "User", admin_users_path %></li>
+            <ul class="nav navbar-nav" style="background-color: rgb(0, 0,26)">
+              <li><%= link_to "User", admin_users_path %></li>
             </ul>
           <% end %>
           

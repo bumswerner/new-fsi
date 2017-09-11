@@ -497,32 +497,50 @@ puts "3 Galleries created"
 
 Image.create!(
   name: "Werner",
-  picture_file_name: "http://placehold.it/100x100",
+  picture: "http://placehold.it/100x100",
   gallery_id: 1
   )
   
 Image.create!(
   name: "Karsten",
-  picture_file_name: "http://placehold.it/100x100",
+  picture: "http://placehold.it/100x100",
   gallery_id: 1
   )
 
 Image.create!(
   name: "Hans",
-  picture_file_name: "http://placehold.it/100x100",
+  picture: "http://placehold.it/100x100",
   gallery_id: 1
   )
   
 Image.create!(
   name: "Karl",
-  picture_file_name: "http://placehold.it/100x100",
+  picture: "http://placehold.it/100x100",
   gallery_id: 1
   )
   
 Image.create!(
   name: "Franz",
-  picture_file_name: "http://placehold.it/100x100",
+  picture: "http://placehold.it/100x100",
   gallery_id: 1
   )
   
-puts "5 Images created"
+Image.create!(
+  name: "Tanz",
+  picture: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+  
+Image.create!(
+  name: "Peter",
+  picture: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+  
+Image.create!(
+  name: "Egon",
+  picture: "http://placehold.it/100x100",
+  gallery_id: 1
+  )
+  
+puts "8 Images created"
