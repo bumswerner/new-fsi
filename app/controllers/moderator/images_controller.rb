@@ -2,16 +2,14 @@ class Moderator::ImagesController < ApplicationController
   
   before_action :set_image, only: [:show, :edit, :update, :destroy]
   
-   # set access roles
-  access all: [:show, :index], 
-  user:  {except: [:destroy, :new, :create, :update, :edit]},
-  moderator: :all,
+  # set access roles
+  access moderator: :all,
   admin: :all
 
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = Gallery.find(params[:gallery_id]).images
   end
 
   # GET /images/1
@@ -22,7 +20,7 @@ class Moderator::ImagesController < ApplicationController
   # GET /images/new
   def new
     @image = Image.new
-    @image.gallery_id = Gallery.find(params[:id]).id
+    @image.gallery_id = Gallery.find(params[:gallery_id]).id
   end
 
   # GET /images/1/edit
@@ -36,7 +34,8 @@ class Moderator::ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to moderator_image_path, notice: 'Image was successfully created.' }
+        format.html { redirect_to moderator_gallery_images_path(params[:gallery_id]),
+        notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
@@ -50,7 +49,8 @@ class Moderator::ImagesController < ApplicationController
   def update
     respond_to do |format|
       if @image.update(image_params)
-        format.html { redirect_to moderator_image_path, notice: 'Image was successfully updated.' }
+        format.html { redirect_to moderator_gallery_images_path(params[:gallery_id]),
+        notice: 'Image was successfully updated.' }
         format.json { render :show, status: :ok, location: @image }
       else
         format.html { render :edit }
@@ -64,7 +64,8 @@ class Moderator::ImagesController < ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to moderator_images_url, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to moderator_gallery_images_url(params[:gallery_id]),
+      notice: 'Image was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

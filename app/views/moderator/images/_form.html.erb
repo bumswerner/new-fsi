@@ -1,7 +1,7 @@
 <%
   @image.id.present? ?
-      path_url = moderator_image_path(@image)
-    : path_url = moderator_images_path(@image)
+      path_url = moderator_gallery_image_path(params[:gallery_id], @image)
+    : path_url = moderator_gallery_images_path(params[:gallery_id], @image)
 %>
 
 <%= form_for @image, url: path_url, :html => { multipart: true, :class => "form-horizontal image" } do |f| %>
@@ -48,14 +48,8 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       
-      <% if @image.gallery_id %>
-          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                moderator_gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
-      <% else %>
-        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                moderator_gallery_path(@image.gallery_id), :class => 'btn btn-default' %>
-      <% end %>
-    
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+        moderator_gallery_images_path(params[:gallery_id], @image), :class => 'btn btn-default' %>
     </div>
   </div>
 

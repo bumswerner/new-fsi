@@ -18,8 +18,9 @@ Rails.application.routes.draw do
       resources :notifications
     end
     
-    resources :galleries
-    resources :images
+    resources :galleries do
+      resources :images
+    end
     
   end
   
