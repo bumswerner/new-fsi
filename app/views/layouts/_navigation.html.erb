@@ -1,0 +1,28 @@
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    
+      <%= link_to 'Fachschaft', root_path, class: "navbar-brand", id: "logo" %>
+    </div>
+    
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      
+      <!-- User - Menu - Section -->
+      <%= render 'layouts/navigation/user' %>
+      <!-- Moderator - Menu - Section -->
+      <%= render 'layouts/navigation/moderator' %>
+      <!-- Admin - Menu - Section -->
+      <%= render 'layouts/navigation/admin' %>
+      <!-- Account - Menu - Section -->
+      <%= render 'layouts/navigation/login' %>
+      
+    </div>
+  </div>
+</div>

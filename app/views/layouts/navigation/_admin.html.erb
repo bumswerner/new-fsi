@@ -1,0 +1,5 @@
+<% if logged_in?(:admin) %>
+  <ul class="nav navbar-nav" style="background-color: rgb(0, 0,26)">
+    <li><%= link_to "User", admin_users_path %></li>
+  </ul>
+<% end %>

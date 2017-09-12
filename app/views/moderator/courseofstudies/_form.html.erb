@@ -2,20 +2,7 @@
 
 <%= form_for @courseofstudy, url: target_url, :html => { :class => "form-horizontal courseofstudy" } do |f| %>
 
-  <% if @courseofstudy.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@courseofstudy.errors.count, "error") %> prohibited this courseofstudy from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @courseofstudy.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'shared/form_errors', obj: @courseofstudy %>
 
   <div class="form-group">
     <%= f.label :name, :class => 'control-label col-lg-2' %>
