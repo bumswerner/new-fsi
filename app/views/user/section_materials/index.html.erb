@@ -18,6 +18,10 @@
                                        params[:section_id],
                                        material),
             class: "btn btn-info" %>
+        <%= link_to 'Download',
+                material.data.url(:original, false),
+                download: '',
+                :class => 'btn btn-primary' %>
         </div>
       </div>
     </div> 

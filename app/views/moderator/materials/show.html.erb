@@ -37,4 +37,8 @@
               :default => t("helpers.links.confirm",
               :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+<%= link_to 'Download',
+                @material.data.url(:original, false),
+                download: '',
+                :class => 'btn btn-primary' %>
 <% end %>
