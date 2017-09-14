@@ -1,8 +1,16 @@
 <h1>Welcome and go home</h1>
 <h2>Hi, <%= current_user.username %></h2>
-<%= link_to "logout", destroy_user_session_path, method: :delete %>
-<%= current_user.inspect %>
 
-<%= fa_icon "camera-retro" %>
+<%#= current_user.inspect %>
+<div class="well">
+<span style="font-size: 140pt"><%= fa_icon "camera-retro" %></span>
+<span style="font-size: 140pt"><%= fa_icon "camera-retro" %></span>
+<span style="font-size: 140pt"><%= fa_icon "camera-retro" %></span>
+<span style="font-size: 140pt"><%= fa_icon "github" %></span>
+<span style="font-size: 140pt"><%= fa_icon "facebook" %></span>
+<span style="font-size: 140pt"><%= fa_icon "bitbucket" %></span>
+<span style="font-size: 140pt"><%= fa_icon "camera-retro" %></span>
+<span style="font-size: 140pt"><%= fa_icon "camera-retro" %></span>
+</div>
 <%#= params.inspect %>
 <%#= session.inspect %>
