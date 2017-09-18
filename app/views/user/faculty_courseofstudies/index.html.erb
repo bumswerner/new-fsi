@@ -1,7 +1,16 @@
 
 <div class="row">
   
-    <%= paginate @faculty_courseofstudies %>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= @faculty.symbol %></a>
+     </li>
+  </ol>
+  
+  <center><%= paginate @faculty_courseofstudies %></center>
   
   <% @faculty_courseofstudies.each do |faculty_courseofstudy| %>
     <% 
@@ -22,7 +31,7 @@
         </div>
         <div class="user-show-links">
            <% categories.each do |category| %>
-            <span class="badge">
+            <span class="badge badge-info">
               <%= link_to category.name,
                   user_category_lectures_path(params[:faculty_id], 
                                               category,
@@ -42,7 +51,9 @@
       </div>
     </div> 
   <% end %>
- <%= paginate @faculty_courseofstudies %>
+  
+  <center><%= paginate @faculty_courseofstudies %></center>
+  
 </div>
- <%= link_to 'Back', user_faculties_path, 
-              class: "btn btn-default" %></h2>
+ <center><%= link_to 'Back', user_faculties_path, 
+              class: "btn btn-default" %></center>

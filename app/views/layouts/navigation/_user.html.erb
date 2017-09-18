@@ -1,6 +1,6 @@
 <% if logged_in?(:admin, :moderator, :user) and !current_user.is_a?(GuestUser) %>
-  <ul class="nav navbar-nav" style="background-color: rgb(26, 0, 0)">
-     <li><%= link_to "News", user_faculties_path %></li>
+  <ul class="nav navbar-nav horizont-line">
+     <li><%= link_to "News", user_faculties_path ,class: "active" %></li>
      <li><%= link_to "Galleries", user_galleries_path %></li>
      <li><%= link_to "Materials", user_faculties_path %></li>
   </ul>

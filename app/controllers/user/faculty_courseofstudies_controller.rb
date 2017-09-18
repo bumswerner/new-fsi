@@ -20,7 +20,9 @@ class User::FacultyCourseofstudiesController < ApplicationController
   private
   
     def get_courseofstudies
-      @faculty_courseofstudies = Faculty.find(params[:faculty_id]).courseofstudies.page(params[:page]).per(2)
+      @faculty = Faculty.find(params[:faculty_id])
+      @faculty_courseofstudies = @faculty.courseofstudies.page(params[:page]).per(2)
+     
     end
   
 end

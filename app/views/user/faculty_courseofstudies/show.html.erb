@@ -1,9 +1,27 @@
+<%
+  studytype = Studytype.find(@faculty_courseofstudy.studytype_id)
+%>
+
 <div class="row">
+  
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(params[:faculty_id]) %>">
+          <%= @faculty.symbol %></a>
+     </li>
+    <li class="breadcrumb-item active">
+       <%= @faculty_courseofstudy.symbol + studytype.symbol %>
+    </li>
+  </ol>
+  
   <div class="col-xs-8 col-xs-offset-2">
     <div class="well well-lg">
       <div class="user-show-title">
         <h2><%= @faculty_courseofstudy.name %>
-            <%= @faculty_courseofstudy.symbol %></h2>
+            <%= @faculty_courseofstudy.symbol + studytype.symbol %></h2>
       </div>
       <div class="user-show-body">
         <hr />
