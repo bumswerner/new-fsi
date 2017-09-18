@@ -549,5 +549,5 @@ to view
 <%= paginate @images %>
 
 create a better design
-rails generate kaminari:views github
+rails generate kaminari:views bootstrap4
 
