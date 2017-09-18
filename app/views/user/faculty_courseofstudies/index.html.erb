@@ -1,9 +1,14 @@
+
 <div class="row">
+  
+    <%= paginate @faculty_courseofstudies %>
+  
   <% @faculty_courseofstudies.each do |faculty_courseofstudy| %>
     <% 
       studytype = Studytype.find(faculty_courseofstudy.studytype_id)
       categories = faculty_courseofstudy.categories.uniq
     %>
+    
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
         <div class="user-show-title">
@@ -37,6 +42,7 @@
       </div>
     </div> 
   <% end %>
+ <%= paginate @faculty_courseofstudies %>
 </div>
  <%= link_to 'Back', user_faculties_path, 
               class: "btn btn-default" %></h2>

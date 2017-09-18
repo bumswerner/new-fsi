@@ -7,6 +7,7 @@ class User::FacultyCourseofstudiesController < ApplicationController
   
   # GET /user/faculty_courseofstudies/faculty_id
   def index
+  
   end
   
   # GET /user/faculty_courseofstudies/facult_id/courseofstudy_id
@@ -19,7 +20,7 @@ class User::FacultyCourseofstudiesController < ApplicationController
   private
   
     def get_courseofstudies
-      @faculty_courseofstudies = Faculty.find(params[:faculty_id]).courseofstudies
+      @faculty_courseofstudies = Faculty.find(params[:faculty_id]).courseofstudies.page(params[:page]).per(2)
     end
   
 end
