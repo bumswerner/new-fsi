@@ -535,4 +535,19 @@ install  the gem font-awesome-rails
 ********************************************************************************
 
 
+********************************************************************************
+install the gem kaminari
+********************************************************************************
+insert this line into gemfile
+
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+
+to controller
+object.page(params[:page]).per(4)
+
+to view
+<%= paginate @images %>
+
+create a better design
+rails generate kaminari:views github
 

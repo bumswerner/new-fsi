@@ -9,7 +9,7 @@ class Moderator::ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Gallery.find(params[:gallery_id]).images
+    @images = Gallery.find(params[:gallery_id]).images.page(params[:page]).per(4)
   end
 
   # GET /images/1
