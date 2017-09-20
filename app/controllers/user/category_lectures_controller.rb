@@ -15,7 +15,6 @@ class User::CategoryLecturesController < ApplicationController
     @lecture = Lecture.find(params[:id])
   end
   
-  
   # the private section
   private
   

@@ -1,4 +1,36 @@
+<!-- index =>  Faculties / IngWi / PIB / Kategorien / S 1 - Mathe 1 / Klausuren / SS2010 -->
+
 <div class="row">
+  
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>"><%= @faculty.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(@faculty_id) %>">
+          Studiengänge</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_category_lectures_path(@faculty_id,
+                                               @category.id,
+                                               @courseofstudy.id) %>">
+        <%= @courseofstudy.name + " - " + @category.name %></a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_section_materials_path(@category.id,
+                                               @courseofstudy.id,
+                                               params[:lecture_id],
+                                               params[:section_id]) %>">
+        Klausuren</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= @material.name %>
+    </li>
+  </ol>
+  
   <div class="col-xs-8 col-xs-offset-2">
     <div class="well well-lg">
       <div class="user-show-title">

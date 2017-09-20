@@ -1,9 +1,35 @@
+<!-- Fakultäten   IngWi   Studiengänge   Praktische Informatik - Semester 1 / -->
+
 <% 
   assoziation = @lecture.assoziations.first
   sections = @lecture.materials
 %>
 
 <div class="row">
+  
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>"><%= @faculty.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(params[:faculty_id]) %>">
+          Studiengänge</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <a href="<%= user_category_lectures_path(@faculty.id, 
+                                               @category.id,
+                                               @courseofstudy.id) %>">
+        <%= @courseofstudy.name + " - " + @category.name %>
+      </a>
+    </li>
+    <li class="breadcrumb-item active">
+       <%= @lecture.name %>
+    </li>
+  </ol>
+  
   <div class="col-xs-8 col-xs-offset-2">
     <div class="well well-lg">
       <div class="user-show-title">
