@@ -1,19 +1,30 @@
 class User::LectureSectionsController < ApplicationController
   
+  before_action :get_data, only: [:index, :show]
+  
   # set access roles
   access user: {except: [:destroy, :new, :create, :update, :edit]}
   
   # GET  /user/lecture_sections/1/1
   def index
-    @faculty_id = Courseofstudy.find(params[:courseofstudy_id]).faculty_id
-    @sections = Lecture.find(params[:lecture_id]).materials
-    @category = Category.find(params[:category_id])
+    @sections = @lecture.materials.page(params[:page]).per(2)
   end
   
   # GET /user/lecture_sections/1/1/1
   def show
-   @faculty_id = Courseofstudy.find(params[:courseofstudy_id]).faculty_id
-   @section = Lecture.find(params[:lecture_id]).materials.find(params[:id])
+    @section = @lecture.materials.find(params[:id])
+  end
+  
+  # the private section
+  private
+  
+  def get_data
+    @courseofstudy = Courseofstudy.find(params[:courseofstudy_id])
+    @faculty_id = @courseofstudy.faculty_id
+    @faculty = Faculty.find(@faculty_id)
+    @category = Category.find(params[:category_id])
+    @lecture = Lecture.find(params[:lecture_id])
+    @studytype = Studytype.find(@courseofstudy.studytype_id)
   end
   
 end

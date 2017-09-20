@@ -1,9 +1,30 @@
+<!-- index =>  Faculties / IngWi / PIB / Lectures  -->
+
 <div class="row">
- <% @assoziations.each do |assoziation| %>
-  <%
-    lecture =  Lecture.find(assoziation.lecture_id)
-    sections = lecture.materials
-  %>
+  
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>"><%= @faculty.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(params[:faculty_id]) %>">
+          Studiengänge</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= @courseofstudy.name + " - " + @category.name %>
+    </li>
+  </ol>
+  
+  <center><%= paginate @assoziations %></center>
+  
+  <% @assoziations.each do |assoziation| %>
+    <%
+      lecture =  Lecture.find(assoziation.lecture_id)
+      sections = lecture.materials
+    %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
         <div class="user-show-title">
@@ -40,7 +61,11 @@
       </div>
     </div> 
   <% end %>
-</div>            
- <%= link_to 'Back to ', user_faculty_courseofstudies_path(params[:faculty_id]), 
-              class: "btn btn-default" %></h2>
+  
+   <center><%= paginate @assoziations %></center>
+</div>    
+<center>
+  <%= link_to 'Back to Lectures', user_faculty_courseofstudies_path(params[:faculty_id]), 
+              class: "btn btn-default" %>
+</center>
           

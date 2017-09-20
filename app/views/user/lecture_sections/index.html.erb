@@ -1,9 +1,35 @@
+<!-- index =>  Faculties / IngWi / PI / Categories / Mathe  -->
+
 <div class="row">
+  
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>"><%= @faculty.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(@faculty_id) %>">
+          <%= @courseofstudy.symbol + @studytype.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_courseofstudy_categories_path(@faculty_id, @courseofstudy.id) %>">
+          Kategorien</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= @category.name + " - " + @lecture.name %>
+    </li>
+  </ol>
+  
+  <center><%= paginate @sections %></center>
+  
   <% @sections.each do |section| %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
         <div class="user-show-title">
          <%= @category.name %> -
+         <%= @lecture.name %> - 
          <%= section.name %>
         </div>
         <div class="user-show-body">
@@ -35,13 +61,19 @@
       </div>
     </div> 
   <% end %>
-</div>            
- <%= link_to 'Back', user_category_lectures_path(@faculty_id,
-                                                 params[:category_id],
-                                                 params[:courseofstudy_id]), 
+  
+  <center><%= paginate @sections %></center>
+</div>
+
+<center>
+  <%= link_to 'Back', user_category_lectures_path(@faculty_id,
+                                               params[:category_id],
+                                               params[:courseofstudy_id]), 
               class: "btn btn-default" %>
-              
- <%= link_to 'Back to Categories', user_courseofstudy_categories_path(@faculty_id,
-                                                 params[:courseofstudy_id]), 
+            
+  <%= link_to 'Back to Categories', user_courseofstudy_categories_path(@faculty_id,
+                                               params[:courseofstudy_id]), 
               class: "btn btn-default" %>
+</center>
+            
 

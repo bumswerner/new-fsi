@@ -1,4 +1,34 @@
+<!-- index =>
+  Faculties / IngWi / PI / Categories / Semester 1 - Mathe 1 / Klausuren -->
+
 <div class="row">
+  
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>"><%= @faculty.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(@faculty_id) %>">
+        <%= @courseofstudy.symbol + @studytype.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_courseofstudy_categories_path(@faculty_id, @courseofstudy.id) %>">
+          Kategorien</a>
+    </li>
+     <li class="breadcrumb-item">
+     <a href="<%= user_lecture_sections_path(@category.id,
+                                             @courseofstudy.id,
+                                             @lecture.id) %>">
+        <%= @category.name + " - " + @lecture.name %></a>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= @section.name %>
+    </li>
+  </ol>
+  
   <div class="col-xs-8 col-xs-offset-2">
     <div class="well well-lg">
       <div class="user-show-title">

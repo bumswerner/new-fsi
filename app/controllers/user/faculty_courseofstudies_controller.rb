@@ -1,6 +1,6 @@
 class User::FacultyCourseofstudiesController < ApplicationController
   
-  before_action :get_courseofstudies, only: [:index, :show]
+  before_action :get_data, only: [:index, :show]
   
   # set access roles
   access user: {except: [:destroy, :new, :create, :update, :edit]}
@@ -19,10 +19,9 @@ class User::FacultyCourseofstudiesController < ApplicationController
   # the private section
   private
   
-    def get_courseofstudies
+    def get_data
       @faculty = Faculty.find(params[:faculty_id])
       @faculty_courseofstudies = @faculty.courseofstudies.page(params[:page]).per(2)
-     
     end
   
 end

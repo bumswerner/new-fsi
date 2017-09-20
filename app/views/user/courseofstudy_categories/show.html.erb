@@ -1,4 +1,27 @@
+<!-- show =>  Faculties / IngWi / PI / Categories / Semester 1  -->
+
 <div class="row">
+  
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>"><%= @faculty.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(params[:faculty_id]) %>">
+          <%= @courseofstudy.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_courseofstudy_categories_path(params[:faculty_id], params[:courseofstudy_id]) %>">
+        Kategories</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= @category.name %>
+    </li>
+  </ol>
+  
   <div class="col-xs-8 col-xs-offset-2">
     <div class="well well-lg">
       <div class="user-show-title">

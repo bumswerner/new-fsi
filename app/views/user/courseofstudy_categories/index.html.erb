@@ -1,4 +1,25 @@
+<!-- index =>  Faculties / IngWi / PI / Categories  -->
+
 <div class="row">
+  
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>">Fakultäten</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= user_faculties_path %>"><%= @faculty.symbol %></a>
+    </li>
+    <li class="breadcrumb-item">
+     <a href="<%= user_faculty_courseofstudies_path(params[:faculty_id]) %>">
+          <%= @courseofstudy.symbol + @studytype.symbol %></a>
+    </li>
+    <li class="breadcrumb-item active">
+      Kategorien
+    </li>
+  </ol>
+  
+  <center><%= paginate @categories %></center>
+  
   <% @categories.each do |category| %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
@@ -10,8 +31,7 @@
           <%= category.description %>
         </div>
         <% 
-         assoziations = @assoziations.where("category_id = ?", category.id)
-          
+          assoziations = @assoziations.where("category_id = ?", category.id)
         %>
         <div class="user-show-links">
           <% assoziations.each do |assoziation| %>
@@ -32,6 +52,11 @@
       </div>
     </div> 
   <% end %>
+  
+  <center><%= paginate @categories %></center>
+  
 </div>            
- <%= link_to 'Back', user_faculty_courseofstudies_path(params[:faculty_id]), 
-              class: "btn btn-default" %>
+<%= link_to 'Back', user_faculty_courseofstudies_path(params[:faculty_id]), 
+            class: "btn btn-default" %>
+              
+              
