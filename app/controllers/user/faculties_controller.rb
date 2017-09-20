@@ -5,7 +5,7 @@ class User::FacultiesController < ApplicationController
     
   # GET /user/faculties/
   def index
-    @faculties = Faculty.all
+    @faculties = Faculty.all.page(params[:page]).per(2)
   end
   
   # GET user/faculties/1
