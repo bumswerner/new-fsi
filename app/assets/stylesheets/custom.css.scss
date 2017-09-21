@@ -5,6 +5,8 @@
 @import "font-awesome";
 
 
+
+
 .horizont-line {
   border-right: 1px solid gainsboro
 }
@@ -32,8 +34,9 @@
 }
 
 
-// User-Show-Material-Section
+// User-Show-Material-Section start
 .user-show-title {
+  text-align: center;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -64,6 +67,22 @@
   border: 2px solid #CEF6e0;
 }
 
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) { 
+  
+  .user-show-title {
+    font-size: 1em;
+  }
+  
+  .user-show-actions {
+    
+  }
+  
+  
+}
+
+// User-Show-Material-Section - end
 
 
 
@@ -245,3 +264,11 @@ footer {
   color: #FFF;
   font-size: 12px;
 }
+
+
+
+
+
+
+
+

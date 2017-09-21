@@ -9,11 +9,19 @@
   <% @faculties.each do |faculty| %>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
-          <h2><%= faculty.name %> (<%= faculty.courseofstudies.count %>) </h2>
-          <%= link_to 'more' ,user_faculty_courseofstudies_path(faculty), 
+        <div class="user-show-title">
+          <%= faculty.name %> <br />
+          Studiengänge (<%= faculty.courseofstudies.count %>) 
+        </div>
+        <div class="user-show-body">
+          <%= faculty.description %>
+        </div>
+        <div class="user-show-links"><center>
+          <%= link_to 'Show all Courseofstudies' ,user_faculty_courseofstudies_path(faculty), 
               class: "btn btn-primary" %>
-          <%= link_to 'details' ,user_faculty_path(faculty), 
-              class: "btn btn-info" %>
+          <%= link_to 'Details' ,user_faculty_path(faculty), 
+              class: "btn btn-info" %></center>
+        </div>
       </div>
     </div> 
   <% end %>

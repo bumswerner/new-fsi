@@ -1,7 +1,7 @@
 <div class="row">
   
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="<%= user_faculties_path %>">Fakultät</a></li>
+    <li class="breadcrumb-item"><a href="<%= user_faculties_path %>">Fakultäten</a></li>
     <li class="breadcrumb-item active"><%= @faculty.name %></li>
   </ol>
 
@@ -18,4 +18,6 @@
   </div> 
 </div>
 
-<%= link_to 'Back', user_faculties_path, class: "btn btn-default" %>
+<center>
+  <%= link_to 'Back', user_faculties_path, class: "btn btn-default" %>
+</center>

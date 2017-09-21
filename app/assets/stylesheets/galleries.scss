@@ -2,55 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.gallery-title
-{
-    font-size: 36px;
-    color: #42B32F;
-    text-align: center;
-    font-weight: 500;
-    margin-bottom: 70px;
-}
-.gallery-title:after {
-    content: "";
-    position: absolute;
-    width: 7.5%;
-    left: 46.5%;
-    height: 45px;
-    border-bottom: 1px solid #5e5e5e;
-}
-.filter-button
-{
-    font-size: 18px;
-    border: 1px solid #42B32F;
-    border-radius: 5px;
-    text-align: center;
-    color: #42B32F;
-    margin-bottom: 30px;
-
-}
-.filter-button:hover
-{
-    font-size: 18px;
-    border: 1px solid #42B32F;
-    border-radius: 5px;
-    text-align: center;
-    color: #ffffff;
-    background-color: #42B32F;
-
-}
-.btn-default:active .filter-button:active
-{
-    background-color: #42B32F;
-    color: white;
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  background-color: #fff;
 }
 
-.port-image
-{
-    width: 100%;
+.jumbotron p:last-child {
+  margin-bottom: 0;
 }
 
-.gallery_product
-{
-    margin-bottom: 30px;
+.jumbotron-heading {
+  font-weight: 300;
 }
 
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
