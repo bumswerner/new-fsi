@@ -7,7 +7,6 @@ class User::CategoryLecturesController < ApplicationController
     
   # GET user/category_lectures/faculty_id/category_id/courseofstudy_id
   def index
-   # @lectures 
   end
   
   # GET user/category_lectures/faculty_id/category_id//courseofstudy_id/lecture_id
