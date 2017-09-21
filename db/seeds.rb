@@ -496,51 +496,62 @@ puts "3 Galleries created"
 
 
 Image.create!(
-  name: "Werner",
-  picture: "http://placehold.it/100x100",
+  name: "Pretzel",
+  picture: "https://cdn.pixabay.com/photo/2017/09/17/22/01/pretzel-2759994__340.jpg",
   gallery_id: 1
   )
   
 Image.create!(
-  name: "Karsten",
-  picture: "http://placehold.it/100x100",
+  name: "Eagle",
+  picture: "https://cdn.pixabay.com/photo/2017/09/04/20/52/bald-eagle-2715461__340.jpg",
   gallery_id: 1
   )
 
 Image.create!(
-  name: "Hans",
-  picture: "http://placehold.it/100x100",
+  name: "Iceland",
+  picture: "https://cdn.pixabay.com/photo/2017/08/31/11/39/iceland-2700427__340.jpg",
   gallery_id: 1
   )
   
 Image.create!(
-  name: "Karl",
-  picture: "http://placehold.it/100x100",
+  name: "Coast",
+  picture: "https://cdn.pixabay.com/photo/2017/09/07/03/03/coast-2723729__340.jpg",
   gallery_id: 1
   )
   
 Image.create!(
-  name: "Franz",
-  picture: "http://placehold.it/100x100",
+  name: "Chess",
+  picture: "https://cdn.pixabay.com/photo/2017/09/08/02/24/chess-2727443__340.jpg",
   gallery_id: 1
   )
   
 Image.create!(
-  name: "Tanz",
-  picture: "http://placehold.it/100x100",
+  name: "Cats eyes",
+  picture: "https://cdn.pixabay.com/photo/2017/08/23/08/33/cats-eyes-2671903__340.jpg",
   gallery_id: 1
   )
   
 Image.create!(
-  name: "Peter",
-  picture: "http://placehold.it/100x100",
+  name: "Coffee",
+  picture: "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970__340.jpg",
   gallery_id: 1
   )
   
 Image.create!(
-  name: "Egon",
-  picture: "http://placehold.it/100x100",
+  name: "Cross",
+  picture: "https://cdn.pixabay.com/photo/2017/09/04/09/38/cross-2713356__340.jpg",
   gallery_id: 1
   )
   
-puts "8 Images created"
+Image.create!(
+  name: "Woman",
+  picture: "https://cdn.pixabay.com/photo/2017/09/03/17/26/woman-2711279__340.jpg",
+  gallery_id: 1
+  )
+
+Image.create!(
+  name: "Grapes",
+  picture: "https://cdn.pixabay.com/photo/2017/09/04/22/16/grapes-2715711_960_720.jpg",
+  gallery_id: 1
+  )
+puts "10 Images created"
