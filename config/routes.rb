@@ -76,17 +76,15 @@ Rails.application.routes.draw do
          :as => 'lecture_section'
          
     # Gallery Section
-    # resources :galleries, only: [:index, :show]
     get 'galleries/:gallery_id',
          to: 'galleries#index',
          as: 'galleries'
          
-    get 'gallery_images/:gallery_id',
-         to: 'gallery_images#index',
-         as: 'gallery_images'
-    get 'gallery_images/:gallery_id/:id',
-         to: 'gallery_images#show',
-         as: 'gallery_image'
+    # News Section
+    get 'news/:notification_id',
+         to: 'notifications#index',
+         as: 'news'
+        
   end
 
   

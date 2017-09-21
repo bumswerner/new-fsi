@@ -57,6 +57,8 @@ gem 'kaminari', '~> 1.0', '>= 1.0.1'
 
 gem 'lightbox-bootstrap-rails', '5.1.0.1'
 
+gem 'bootstrap', '~> 4.0.0.beta'
+
 group :development, :test do
   
   gem 'rspec-rails'
