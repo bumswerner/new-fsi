@@ -551,3 +551,30 @@ to view
 create a better design
 rails generate kaminari:views bootstrap4
 
+
+********************************************************************************
+install the gem Lightbox for Bootstrap 4
+********************************************************************************
+
+
+insert this line into gem file
+gem 'lightbox-bootstrap-rails', '5.1.0.1'
+
+in assets/javascripts/application.js
+//= require lightbox-bootstrap
+
+in assets/javascripts/application.js
+*= require lightbox-bootstrap
+
+assets/javascripts/lightbox_bootstraped.coffee
+
+$(document).delegate '*[data-toggle="lightbox"]', 'click', (event) ->
+  event.preventDefault()
+  $(this).ekkoLightbox()
+  return
+  
+  
+  
+website for pictures
+
+https://unsplash.it/

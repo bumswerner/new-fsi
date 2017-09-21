@@ -1,70 +1,140 @@
 
 
-<h1 class="my-4 text-center text-lg-left">Thumbnail Gallery</h1>
+<h3 class="my-4 text-center text-lg-left">Gallery</h3>
 
-<div class="row text-center text-lg-left">
 
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="http://placehold.it/400x300" class="d-block mb-4 h-100"  data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
-  </div>
-  <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-    </a>
+<div class="row">
+  
+  <div class="well well-sm">
+    <ul class="nav nav-pills" role="tablist">
+      <li class="active" role="presentation"><a href="#">Mitglieder <span class="badge">6</span></a></li>
+      <li role="presentation"><a href="#">Sommerfest <span class="badge">3</span></a></li>
+      <li role="presentation"><a href="#">Weihnachten <span class="badge">8</span></a></li>
+      <li role="presentation"><a href="#">Party 2017 <span class="badge">4</span></a></li>
+      <li role="presentation"><a href="#">Weihnachten <span class="badge">12</span></a></li>
+      <li role="presentation"><a href="#">Einstand 2014 <span class="badge">23</span></a></li>
   </div>
 </div>
+
+
+<!--<div class="row">-->
+  
+<!--  <ul class="list-group">-->
+<!--  <li class="list-group-item active">-->
+<!--    <span class="badge">14</span>-->
+<!--    Cras justo odio-->
+<!--  </li>-->
+<!--   <li class="list-group-item">-->
+<!--    <span class="badge">14</span>-->
+<!--    Cras justo odio-->
+<!--  </li>-->
+<!--   <li class="list-group-item">-->
+<!--    <span class="badge">14</span>-->
+<!--    Cras justo odio-->
+<!--  </li>-->
+<!--   <li class="list-group-item">-->
+<!--    <span class="badge">14</span>-->
+<!--    Cras justo odio-->
+<!--  </li>-->
+<!--</ul>-->
+<!--</div>-->
+  
+<div class="row text-center text-lg-left">
+
+ 
+  
+  <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/550/550/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+  
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+  
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+   <div class="col-lg-3 col-md-4 col-xs-6">
+   <%= link_to image_tag("https://unsplash.it/200/200/?random", class: "img-fluid img-thumbnail"), 
+       "https://unsplash.it/600/600/?random", data: { title: "Header", footer: "Gallery name", toggle: "lightbox", gallery: "multiimages" },
+        class: "d-block mb-4 h-100" %>
+    </a>
+  </div>
+
+</div>
+  <!--
+  <div class="col-lg-3 col-md-4 col-xs-6">
+    <a href="http://placehold.it/410x300"
+        class="d-block mb-4 h-100"  data-toggle="lightbox" data-gallery="example-gallery" data-title="Adolf" data-footer="Werner"class="col-sm-4">
+      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+    </a>
+  </div>
+  
+</div>
+
+ <div class="col-lg-3 col-md-4 col-xs-6">
+    <a href="http://placehold.it/400x300"
+        class="d-block mb-4 h-100"  data-toggle="lightbox" data-gallery="example-gallery" data-title="Adolf" data-footer="Werner"class="col-sm-4">
+      <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+    </a>
+  </div>
 
 
 

@@ -55,6 +55,8 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 # allows pagination
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 
+gem 'lightbox-bootstrap-rails', '5.1.0.1'
+
 group :development, :test do
   
   gem 'rspec-rails'
