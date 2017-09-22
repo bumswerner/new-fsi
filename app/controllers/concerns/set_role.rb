@@ -11,7 +11,7 @@ module SetRole
   def set_first_user_to_admin
     user = User.first
     if !user.nil?
-      if user.id == 1 && !user.is_admin
+      if user.id == 1 
          user.update!(roles: "admin")
       end
     end

@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<%= paginate @images %>
+<center><%= paginate @images %></center>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -38,9 +38,10 @@
     <% end %>
   </tbody>
 </table>
-<%= paginate @images %><br />
+<center><%= paginate @images %></center><br />
 <% if logged_in?(:admin, :moderator) %>
   <%= link_to t('.new', :default => t("helpers.links.new")),
               new_moderator_gallery_image_path,
               :class => 'btn btn-primary' %>
+  <%= link_to 'Back', moderator_galleries_path, class: "btn btn-default" %>
 <% end %>

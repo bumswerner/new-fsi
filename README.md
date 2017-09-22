@@ -581,3 +581,9 @@ https://unsplash.it/
 
 
 rake assets:precompile !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+get connection to rails console
+ cf ssh fsi -t -c "/tmp/lifecycle/launcher /home/vcap/app 'rails c' ''"        
+ 
+ 
+cf run-task fsi 'rails db:setup' 

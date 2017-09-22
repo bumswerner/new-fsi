@@ -89,19 +89,37 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
+ # Variante 1 - man kann keine Dateien hochladen, sieht aber die Bilder
+ # https://s3-eu-west-1.amazonaws.com/a9s-railsvorlesung/home/railsvorlesung4//images/pictures/000/000/003/medium/Bild_2.jpg?1506099552
+  
   config.paperclip_defaults = {
     :storage => :fog,
-     :fog_credentials => {
-       :provider => "AWS",
-       :region => 'eu-west-1',
-       :scheme => 'https',
-       :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-     },
-     :fog_host => "https://s3-eu-west-1.amazonaws.com/#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
+    :fog_credentials => {
+      :provider => "AWS",
+      :region => 'eu-west-1',
+      :scheme => 'https',
+      :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    },
+    :fog_host => "https://s3-eu-west-1.amazonaws.com/#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
 }
 
-#s3 = Fog::Storage.new(provider: 'AWS', aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], region: 'eu-west-1')
+# Variante 2 - man kann Dateien hochladen, sieht dafür aber keine Bilder
+# https://s3-eu-west-1.amazonaws.com/images/pictures/000/000/003/medium/Bild_2.jpg?1506099552
+
+  config.paperclip_defaults = {
+    :storage => :fog,
+    :fog_credentials => {
+      :provider              => "AWS",
+      :region                => 'eu-west-1',
+      :scheme                => 'https',
+      :aws_access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
+      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    },
+    :fog_directory => "#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}",
+    :fog_host      => "https://s3-eu-west-1.amazonaws.com"
+  }
+
 
   config.action_mailer.default_url_options = { host: 'http://fsi.aws.ie.a9sapp.eu' }
   
