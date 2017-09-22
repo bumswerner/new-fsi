@@ -36,4 +36,9 @@ class User < ApplicationRecord
     end
     end
   end
+  
+  # check if admin
+  def is_admin
+    self.roles != 7 && self.roles != 19
+  end
 end

@@ -578,3 +578,6 @@ $(document).delegate '*[data-toggle="lightbox"]', 'click', (event) ->
 website for pictures
 
 https://unsplash.it/
+
+
+rake assets:precompile !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
