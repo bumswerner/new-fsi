@@ -12,7 +12,7 @@
 }
 
 .horizont-line-left {
- // border-left: 1px ridge gainsboro
+  // border-left: 1px ridge gainsboro
 }
 
 #logo {
@@ -34,7 +34,48 @@
 }
 
 
-// User-Show-Material-Section start
+/*
+  User Material - Section - Start
+*/
+
+.badge {
+  margin: 0;
+  padding: 0;
+}
+
+.user-panel-body {
+  background-color: #f9f9f9;
+}
+
+.user-panel-badges {
+  background-color: rgb(217, 237, 247) !important;
+  .badge {
+    background-color: rgb(49, 112, 143);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    a {
+      color: rgb(217, 237, 247);
+    }
+  }
+}
+
+.user-panel-actions {
+  background-color: #e8ebef !important;
+  a {
+    font-weight: bold;
+  }
+}
+
+/*
+  User Material - Section - End
+*/
+
+
+
+
+
+
 .user-show-title {
   text-align: center;
   font-weight: bold;
@@ -59,42 +100,21 @@
 }
 
 
-.badge {
-  background-color: #CEF6F5;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-  border: 2px solid #CEF6e0;
-}
 
 
 // Small devices (landscape phones, 576px and up)
-@media (max-width: 576px) { 
-  
+@media (max-width: 576px) {
+
   .user-show-title {
     font-size: 1em;
   }
-  
-  .user-show-actions {
-    
-  }
-  
-  
+
+  .user-show-actions {}
+
+
 }
 
 // User-Show-Material-Section - end
-
-
-
-
-
-
-
-
-
-
-
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -264,11 +284,3 @@ footer {
   color: #FFF;
   font-size: 12px;
 }
-
-
-
-
-
-
-
-

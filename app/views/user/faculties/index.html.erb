@@ -7,57 +7,35 @@
   <center><%= paginate @faculties %></center>
 
   <% @faculties.each do |faculty| %>
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="well well-lg">
-        <div class="user-show-title">
-          <%= faculty.name %> <br />
-          Studiengänge (<%= faculty.courseofstudies.count %>) 
+    <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class='panel-title'>
+            <span class="badge"><%= faculty.symbol %></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= faculty.name %>
+          </h4>
         </div>
-        <div class="user-show-body">
-          <%= faculty.description %>
+        <div class="panel-body" style="background-color: #f9f9f9">
+          <p><%= faculty.description %></p>
         </div>
-        <div class="user-show-links"><center>
-          <%= link_to 'Show all Courseofstudies' ,user_faculty_courseofstudies_path(faculty), 
-              class: "btn btn-primary" %>
+        <div class='panel-footer user-panel-footer'>
+          <a class='btn btn-default' 
+             href="<%= user_faculty_courseofstudies_path(faculty) %>">
+            <span class=" glyphicon glyphicon-education"></span>
+             Studiengänge
+            <span class=" glyphicon glyphicon-menu-right"></span>
+            <span class="badge">
+             <%= faculty.courseofstudies.count %>
+            </span></a>
           <%= link_to 'Details' ,user_faculty_path(faculty), 
-              class: "btn btn-info" %></center>
+              class: "btn btn-default" %>
         </div>
       </div>
-    </div> 
+    </div>
   <% end %>
   
   <center><%= paginate @faculties %></center>
   
 </div>
-
-   <div class="row">
-            <div class="col-md-4">
-        		<div class="card">
-                    <div class="card-content">
-                    	<div class="card-header-blue">
-                           <h1 class="card-heading">Card Header Blue</h1>
-                       	</div>
-                       	<div class="card-body">
-                     	  <p class="card-p">
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,
-                                or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there
-                                isn't anything embarrassing hidden in the middle of text.
-                                
-                            </p>
-                     	</div>
-                     	
-                     	<nav class="nav-tabs">
-                     		<ul class="nav nav-pills pull-left">
-                                <li class="card-action"><a href="#">Link</a></li>
-                                <li class="card-action"><a href="#">Link</a></li>
-                                <li class="card-action"><a href="#">Link</a></li>
-                                <li class="card-action"><a href="#">Link</a></li>
-                            </ul>
-                     		
-                     	</nav>
-                     		
-                    </div>
-                </div>
-           	</div>
-
-
+ 

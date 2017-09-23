@@ -1,4 +1,3 @@
-
 <div class="row">
   
   <ol class="breadcrumb">
@@ -17,21 +16,23 @@
       studytype = Studytype.find(faculty_courseofstudy.studytype_id)
       categories = faculty_courseofstudy.categories.uniq
     %>
-    
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="well well-lg">
-        <div class="user-show-title">
-          <h2><%= faculty_courseofstudy.name %></h2>
-        </div>
-        <div class="user-show-body">
-          <h3><%= faculty_courseofstudy.symbol + 
+    <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class='panel-title'>
+            <span class="badge"><%= @faculty.symbol %></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= faculty_courseofstudy.name %>
+            <%= faculty_courseofstudy.symbol + 
                   studytype.symbol %>
-             (<%= studytype.name %>)
-          </h3>
+          </h4>
         </div>
-        <div class="user-show-links">
+        <div class="panel-body user-panel-body">
+          <p><%= faculty_courseofstudy.description %></p>
+        </div>
+        <div class="panel-footer user-panel-badges">
            <% categories.each do |category| %>
-            <span class="badge badge-info">
+            <span class="badge">
               <%= link_to category.name,
                   user_category_lectures_path(params[:faculty_id], 
                                               category,
@@ -39,21 +40,30 @@
                   &nbsp;
             </span>
           <% end %>
-        </div>  
-        <div class="user-show-actions">
-          <%= link_to 'Show all Categories', 
-              user_courseofstudy_categories_path(params[:faculty_id], faculty_courseofstudy),
-             class: "btn btn-primary" %>
+        </div>
+        <div class='panel-footer user-panel-actions'>
+          <a class='btn btn-default' 
+             href="<%= user_courseofstudy_categories_path(params[:faculty_id],
+                                                          faculty_courseofstudy) %>">
+            <span class=" glyphicon glyphicon-education"></span>
+             Kategorien
+            <span class=" glyphicon glyphicon-menu-right"></span>
+            <span class="badge">
+             <%= categories.count %>
+            </span></a>
+           <!-- <span class="glyphicon glyphicon-eye-open"></span> -->
           <%= link_to 'Details',
               user_faculty_courseofstudy_path(params[:faculty_id], faculty_courseofstudy),
-              class: "btn btn-info" %>
+              class: "btn btn-default" %>
         </div>
       </div>
-    </div> 
+    </div>
   <% end %>
-  
+    
   <center><%= paginate @faculty_courseofstudies %></center>
   
 </div>
- <center><%= link_to 'Back', user_faculties_path, 
-              class: "btn btn-default" %></center>
+<center>
+  <%= link_to 'Back', user_faculties_path, 
+               class: "btn btn-default" %>
+</center>
