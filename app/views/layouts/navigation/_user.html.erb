@@ -1,9 +1,14 @@
 <% if logged_in?(:admin, :moderator, :user) and !current_user.is_a?(GuestUser) %>
   <ul class="nav navbar-nav horizont-line">
      <!-- load allways the first news category by default -->
-     <li class="active"><%= link_to "News", user_news_path(Notificationtype.first) if Notificationtype.first %></li>
+     <li class="<%= active_class(user_news_path(Notificationtype.first)) if Notificationtype.first %>">
+       <%= link_to "News", user_news_path(Notificationtype.first) if Notificationtype.first %></li>
+       
      <!-- load allways the first gallery by default -->
-     <li><%= link_to "Galleries", user_galleries_path(Gallery.first) if Gallery.first %></li>
-     <li><%= link_to "Materials", user_faculties_path %></li>
+     <li class ="<%= active_class(user_galleries_path(Gallery.first)) if Gallery.first %>">
+       <%= link_to "Galleries", user_galleries_path(Gallery.first) if Gallery.first %></li>
+     
+     <li class="<%= active_class(user_faculties_path) %>">
+       <%= link_to "Materials", user_faculties_path %></li>
   </ul>
 <% end %>

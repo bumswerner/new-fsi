@@ -1,0 +1,22 @@
+<div class='row'><center>
+  <div class='col-lg-offset-2 col-lg-8 col-md-offeset-0 
+              col-md-6 col-xs-12 col-xs-offset-0'>
+    <div class="panel panel-default">
+      <img src="<%= @notification.image.url(:medium) %>" class="img-responsive">
+      <div class="panel-body">
+        <p class='lead'><%= @notification.title %></p>
+        <p class="text-justify"><%= @notification.message %></p>
+        <p>
+          <%= link_to "Back",
+              user_news_path(params[:notificationtype_id]) %>
+        </p>
+        <small>
+          Created at:  <%= time_ago_in_words(@notification.created_at) %> ago,
+          <br />
+          last updated: <%= time_ago_in_words(@notification.updated_at) %> ago
+        </small>
+      </div>
+    </div>
+  </div>
+  </center>
+</div>

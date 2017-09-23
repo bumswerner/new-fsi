@@ -84,6 +84,9 @@ Rails.application.routes.draw do
     get 'news/:notificationtype_id',
          to: 'notifications#index',
          as: 'news'
+    get 'news/:notificationtype_id/:notification_id',
+         to: 'notifications#show',
+         as: 'new'
         
   end
 

@@ -1,5 +1,6 @@
 <% if logged_in?(:admin) %>
   <ul class="nav navbar-nav">
-    <li><%= link_to "User", admin_users_path %></li>
+    <li class="<%= active_class(admin_users_path) %>">
+      <%= link_to "User", admin_users_path %></li>
   </ul>
 <% end %>
