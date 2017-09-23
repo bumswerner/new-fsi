@@ -81,7 +81,7 @@ Rails.application.routes.draw do
          as: 'galleries'
          
     # News Section
-    get 'news/:notification_id',
+    get 'news/:notificationtype_id',
          to: 'notifications#index',
          as: 'news'
         

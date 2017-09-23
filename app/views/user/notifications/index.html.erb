@@ -1,4 +1,21 @@
 
+<div class="row">
+  <div class="well well-sm">
+    <ul class="nav nav-pills" role="tablist">
+      <% @notificationtypes.each do |notificationtype| %>
+        <% active = (notificationtype.id == params[:notificationtype_id].to_i) ? "active" : "" %>
+        <li class="<%= active %>" role="presentation">
+          <a href="<%= user_news_path(notificationtype.id) %>">
+            <%= notificationtype.name %>
+            <span class="badge">
+              <%= notificationtype.notifications.count %>
+            </span>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <div class='row'>
   <% @notifications.each do |notification| %>
@@ -19,7 +36,7 @@
             <p>
               <img src="//placehold.it/28X28/ededed">          
               <img src="//placehold.it/28X28/a0c3fd">          
-              <img src="//placehold.it/28X28/25282d">       
+              <img src="//placehold.it/28X28/25282d">
             </p>
             <small>
               Created at:  <%= time_ago_in_words(notification.created_at) %> ago,
