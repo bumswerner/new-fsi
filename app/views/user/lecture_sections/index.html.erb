@@ -24,21 +24,28 @@
   
   <center><%= paginate @sections %></center>
   
-  <% @sections.each do |section| %>
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="well well-lg">
-        <div class="user-show-title">
-         <%= @category.name %> -
-         <%= @lecture.name %> - 
-         <%= section.name %>
+  
+   <% @sections.each do |section| %>
+    <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class='panel-title'>
+            <span class="badge"><%= @category.symbol %></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= @lecture.name %>
+              &nbsp;
+           <!-- <span class="badge"><%#= category.symbol %></span> -->
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= section.name %>
+          </h4>
         </div>
-        <div class="user-show-body">
-          <%= section.description %>
+        <div class="panel-body user-panel-body">
+          <p><%= section.description %></p>
         </div>
         <% materials = Material.where("lecture_id = ? AND section_id = ?",
                                        params[:lecture_id], section)
         %>
-        <div class="user-show-links">
+        <div class="panel-footer user-panel-badges">
           <% materials.each do |material| %>
             <span class="badge">
               <%= link_to material.name,
@@ -51,14 +58,16 @@
             </span>
           <% end %>
         </div>
-         <div class="user-show-actions">
-           <%= link_to 'Details', 
-               user_lecture_section_path(params[:category_id],
-                                         params[:courseofstudy_id],
-                                         params[:lecture_id], section),
-               class: "btn btn-info" %>
-      </div>
-      </div>
+        <div class='panel-footer user-panel-actions'>
+          <a class="btn btn-default"
+            href="<%= user_lecture_section_path(params[:category_id],
+                                                params[:courseofstudy_id],
+                                                params[:lecture_id], section) %>">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            Details
+          </a>
+        </div>
+       </div>
     </div> 
   <% end %>
   
