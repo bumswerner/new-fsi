@@ -1,7 +1,3 @@
-<%
-  studytype = Studytype.find(@faculty_courseofstudy.studytype_id)
-%>
-
 <div class="row">
   
   <ol class="breadcrumb">
@@ -13,29 +9,44 @@
           <%= @faculty.symbol %></a>
      </li>
     <li class="breadcrumb-item active">
-       <%= @faculty_courseofstudy.symbol + studytype.symbol %>
+       <%= @faculty_courseofstudy.symbol + @studytype.symbol %>
     </li>
   </ol>
   
-  <div class="col-xs-8 col-xs-offset-2">
-    <div class="well well-lg">
-      <div class="user-show-title">
-        <h2><%= @faculty_courseofstudy.name %>
-            <%= @faculty_courseofstudy.symbol + studytype.symbol %></h2>
-      </div>
-      <div class="user-show-body">
-        <hr />
-        <%= @faculty_courseofstudy.description %>
-      </div>
-      <div class="user-show-actions">
-      
-      </div>
-    </div>
-  </div> 
+  <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class='panel-title'>
+            <span class="badge"><%= @faculty_courseofstudy.symbol +
+                                    @studytype.symbol %></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= @faculty_courseofstudy.name %>
+          </h4>
+        </div>
+        <div class="panel-body user-panel-body">
+          <p><%= @faculty_courseofstudy.description %></p>
+        </div>
+        <div class="panel-footer user-panel-badges">
+          <% @categories.each do |category| %>
+            <span class="badge">
+              <%= category.name %>  
+            </span> 
+          <% end %>
+        </div>
+        <div class='panel-footer user-panel-actions'>
+          <a class='btn btn-default' 
+             href="<%= user_faculty_courseofstudies_path %>">
+            <span class="glyphicon glyphicon-share"></span> 
+             Studiengänge
+          </a>
+          <a class='btn btn-default' 
+             href="<%=user_faculties_url(params[:faculty_id]) %>">
+            <span class="glyphicon glyphicon-share"></span> 
+             Fakultäten
+          </a>
+        </div>
+    </div>    
+  </div>
  
-</div>
-<%= link_to 'Back',user_faculty_courseofstudies_path, 
-             class: "btn btn-default" %>
-<%= link_to 'Back to Faculties', 
-            user_faculties_url(params[:faculty_id]),
-            class: "btn btn-primary" %>
+</div>        
+  

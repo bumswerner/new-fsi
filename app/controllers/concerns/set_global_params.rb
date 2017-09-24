@@ -15,7 +15,7 @@ module SetGlobalParams
   end
   
   def set_description_length
-    @description_length = 100
+    @user_description_length = 150
   end
   
 end

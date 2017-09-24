@@ -13,6 +13,8 @@ class User::FacultyCourseofstudiesController < ApplicationController
   # GET /user/faculty_courseofstudies/facult_id/courseofstudy_id
   def show
    @faculty_courseofstudy = @faculty_courseofstudies.find(params[:courseofstudy_id])
+   @categories = @faculty_courseofstudy.categories.distinct
+   @studytype = Studytype.find(@faculty_courseofstudy.studytype_id)
   end
   
   
@@ -21,7 +23,8 @@ class User::FacultyCourseofstudiesController < ApplicationController
   
     def get_data
       @faculty = Faculty.find(params[:faculty_id])
-      @faculty_courseofstudies = @faculty.courseofstudies.page(params[:page]).per(2)
+      @faculty_courseofstudies = @faculty.courseofstudies.page(params[:page])
+                                         .per(@courseofstudies_per_page)
     end
   
 end
