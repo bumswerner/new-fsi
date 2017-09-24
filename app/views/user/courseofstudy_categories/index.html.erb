@@ -1,5 +1,7 @@
 <!-- index =>  Faculties / IngWi / PI / Categories  -->
 
+<br />
+
 <div class="row">
   
   <ol class="breadcrumb">
@@ -20,7 +22,6 @@
   
   <center><%= paginate @categories %></center>
   
-  
   <% @categories.each do |category| %>
     <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
       <div class="panel panel-info">
@@ -36,7 +37,7 @@
           </h4>
         </div>
          <div class="panel-body user-panel-body">
-          <p><%= category.description %></p>
+          <p><%= truncate(category.description, length: @user_description_length) %></p>
         </div>
         <% 
           assoziations = @assoziations.where("category_id = ?", category.id)

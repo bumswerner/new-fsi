@@ -7,8 +7,6 @@ class User::CourseofstudyCategoriesController < ApplicationController
     
   # GET /user/courseofstudies_categories/faculty_id/courseofstudy_id
   def index
-    @assoziations = Assoziation.where("courseofstudy_id = ?", params[:courseofstudy_id])
-    
   end
   
   # GET /user/courseofstudies_categories/faculty_id/courseofstudy_id/category_id
@@ -23,7 +21,12 @@ class User::CourseofstudyCategoriesController < ApplicationController
       @faculty = Faculty.find(params[:faculty_id])
       @courseofstudy = Courseofstudy.find(params[:courseofstudy_id])
       @studytype = Studytype.find(@courseofstudy.studytype_id)
-      @categories = Courseofstudy.find(params[:courseofstudy_id]).categories.distinct.page(params[:page]).per(2)
+      @categories = Courseofstudy.find(params[:courseofstudy_id])
+                                 .categories.distinct
+                                 .page(params[:page])
+                                 .per(@categories_per_page)
+      @assoziations = Assoziation.where("courseofstudy_id = ?",
+                                        params[:courseofstudy_id])
     end
 
 end

@@ -1,5 +1,7 @@
 <!-- show =>  Faculties / IngWi / PI / Categories / Semester 1  -->
 
+<br />
+
 <div class="row">
   
   <ol class="breadcrumb">
@@ -22,19 +24,52 @@
     </li>
   </ol>
   
-  <div class="col-xs-8 col-xs-offset-2">
-    <div class="well well-lg">
-      <div class="user-show-title">
-        <h2><%= @category.name %>  </h2>
-       
+  <br /><br />
+  
+  <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4 class='panel-title'>
+          <span class="badge"><%= @courseofstudy.symbol + @studytype.symbol %></span>
+          <span class="glyphicon glyphicon-arrow-right"></span>
+          <%= @courseofstudy.name %>
+            &nbsp;
+          <span class="badge"><%= @category.symbol %></span>
+          <span class="glyphicon glyphicon-arrow-right"></span>
+          <%= @category.name %>
+        </h4>
       </div>
-      <div class="user-show-body">
-        <%= @category.description %>
+       <div class="panel-body user-panel-body">
+        <p><%= @category.description %></p>
+      </div>
+      <% 
+        assoziations = @assoziations.where("category_id = ?", @category.id)
+      %>
+      <div class="panel-footer user-panel-badges">
+        <% assoziations.each do |assoziation| %>
+          <span class="badge">
+           <%= link_to Lecture.find(assoziation.lecture_id).name, 
+                user_lecture_sections_path(@category, assoziation.lecture_id) %>
+                &nbsp;
+          </span>
+        <% end %>
+      </div>
+      <div class='panel-footer user-panel-actions'>
+        <a class="btn btn-default"
+           href="<%= user_courseofstudy_category_path(params[:faculty_id],
+                                                      params[:courseofstudy_id],
+                                                      @category.id) %>">
+          <span class="glyphicon glyphicon-eye-open"></span>
+          Details
+        </a>
+        <a class="btn btn-default"
+           href="<%= user_courseofstudy_categories_path(params[:faculty_id],
+                                                        params[:courseofstudy_id]) %>">
+          <span class="glyphicon glyphicon-share"></span>
+          Kategorien
+        </a>
       </div>
     </div>
   </div> 
-</div>
-<%= link_to 'Back', user_courseofstudy_categories_path(params[:faculty_id],
-                                                       params[:courseofstudy_id]),
-    class: "btn btn-default" %>
     
+</div>

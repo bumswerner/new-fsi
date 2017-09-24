@@ -27,7 +27,9 @@ class User::SectionMaterialsController < ApplicationController
       @section = Section.find(params[:section_id])
       @materials = Material.where("lecture_id = ? AND section_id = ?",
                                    params[:lecture_id],
-                                   params[:section_id]).page(params[:page]).per(5)
+                                   params[:section_id])
+                                   .page(params[:page])
+                                   .per(@user_description_length)
     end
   
 end
