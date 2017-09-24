@@ -11,6 +11,7 @@ module SetGlobalParams
     @courseofstudies_per_page = 2
     @categories_per_page = 2
     @lectures_per_page = 2
+    @sections_per_page = 2
     @materials_per_page = 4
   end
   

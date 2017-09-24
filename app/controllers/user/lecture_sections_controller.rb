@@ -7,12 +7,14 @@ class User::LectureSectionsController < ApplicationController
   
   # GET  /user/lecture_sections/1/1
   def index
-    @sections = @lecture.materials.page(params[:page]).per(2)
+    @sections = @lecture.materials.page(params[:page]).per(@sections_per_page)
   end
   
   # GET /user/lecture_sections/1/1/1
   def show
     @section = @lecture.materials.find(params[:id])
+    @materials = Material.where("lecture_id = ? AND section_id = ?",
+                                params[:lecture_id], @section)
   end
   
   # the private section
