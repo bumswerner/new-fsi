@@ -1,10 +1,5 @@
 <!-- Fakultäten   IngWi   Studiengänge   Praktische Informatik - Semester 1 / -->
 
-<% 
-  assoziation = @lecture.assoziations.first
-  sections = @lecture.materials
-%>
-
 <div class="row">
   
    <ol class="breadcrumb">
@@ -30,21 +25,37 @@
     </li>
   </ol>
   
-  <div class="col-xs-8 col-xs-offset-2">
-    <div class="well well-lg">
-      <div class="user-show-title">
-        <%= @lecture.name %> -
-         <%= assoziation.code %> -
-         <%= assoziation.instructor %> 
-         (<%= @lecture.symbol %>)
+  <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4 class='panel-title'>
+            <span class="badge"><%= @courseofstudy.symbol + @studytype.symbol %></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= @lecture.name %>
+              &nbsp;
+            <span class="badge"><%= @assoziation.code %></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= @assoziation.instructor %>
+        </h4>
       </div>
-      <div class="user-show-body">
-        <%= @lecture.description %>
+      <div class="panel-body user-panel-body">
+        <p><%= @lecture.description %></p>
       </div>
-    </div>
-  </div> 
+      <div class="panel-footer user-panel-badges">
+        <% @sections.each do |section| %>
+          <span class="badge">
+            <%= section.name %>  
+          </span> 
+        <% end %>
+      </div>
+      <div class='panel-footer user-panel-actions'>
+        <a class='btn btn-default' 
+           href="<%= user_category_lectures_url %>">
+          <span class="glyphicon glyphicon-share"></span> 
+           Vorlesungen
+        </a>
+      </div>
+    </div>    
+  </div>
+  
 </div>
-
-<center>
-  <%= link_to 'Back', user_category_lectures_url, class: "btn btn-default" %>
-</center>

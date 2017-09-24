@@ -12,6 +12,8 @@ class User::CategoryLecturesController < ApplicationController
   # GET user/category_lectures/faculty_id/category_id//courseofstudy_id/lecture_id
   def show
     @lecture = Lecture.find(params[:id])
+    @assoziation = @lecture.assoziations.first
+    @sections = @lecture.materials
   end
   
   # the private section
@@ -23,7 +25,9 @@ class User::CategoryLecturesController < ApplicationController
       @courseofstudy = Courseofstudy.find(params[:courseofstudy_id])
       @assoziations = Assoziation.where("courseofstudy_id = ? AND category_id = ?",
                                         params[:courseofstudy_id],
-                                        params[:category_id]).page(params[:page]).per(2)
+                                        params[:category_id])
+                                        .page(params[:page])
+                                        .per(@lectures_per_page)
       @category = Category.find(params[:category_id])
     end
     
