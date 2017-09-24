@@ -66,9 +66,12 @@
   <center><%= paginate @categories %></center>
   
 </div>  
+
+<br />
 <center>
-  <%= link_to 'Back', user_faculty_courseofstudies_path(params[:faculty_id]), 
-              class: "btn btn-default" %>
+  <a class='btn btn-default' 
+     href="<%= user_faculty_courseofstudies_path(params[:faculty_id]) %>">
+    <span class="glyphicon glyphicon-share"></span> 
+     Studiengänge
+  </a>
 </center>
-              
-              

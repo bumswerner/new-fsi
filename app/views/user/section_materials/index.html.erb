@@ -23,6 +23,7 @@
       <%= @lecture.name + " - " + @section.name %>
     </li>
   </ol>
+  <br />
   
   <center><%= paginate @materials %></center>
   
@@ -39,7 +40,8 @@
           </h4>
         </div>
         <div class="panel-body user-panel-body">
-          <p><%= truncate(material.discription, length: 100) %></p>
+          <p><%= truncate(material.discription,
+                 length: @user_description_length) %></p>
         </div>
         <div class='panel-footer user-panel-actions'>
           <a class="btn btn-default"
@@ -65,10 +67,14 @@
   <center><%= paginate @materials %></center>
   
 </div>
+
+<br />
 <center>
-  <%= link_to 'Back', 
-       user_category_lectures_path(@faculty_id,
-                                   params[:category_id],
-                                   params[:courseofstudy_id]),
-       class: "btn btn-default" %>
+  <a class='btn btn-default' 
+     href="<%= user_category_lectures_path(@faculty_id,
+                                           params[:category_id],
+                                           params[:courseofstudy_id]) %>">
+    <span class="glyphicon glyphicon-share"></span> 
+     Vorlesungen
+  </a>
 </center>

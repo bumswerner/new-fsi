@@ -74,17 +74,22 @@
   <% end %>
   
   <center><%= paginate @sections %></center>
+  
 </div>
 
+<br />
 <center>
-  <%= link_to 'Back', user_category_lectures_path(@faculty_id,
-                                               params[:category_id],
-                                               params[:courseofstudy_id]), 
-              class: "btn btn-default" %>
-            
-  <%= link_to 'Back to Categories', user_courseofstudy_categories_path(@faculty_id,
-                                               params[:courseofstudy_id]), 
-              class: "btn btn-default" %>
+  <a class='btn btn-default' 
+     href="<%= user_category_lectures_path(@faculty_id,
+                                           params[:category_id],
+                                           params[:courseofstudy_id]) %>">
+    <span class="glyphicon glyphicon-share"></span> 
+     Vorlesungen
+  </a>
+  <a class='btn btn-default' 
+     href="<%= user_courseofstudy_categories_path(@faculty_id,
+                                                  params[:courseofstudy_id]) %>">
+    <span class="glyphicon glyphicon-share"></span> 
+     Kategorien
+  </a>
 </center>
-            
-
