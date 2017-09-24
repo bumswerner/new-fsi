@@ -19,7 +19,7 @@
         <div class="panel-body" style="background-color: #f9f9f9">
           <p><%= faculty.description %></p>
         </div>
-        <div class='panel-footer user-panel-footer'>
+        <div class='panel-footer user-panel-actions'>
           <a class='btn btn-default' 
              href="<%= user_faculty_courseofstudies_path(faculty) %>">
             <span class=" glyphicon glyphicon-education"></span>
@@ -28,8 +28,11 @@
             <span class="badge">
              <%= faculty.courseofstudies.count %>
             </span></a>
-          <%= link_to 'Details' ,user_faculty_path(faculty), 
-              class: "btn btn-default" %>
+          <a class="btn btn-default"
+             href="<%= user_faculty_path(faculty) %>">
+            <span class="glyphicon glyphicon-eye-open"></span>
+             Details
+          </a>
         </div>
       </div>
     </div>

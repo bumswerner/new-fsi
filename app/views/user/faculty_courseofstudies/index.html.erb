@@ -51,10 +51,12 @@
             <span class="badge">
              <%= categories.count %>
             </span></a>
-           <!-- <span class="glyphicon glyphicon-eye-open"></span> -->
-          <%= link_to 'Details',
-              user_faculty_courseofstudy_path(params[:faculty_id], faculty_courseofstudy),
-              class: "btn btn-default" %>
+          <a class="btn btn-default"
+              href="<%= user_faculty_courseofstudy_path(params[:faculty_id],
+                                                         faculty_courseofstudy) %>">
+              <span class="glyphicon glyphicon-eye-open"></span>
+              Details
+          </a>
         </div>
       </div>
     </div>

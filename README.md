@@ -78,7 +78,7 @@
     move gem 'sqlite3' to group :development, :test
     create new group in Gemfile
     group :production do
-      gem 'pg'
+      gem 'pg' ????
       gem 'rails_12factor'
     end
     bundle install --without production
@@ -587,3 +587,12 @@ get connection to rails console
  
  
 cf run-task fsi 'rails db:setup' 
+
+
+********************************************************************************
+Design
+********************************************************************************
+colors:
+
+#eff2f7
+#f4f6f9
