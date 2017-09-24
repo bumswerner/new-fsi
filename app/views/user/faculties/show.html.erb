@@ -5,19 +5,37 @@
     <li class="breadcrumb-item active"><%= @faculty.name %></li>
   </ol>
 
-  <div class="col-xs-8 col-xs-offset-2">
-    <div class="well well-lg">
-      <div class="user-show-title">
-        <h2><%= @faculty.name %>
-            (<%= @faculty.symbol %>)</h2>
-      </div>
-      <div class="user-show-body">
-        <%= @faculty.description %>
-      </div>
-    </div>
-  </div> 
-</div>
+  <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class='panel-title'>
+            <span class="badge"><%= @faculty.symbol %></span>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <%= @faculty.name %>
+          </h4>
+        </div>
+        <div class="panel-body user-panel-body">
+          <p><%= @faculty.description %></p>
+        </div>
+        <div class="panel-footer user-panel-badges">
+          <% @courseofstudies.each do |courseofstudy| %>
+          <%
+             studytype = Studytype.find(courseofstudy.studytype_id)
+          %>
+            <span class="badge">
+              <%= courseofstudy.symbol + studytype.symbol %>  
+            </span> 
+          <% end %>
+        </div>
+        <div class='panel-footer user-panel-actions'>
+          <a class='btn btn-default' 
+             href="<%=user_faculties_path %>">
+            <span class="glyphicon glyphicon-share"></span> 
+             Fakultäten
+          </a>
+        </div></a>
+    </div>    
+  </div>
 
-<center>
-  <%= link_to 'Back', user_faculties_path, class: "btn btn-default" %>
-</center>
+</div>  
+

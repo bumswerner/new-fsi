@@ -16,8 +16,8 @@
             <%= faculty.name %>
           </h4>
         </div>
-        <div class="panel-body" style="background-color: #f9f9f9">
-          <p><%= faculty.description %></p>
+        <div class="panel-body user-panel-body">
+          <p><%= truncate(faculty.description, length: @description_length) %></p>
         </div>
         <div class='panel-footer user-panel-actions'>
           <a class='btn btn-default' 

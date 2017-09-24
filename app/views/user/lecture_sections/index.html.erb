@@ -26,6 +26,9 @@
   
   
    <% @sections.each do |section| %>
+    <% materials = Material.where("lecture_id = ? AND section_id = ?",
+                                       params[:lecture_id], section)
+    %>
     <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-8">
       <div class="panel panel-info">
         <div class="panel-heading">
@@ -34,17 +37,13 @@
             <span class="glyphicon glyphicon-arrow-right"></span>
             <%= @lecture.name %>
               &nbsp;
-           <!-- <span class="badge"><%#= category.symbol %></span> -->
             <span class="glyphicon glyphicon-arrow-right"></span>
             <%= section.name %>
           </h4>
         </div>
         <div class="panel-body user-panel-body">
-          <p><%= section.description %></p>
+          <p><%= truncate(section.description, length: 100) %></p>
         </div>
-        <% materials = Material.where("lecture_id = ? AND section_id = ?",
-                                       params[:lecture_id], section)
-        %>
         <div class="panel-footer user-panel-badges">
           <% materials.each do |material| %>
             <span class="badge">
@@ -59,6 +58,8 @@
           <% end %>
         </div>
         <div class='panel-footer user-panel-actions'>
+          <!--<span class="badge"><%= materials.count %>&nbsp;
+           <span class="glyphicon glyphicon-eye-open"></span></span>-->
           <a class="btn btn-default"
             href="<%= user_lecture_section_path(params[:category_id],
                                                 params[:courseofstudy_id],
