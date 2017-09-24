@@ -23,10 +23,11 @@ class User::SectionMaterialsController < ApplicationController
       @studytype = Studytype.find(params[:courseofstudy_id])
       @courseofstudy = Courseofstudy.find(params[:courseofstudy_id])
       @category = Category.find(params[:category_id])
+      @lecture = Lecture.find(params[:lecture_id])
       @section = Section.find(params[:section_id])
       @materials = Material.where("lecture_id = ? AND section_id = ?",
                                    params[:lecture_id],
-                                   params[:section_id]).page(params[:page]).per(2)
+                                   params[:section_id]).page(params[:page]).per(5)
     end
   
 end
