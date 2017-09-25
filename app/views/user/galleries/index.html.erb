@@ -26,9 +26,9 @@
          style="min-height: 150px"
          data-toggle="tooltip" 
          title="<%= image.name %>">
-     <%= link_to image_tag(image.picture.url(:medium),
+     <%= link_to image_tag(create_path(image.picture.url(:medium)),
          class: "img-fluid img-thumbnail"), 
-         image.picture.url,     
+         create_path(image.picture.url),     
          data: { title: image.name, 
                  footer: @gallery.name, 
                  toggle: "lightbox", 

@@ -1,8 +1,7 @@
 class Moderator::AssoziationsController < ApplicationController
   before_action :set_assoziation, only: [:show, :edit, :update, :destroy]
-  
-   # set access roles
-  # access user: {except: [:destroy, :new, :create, :update, :edit]},
+  #respond_to :html, :js
+  # set access roles
   access moderator:   :all,
   admin:       :all
 
@@ -24,6 +23,7 @@ class Moderator::AssoziationsController < ApplicationController
 
   # GET /assoziations/1/edit
   def edit
+    @courseofstudy = Courseofstudy.find(@assoziation.courseofstudy_id) 
   end
 
   # POST /assoziations
@@ -65,7 +65,13 @@ class Moderator::AssoziationsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  # for AJAX call
+  def dropdown
+    @courseofstudies = Studytype.find(params[:studytype_id]).courseofstudies
+    render :json => @courseofstudies.to_json()
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_assoziation

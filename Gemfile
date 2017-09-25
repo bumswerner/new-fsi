@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pg'
-gem 'aws-sdk'
+# gem 'aws-sdk'
 gem 'fog'
 
 gem 'paperclip'

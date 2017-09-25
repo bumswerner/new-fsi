@@ -20,15 +20,12 @@
   <% @notifications_per_type.each do |notification| %>
       <div class='col-lg-offset-0 col-lg-4 col-md-offeset-0 col-md-6 col-xs-10 col-xs-offset-1'>
         <div class="panel panel-default">
-          <img src="<%= notification.image.url(:card) %>" class="img-responsive">
+          <img src="<%= create_path(notification.image.url(:card)) %>" class="img-responsive">
           <div class="panel-body">
             <p class='lead'><%= truncate(notification.title, length:50) %></p>
             <p><%= truncate(notification.message, length: 200) %></p>
             <center>
               <p>
-               <!-- <img src="//placehold.it/28X28/ededed">          
-                <img src="//placehold.it/28X28/a0c3fd">          
-                <img src="//placehold.it/28X28/25282d"> -->
                 <%= link_to "Read more",
                    user_new_path(params[:notificationtype_id], notification.id) %>
               </p>

@@ -91,18 +91,20 @@ Rails.application.configure do
   
  # Variante 1 - man kann keine Dateien hochladen, sieht aber die Bilder
  # https://s3-eu-west-1.amazonaws.com/a9s-railsvorlesung/home/railsvorlesung4//images/pictures/000/000/003/medium/Bild_2.jpg?1506099552
+ # https://s3.amazonaws.com/a9s-railsvorlesung/home/railsvorlesung4//images/pictures/000/000/001/thumb/pretzel-2759994__340_1_.jpg?1506111096
+
   
-  config.paperclip_defaults = {
-    :storage => :fog,
-    :fog_credentials => {
-      :provider => "AWS",
-      :region => 'eu-west-1',
-      :scheme => 'https',
-      :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    },
-    :fog_host => "https://s3-eu-west-1.amazonaws.com/#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
-}
+#   config.paperclip_defaults = {
+#     :storage => :fog,
+#     :fog_credentials => {
+#       :provider => "AWS",
+#       :region => 'eu-west-1',
+#       :scheme => 'https',
+#       :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+#       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+#     },
+#     :fog_host => "https://s3-eu-west-1.amazonaws.com/#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
+# }
 
 # Variante 2 - man kann Dateien hochladen, sieht dafür aber keine Bilder
 # https://s3-eu-west-1.amazonaws.com/images/pictures/000/000/003/medium/Bild_2.jpg?1506099552
@@ -120,6 +122,17 @@ Rails.application.configure do
   #   :fog_host      => "https://s3-eu-west-1.amazonaws.com"
   # }
 
+   config.paperclip_defaults = {
+    :storage => :fog,
+     :fog_credentials => {
+       :provider              => "AWS",
+       :region                => 'eu-west-1',
+       :scheme                => 'https',
+       :aws_access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
+       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+     },
+     :fog_directory => "#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
+}
 
   config.action_mailer.default_url_options = { host: 'http://fsi.aws.ie.a9sapp.eu' }
   
