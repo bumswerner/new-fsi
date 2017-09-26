@@ -10,4 +10,6 @@ class Notification < ApplicationRecord
   validates :title, presence: true
   validates :message, presence: true
   
+  default_scope { order(updated_at: :desc) }
+  
 end
