@@ -70,6 +70,14 @@ class Moderator::FacultiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  protected
+    
+    def resource_not_found
+      message = "This faculty you are looking for could not be found"
+      flash[:alert] = message
+      redirect_to moderator_faculties_url
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
