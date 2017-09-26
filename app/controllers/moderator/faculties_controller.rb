@@ -55,6 +55,7 @@ class Moderator::FacultiesController < ApplicationController
         format.html { redirect_to moderator_faculties_path, notice: 'Faculty was successfully updated.' }
         format.json { render :show, status: :ok, location: @faculty }
       else
+        flash.now[:danger] = 'Faculty has not been updated.'
         format.html { render :edit }
         format.json { render json: @faculty.errors, status: :unprocessable_entity }
       end
@@ -71,6 +72,7 @@ class Moderator::FacultiesController < ApplicationController
     end
   end
   
+  
   protected
     
     def resource_not_found
@@ -78,6 +80,7 @@ class Moderator::FacultiesController < ApplicationController
       flash[:alert] = message
       redirect_to moderator_faculties_url
     end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

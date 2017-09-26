@@ -14,7 +14,7 @@
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               moderator_faculties_path, :class => 'btn btn-default'  %>
-<% if logged_in?(:admin, :moderator) %>
+<% #if logged_in?(:admin, :moderator) %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
                 edit_moderator_faculty_path(@faculty), :class => 'btn btn-default' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -24,4 +24,4 @@
                 :default => t("helpers.links.confirm", 
                 :default => 'Are you sure?')) },
                 :class => 'btn btn-danger' %>
-<% end %>
+<% #end %>
