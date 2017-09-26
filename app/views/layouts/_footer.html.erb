@@ -1,18 +1,16 @@
-<!--<style>
+<style>
   footer {
-    position: fixed;
-   /* height: 100px; */
-    bottom: 0;
-    width: 100%;
-}  -->
-</style>
+  
+ 
+}  
+/*</style>
 <footer>
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6 footerleft ">
         <div class="logofooter"> Logo</div>
         <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p> -->
-        <p><i class="fa fa-map-pin"></i>Campus Alt-Saarbrücken - Raum 7212/7213</p>
+        <p><i class="fa fa-map-pin"></i>Campus Alt-Saarbrücken - Raum 7212 / 7213</p>
         <p><i class="fa fa-phone"></i> Telefon: 0681 / 5867 – 277 (nicht ständig besetzt)</p>
         <p><i class="fa fa-envelope"></i> E-mail : fs-i (ät) htw-saarland (dot) de</p>
         
@@ -21,33 +19,44 @@
       <div class="col-md-2 col-sm-6 paddingtop-bottom">
         <h6 class="heading7">GENERAL LINKS</h6>
         <ul class="footer-ul">
-          <li><a href="#"> Career</a></li>
-          <li><a href="#"> Privacy Policy</a></li>
-          <li><a href="#"> Terms & Conditions</a></li>
-          <li><a href="#"> Client Gateway</a></li>
-      <!--    <li><a href="#"> Ranking</a></li>
-          <li><a href="#"> Case Studies</a></li>
-          <li><a href="#"> Frequently Ask Questions</a></li> -->
+          <li><a href="http://www.asta-htw.de/index.php?id=326" target="_blank">Mensa-Plan CAS</a></li>
+          <li><a href="https://stl-webmail.htwsaar.de/" target="_blank">STL Webmail</a></li>
+          <li><a href="https://stdservice.htwsaar.de/" target="_blank">studService</a>
+          <li><a href="https://www.htwsaar.de" target="_blank">HTW Saar</a></li>
         </ul>
       </div>
       
       <div class="col-md-3 col-sm-6 paddingtop-bottom">
         <h6 class="heading7">LATEST POST</h6>
         <div class="post">
-        <!--  <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
-          <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
-          <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>  -->
+          <%= render 'layouts/footer_news' %>
         </div>
       </div>
       
       <div class="col-md-3 col-sm-6 paddingtop-bottom">
-        <div class="fb-page" data-href="https://www.facebook.com/facebook" 
-             data-tabs="timeline" data-height="300" data-small-header="false" 
-              style="margin-bottom:15px;" data-adapt-container-width="true" 
-              data-hide-cover="false" data-show-facepile="true">
-          <div class="fb-xfbml-parse-ignore">
-            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
-          </div>
+        <div>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+          <a href="https://de-de.facebook.com/htwsaar/" target="_blank">
+            <span style="font-size: 24pt"><%= fa_icon "facebook" %></span>
+             htw saar
+          </a>
+        </div>
+        <div>
+          <a href="https://htwsaar-jobportal.de/" target="_blank">
+            <span style="font-size: 24 pt">
+              <i class="fa fa-cog fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+               htwsaar-jobportal
+            </span>
+          </a>
+        </div><br />
+        <div>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+          <a href="http://htwsaar-blog.de/" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+             htw saar
+          </a>
+        </div>
         </div>
       </div>
     </div>
@@ -62,7 +71,6 @@
     </div>
     <div class="col-md-6">
       <ul class="bottom_ul">
-        <li><a href="https://www.htwsaar.de">HTW Saar</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Faq's</a></li>
         <li><a href="#">Contact us</a></li>

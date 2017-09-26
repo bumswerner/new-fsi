@@ -14,8 +14,7 @@ Rails.application.routes.draw do
     resources :connections
     resources :materials
     
-    
-    get '/fetch_courses' => 'assoziations#from_studytype', as: 'fetch_courses'
+    # Route for AJAX - Request
     get 'assoziations/:studytype_id/dropdown',
          to: "assoziations#dropdown",
          as: 'dropdown'

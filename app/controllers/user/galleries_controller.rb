@@ -9,7 +9,7 @@ class User::GalleriesController < ApplicationController
   def index 
      @galleries = Gallery.all
      @gallery = @galleries.find(params[:gallery_id])
-     @images = @gallery.images.page(params[:page]).per(8)
+     @images = @gallery.images.page(params[:page]).per(@images_per_page)
   end
   
   # GET /user/galleries/1

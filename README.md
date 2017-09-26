@@ -596,3 +596,7 @@ colors:
 
 #eff2f7
 #f4f6f9
+
+
+
+select_date(new.updated_at, order: [:year, :month, :day])

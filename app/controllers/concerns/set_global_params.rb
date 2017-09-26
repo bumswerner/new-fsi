@@ -13,6 +13,8 @@ module SetGlobalParams
     @lectures_per_page = 2
     @sections_per_page = 2
     @materials_per_page = 4
+    
+    @images_per_page = 12
   end
   
   def set_description_length

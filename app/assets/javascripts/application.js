@@ -18,6 +18,9 @@
 //= require turbolinks
 //= require_tree .
 
+
+
+
 // Zeigt ein Tooltip an
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
@@ -42,7 +45,7 @@ function showCourseofstudy(studytype_id, courseofstudy_id) {
           '<select name="assoziation[courseofstudy_id]" id="assoziation_courseofstudy_id" ' +
           'remote="true" class="form-control"><option value="">Please select</option>';
     for(i = 0; i < courseofstudies.length; i++) {  
-      if(courseofstudy_id ==  courseofstudies[i].id) {
+      if(courseofstudy_id == courseofstudies[i].id) {
         html += '<option selected value="' + courseofstudies[i].id+ '">' + courseofstudies[i].name + '</option>';
       } else {
         html += '<option value="' + courseofstudies[i].id+ '">' + courseofstudies[i].name + '</option>';
