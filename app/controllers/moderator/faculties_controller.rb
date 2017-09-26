@@ -1,11 +1,14 @@
 class Moderator::FacultiesController < ApplicationController
   before_action :set_faculty, only: [:show, :edit, :update, :destroy]
   
-  
+   skip_before_action :authenticate_user!, only: [:index, :new, :show, :edit, :create, :update, :destroy]
   # set access roles
   # access user: {except: [:destroy, :new, :create, :update, :edit]},
   access moderator:   :all,
-  admin:              :all
+  admin:              :all,
+  all: :all
+  
+  
 
   # GET /faculties
   # GET /faculties.json

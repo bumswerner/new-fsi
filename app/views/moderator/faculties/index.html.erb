@@ -16,12 +16,12 @@
       <tr>
         <td><%= faculty.name %></td>
         <td><%= faculty.symbol %></td>
-        <td><%= truncate(faculty.description, length: 100) %></td>
+        <td><%= truncate(faculty.description, length: @moderator_description_length) %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       moderator_faculty_path(faculty), :class => 'btn btn-default btn-xs' %>
        
-          <% if logged_in?(:admin, :moderator) %>
+          <% # if logged_in?(:admin, :moderator) %>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_moderator_faculty_path(faculty), :class => 'btn btn-default btn-xs' %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -31,14 +31,14 @@
                         :default => t("helpers.links.confirm",
                         :default => 'Are you sure?')) },
                         :class => 'btn btn-xs btn-danger' %>
-          <% end %>
+          <% # end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<% if logged_in?(:admin, :moderator) %>
+<% #if logged_in?(:admin, :moderator) %>
   <%= link_to t('.new', :default => t("helpers.links.new")),
               new_moderator_faculty_path,
               :class => 'btn btn-primary' %>
-<% end %>
+<% #end %>

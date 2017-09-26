@@ -1,5 +1,7 @@
 require "rails_helper"
 
+# example
+
 # feature 'Creating book' do  
 #   scenario 'can create a book' do
 #     # 1. go to root where will be button to Add New Book:
@@ -21,8 +23,39 @@ require "rails_helper"
 # 4. Submit from
 # 5. See 'show' page of created faculty
 
-# click on new image
 
+
+
+RSpec.feature "Show all faculties - " do
+  scenario "A user go back from show to index" do
+    
+    faculty = FactoryGirl.create(:faculty)
+    
+    visit "/moderator/faculties/#{faculty.id}"
+    click_link "Back" 
+    
+    expect(page).to have_content("Ingenieurwissenschaften")
+    expect(page).to have_content("IngWi")
+    expect(page).to have_content("Die Ausbildung von Ingenieuren an der htw saar")
+    
+  end
+end
+
+
+RSpec.feature "Show a faculty - " do
+  scenario "A user click of show button" do
+    
+    faculty = FactoryGirl.create(:faculty)
+    
+    visit "/moderator/faculties/"
+    click_link "Show" 
+    
+    expect(page).to have_content("Ingenieurwissenschaften")
+    expect(page).to have_content("IngWi")
+    expect(page).to have_content("Die Ausbildung von Ingenieuren an der htw saar")
+    
+  end
+end
 
 
 RSpec.feature "Creating Faculty - " do
@@ -30,8 +63,9 @@ RSpec.feature "Creating Faculty - " do
      
   #  sign_in_with 'miketheman@t-online.de', 'massick'
   #  user = build(:user, name: "John")
-    visit "/faculties"
-    click_link "New Faculty" 
+  
+    visit "/moderator/faculties"
+    click_link "New" 
     
     fill_in "Name", :with => "Ingenieurwissenschaften"
     fill_in "Symbol", with: "IngWi"
@@ -40,12 +74,12 @@ RSpec.feature "Creating Faculty - " do
     click_button "Create Faculty"
     
     expect(page).to have_content("Faculty was successfully created.")
-    expect(page.current_path).to eq(faculty_path(2))
+    expect(page.current_path).to eq(moderator_faculties_path)
   end
   
   scenario "A user fails to create a new faculty" do
-    visit "/faculties"
-    click_link "New Faculty" 
+    visit "moderator/faculties"
+    click_link "New" 
     
     fill_in "Name", with: ""
     fill_in "Symbol", with: ""
@@ -62,29 +96,34 @@ RSpec.feature "Creating Faculty - " do
 end
 
 
-#RSpec.describe Faculty, type :model do
- # before do
- #   @faculty = FactoryGirl.create(:faculty)
-#  end
-
 RSpec.feature "Updating Faculty - " do
   scenario "A user update a faculty" do
-#   visit "/faculties/2/edit"
-  
     faculty = FactoryGirl.create(:faculty)
-   puts faculty.name
-  #  faculty.name 
-
-#  click_link "Edit" 
-#    fill_in "Name", with: "Ingenieurwissenschaften updated"
-   # fill_in "Symbol", with: "IngWi updated"
-  #  fill_in "Description", with: "Die Fakultät für Ingenieurwissenschaften updated"
-    
-  #  click_button "Update Faculty"
-    
-  #  expect(page).to have_content("Faculty was successfully created.")
-  #  expect(page.current_path).to eq(faculty_path(1))
+    visit "/moderator/faculties"
+    click_link "Edit" 
+    fill_in "Name", with: "Ingenieurwissenschaften updated"
+    fill_in "Symbol", with: "IngWi updated"
+    fill_in "Description", with: "Die Fakultät für Ingenieurwissenschaften updated"
+    click_button "Update Faculty"
+    expect(page).to have_content("Faculty was successfully updated.")
+    expect(page).to have_content("Ingenieurwissenschaften updated")
+    expect(page).to have_content("IngWi updated")
+    expect(page).to have_content("Die Fakultät für Ingenieurwissenschaften updated")
+    expect(page.current_path).to eq(moderator_faculties_path)
   end
 end
 
-# Run only this test
+
+RSpec.feature "Deleting Faculty" do
+  scenario "A user delete a faculty" do
+    faculty = FactoryGirl.create(:faculty)
+    
+    visit "/moderator/faculties"
+    click_link "Delete"
+    expect(page).to have_content("Faculty was successfully destroyed.")
+    #expect(true).to eq (faculty.nil?)
+    puts faculty.name
+    expect(page.current_path).to eq(moderator_faculties_path)
+    
+  end
+end

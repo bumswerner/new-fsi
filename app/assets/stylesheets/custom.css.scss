@@ -72,6 +72,15 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+  
+  #logo {
+  float: left;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
 
   .user-show-title {
     font-size: 1em;
