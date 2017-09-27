@@ -11,15 +11,24 @@
 }
 
 .horizont-line-left {
-  // border-left: 1px ridge gainsboro
+  border: 1px ridge gainsboro
 }
+
+.fa-user {
+  color: white;
+  float: left;
+  margin-top: -33px;
+  margin-left: -10px;
+}
+
+
 
 #logo {
   float: left;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+ // text-transform: uppercase;
+  letter-spacing: 0px;
   font-weight: bold;
 }
 

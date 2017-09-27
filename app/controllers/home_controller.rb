@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   
   def index
     
+    @notifications = Notification.first(3)
+    
   end
   
 end

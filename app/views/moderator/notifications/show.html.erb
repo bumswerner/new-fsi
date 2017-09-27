@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:message) %>:</strong></dt>
   <dd><%= @notification.message %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image_file_name) %>:</strong></dt>
-  <dd><%= image_tag @notification.image.url , size:"300x300" if @notification.image %></dd></dd>
+  <dd><%= create_path(image_tag @notification.image.url , size:"300x300") if @notification.image %></dd></dd>
   <dt><strong><%= model_class.human_attribute_name(:notificationtype_id) %>:</strong></dt>
   <dd><%= Notificationtype.find(@notification.notificationtype_id).name %></dd>
 </dl>
