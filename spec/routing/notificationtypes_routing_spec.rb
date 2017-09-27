@@ -1,38 +1,38 @@
 require "rails_helper"
 
-RSpec.describe NotificationtypesController, type: :routing do
+RSpec.describe Moderator::NotificationtypesController, type: :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(:get => "/notificationtypes").to route_to("notificationtypes#index")
+      expect(:get => "moderator/notificationtypes").to route_to("moderator/notificationtypes#index")
     end
 
     it "routes to #new" do
-      expect(:get => "/notificationtypes/new").to route_to("notificationtypes#new")
+      expect(:get => "moderator/notificationtypes/new").to route_to("moderator/notificationtypes#new")
     end
 
     it "routes to #show" do
-      expect(:get => "/notificationtypes/1").to route_to("notificationtypes#show", :id => "1")
+      expect(:get => "moderator/notificationtypes/1").to route_to("moderator/notificationtypes#show", :id => "1")
     end
 
     it "routes to #edit" do
-      expect(:get => "/notificationtypes/1/edit").to route_to("notificationtypes#edit", :id => "1")
+      expect(:get => "/moderator/notificationtypes/1/edit").to route_to("moderator/notificationtypes#edit", :id => "1")
     end
 
     it "routes to #create" do
-      expect(:post => "/notificationtypes").to route_to("notificationtypes#create")
+      expect(:post => "/moderator/notificationtypes").to route_to("moderator/notificationtypes#create")
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/notificationtypes/1").to route_to("notificationtypes#update", :id => "1")
+      expect(:put => "/moderator//notificationtypes/1").to route_to("moderator/notificationtypes#update", :id => "1")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/notificationtypes/1").to route_to("notificationtypes#update", :id => "1")
+      expect(:patch => "/moderator//notificationtypes/1").to route_to("moderator/notificationtypes#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/notificationtypes/1").to route_to("notificationtypes#destroy", :id => "1")
+      expect(:delete => "/moderator//notificationtypes/1").to route_to("moderator/notificationtypes#destroy", :id => "1")
     end
 
   end

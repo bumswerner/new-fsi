@@ -1,6 +1,21 @@
 require "rails_helper"
 
 RSpec.feature "Creating Faculty - " do
+  
+  before do 
+    # Login via Moderator
+    @moderator = User.new(username: "moderator", email: "admin@fsi.de", password: "massick", roles: "moderator")
+    @moderator.confirmed_at = Date.today
+    @moderator.save
+    visit "/"
+    click_link "Login"
+    fill_in "Email", with: @moderator.email
+    fill_in "Password", with: @moderator.password
+    click_button "Sign in"
+  end
+  
+ 
+  
   scenario "A user creates a new faculty" do
     visit "/moderator/faculties"
     click_link "New" 
@@ -27,6 +42,18 @@ RSpec.feature "Creating Faculty - " do
 end
 
 RSpec.feature "Updating Faculty - " do
+  
+  before do 
+    # Login via Moderator
+    @moderator = User.new(username: "moderator", email: "admin@fsi.de", password: "massick", roles: "moderator")
+    @moderator.confirmed_at = Date.today
+    @moderator.save
+    visit "/"
+    click_link "Login"
+    fill_in "Email", with: @moderator.email
+    fill_in "Password", with: @moderator.password
+    click_button "Sign in"
+  end
   scenario "A user update a faculty" do
     faculty = FactoryGirl.create(:faculty)
     visit "/moderator/faculties"

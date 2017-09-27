@@ -23,7 +23,7 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe ConnectionsController, type: :controller do
+RSpec.describe Moderator::ConnectionsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Connection. As you add validations to Connection, be sure to
@@ -53,13 +53,6 @@ RSpec.describe ConnectionsController, type: :controller do
     it "returns a success response" do
       connection = Connection.create! valid_attributes
       get :show, params: {id: connection.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
       expect(response).to be_success
     end
   end

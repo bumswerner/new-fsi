@@ -9,4 +9,6 @@ module ApplicationHelper
     @dropdown_active = "active"
     current_page?(link_path) ? "active" : ""
   end
+  
+  
 end

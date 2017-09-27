@@ -23,7 +23,7 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe StudytypesController, type: :controller do
+RSpec.describe Moderator::StudytypesController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Studytype. As you add validations to Studytype, be sure to
@@ -53,13 +53,6 @@ RSpec.describe StudytypesController, type: :controller do
     it "returns a success response" do
       studytype = Studytype.create! valid_attributes
       get :show, params: {id: studytype.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
       expect(response).to be_success
     end
   end

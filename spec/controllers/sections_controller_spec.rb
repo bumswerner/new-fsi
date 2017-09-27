@@ -23,7 +23,7 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe SectionsController, type: :controller do
+RSpec.describe Moderator::SectionsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Section. As you add validations to Section, be sure to
@@ -53,13 +53,6 @@ RSpec.describe SectionsController, type: :controller do
     it "returns a success response" do
       section = Section.create! valid_attributes
       get :show, params: {id: section.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
       expect(response).to be_success
     end
   end

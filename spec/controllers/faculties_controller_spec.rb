@@ -18,7 +18,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe FacultiesController, type: :controller do
+RSpec.describe Moderator::FacultiesController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Faculty. As you add validations to Faculty, be sure to
@@ -52,20 +52,8 @@ RSpec.describe FacultiesController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new faculty as @faculty" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:faculty)).to be_a_new(Faculty)
-    end
-  end
+ 
 
-  describe "GET #edit" do
-    it "assigns the requested faculty as @faculty" do
-      faculty = Faculty.create! valid_attributes
-      get :edit, params: {id: faculty.to_param}, session: valid_session
-      expect(assigns(:faculty)).to eq(faculty)
-    end
-  end
 
   describe "POST #create" do
     context "with valid params" do

@@ -23,7 +23,7 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe LecturesController, type: :controller do
+RSpec.describe Moderator::LecturesController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Lecture. As you add validations to Lecture, be sure to
@@ -53,13 +53,6 @@ RSpec.describe LecturesController, type: :controller do
     it "returns a success response" do
       lecture = Lecture.create! valid_attributes
       get :show, params: {id: lecture.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
       expect(response).to be_success
     end
   end

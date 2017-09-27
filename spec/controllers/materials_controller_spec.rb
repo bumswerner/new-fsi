@@ -23,7 +23,7 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe MaterialsController, type: :controller do
+RSpec.describe Moderator::MaterialsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Material. As you add validations to Material, be sure to
@@ -57,14 +57,7 @@ RSpec.describe MaterialsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #edit" do
+   describe "GET #edit" do
     it "returns a success response" do
       material = Material.create! valid_attributes
       get :edit, params: {id: material.to_param}, session: valid_session
