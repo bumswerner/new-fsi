@@ -16,7 +16,7 @@
     <% @images.each do |image| %>
       <tr>
         <td><%= image.name %></td>
-        <td><%= create_path(image_tag image.picture.url(:thumb)) if image.picture %></td>
+        <td><%= image_tag create_path(image.picture.url(:thumb)) if image.picture %></td>
         <td><%= Gallery.find(image.gallery_id).name %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

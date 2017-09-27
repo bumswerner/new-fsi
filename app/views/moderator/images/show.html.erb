@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @image.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:picture) %>:</strong></dt>
-  <dd><%= create_path(image_tag @image.picture.url , size:"300x300") if @image.picture %></dd>
+  <dd><%= image_tag create_path(@image.picture.url(:medium)) if @image.picture %></dd>
   <dt><strong><%= model_class.human_attribute_name(:gallery_id) %>:</strong></dt>
   <dd><%= Gallery.find(@image.gallery_id).name %></dd>
 </dl>
