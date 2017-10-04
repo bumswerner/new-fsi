@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'pg'
+
 # gem 'aws-sdk'
 gem 'fog'
 
@@ -97,6 +97,8 @@ end
 group :production do
  
   gem 'rails_12factor'
+  gem 'pg'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
