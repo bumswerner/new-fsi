@@ -9,6 +9,10 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+
+  
+  
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -55,12 +59,13 @@ Rails.application.configure do
   # IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   # config.action_mailer.default_url_options = { host: 'https://fsi-miketheman769562.codeanyapp.com' }
    # config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
-    config.action_mailer.default_url_options = { host: 'http://fsi-htw-kalax.c9users.io', port: 8080 }
+   
   
   config.action_mailer.delivery_method = :letter_opener_web
 
-# If not everyone on the team is using vagrant
-#config.action_mailer.delivery_method = ENV['USER'] == 'vagrant' ? :letter_opener_web : :letter_opener
   
+  # for EMAIL - SENDGRID
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = { host: 'http://fsi-htw-cloned-kalax.c9users.io', port: 8080 }
 
 end

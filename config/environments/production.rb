@@ -134,8 +134,15 @@ Rails.application.configure do
      :fog_directory => "#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
 }
 
-  config.action_mailer.default_url_options = { host: 'https://fs-i.herokuapp.com/' }
-  
+   
   config.action_mailer.delivery_method = :letter_opener_web
+  
+  
+  # for EMAIL - SENDGRID
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = {
+    host: 'https://fs-i.herokuapp.com/',
+    :protocol => 'https'
+  }
 
 end
