@@ -122,26 +122,27 @@ Rails.application.configure do
   #   :fog_host      => "https://s3-eu-west-1.amazonaws.com"
   # }
 
-   config.paperclip_defaults = {
-    :storage => :fog,
-     :fog_credentials => {
-       :provider              => "AWS",
-       :region                => 'eu-west-1',
-       :scheme                => 'https',
-       :aws_access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
-       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-     },
-     :fog_directory => "#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
-}
+#   config.paperclip_defaults = {
+#     :storage => :fog,
+#     :fog_credentials => {
+#       :provider              => "AWS",
+#       :region                => 'eu-west-1',
+#       :scheme                => 'https',
+#       :aws_access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
+#       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+#     },
+#     :fog_directory => "#{ENV['AWS_BUCKET']}/#{ENV['AWS_PATH']}"
+# }
 
    
-  config.action_mailer.delivery_method = :letter_opener_web
+ # config.action_mailer.delivery_method = :letter_opener_web
   
   
   # for EMAIL - SENDGRID
   config.action_mailer.delivery_method = :smtp
+  
   config.action_mailer.default_url_options = {
-    host: 'https://fs-i.herokuapp.com/',
+    :host => 'https://fs-i.herokuapp.com/',
     :protocol => 'https'
   }
 
