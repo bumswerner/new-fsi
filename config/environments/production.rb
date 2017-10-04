@@ -142,7 +142,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.default_url_options = {
-    :host => 'https://fs-i.herokuapp.com/',
+    :host => 'https://fs-i.herokuapp.com',
     :protocol => 'https'
   }
 
