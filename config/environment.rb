@@ -8,11 +8,11 @@ Rails.application.initialize!
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address => 'stmp.sendgrid.net',
-  :port => 587,
+  :port => '587',
   :authentication => :plain,
   :user_name => ENV['SENDGRID_USERNAME'],
   :password => ENV['SENDGRID_PASSWORD'],
-  :domain => 'fs-i.herokuapp.com',
+  :domain => 'heroku.com',
   :enable_starttls_auto => true
   
 }
