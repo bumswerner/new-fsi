@@ -27,3 +27,4 @@ manifest.yml
 /public/system/
 /app/views/images.1/
 log_anynines
+.env
