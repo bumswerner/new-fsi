@@ -92,7 +92,7 @@ Rails.application.configure do
  # Variante 1 - man kann keine Dateien hochladen, sieht aber die Bilder
  # https://s3-eu-west-1.amazonaws.com/a9s-railsvorlesung/home/railsvorlesung4//images/pictures/000/000/003/medium/Bild_2.jpg?1506099552
  # https://s3.amazonaws.com/a9s-railsvorlesung/home/railsvorlesung4//images/pictures/000/000/001/thumb/pretzel-2759994__340_1_.jpg?1506111096
-
+ 
   
 #   config.paperclip_defaults = {
 #     :storage => :fog,
@@ -145,7 +145,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.default_url_options = {
-    :host => 'https://fs-i.herokuapp.com',
+    :host => 'https://fsi.herokuapp.com',
     :protocol => 'https'
   }
 
