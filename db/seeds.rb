@@ -479,7 +479,7 @@ Notification.create!(
             Beginn ist um 9:00 Uhr.",
   image: "https://www.htwsaar.de/hochschule/veranstaltungen/immatrikulationsfeier/immatrikulationsfeier-2017/@@images/profilbild/profilsize",
   notificationtype_id: 1)
-  )  
+  
 puts "4 Notification created"
 
 
