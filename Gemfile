@@ -12,6 +12,7 @@ gem 'fog'
 gem 'paperclip'
 gem 'letter_opener_web'
 
+#
 
  # Use SCSS for stylesheets
 gem 'jquery-rails'
