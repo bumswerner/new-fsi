@@ -1,6 +1,8 @@
 <% news = Notification.order(created_at: :desc).limit(2) %>
+<% i = 0 %>
+
 <% news.each do |new| %>
-  <p><%= news[0].title %>
+  <p><%= news[i].title %>
     <span>
       Created:
         <%= distance_of_time_in_words_to_now(new.created_at) if new %>,
@@ -8,4 +10,5 @@
         <%= time_ago_in_words(new.updated_at) if new %>
     </span>
   </p>
+  <% i = i + 1 %>
 <% end %>
