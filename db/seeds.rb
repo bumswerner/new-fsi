@@ -2,6 +2,11 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 
+
+
+
+
+
 # generated objects Faculty
 
 
@@ -438,14 +443,14 @@ Notificationtype.create!(
                 est Lorem ipsum dolor sit amet."
   )
   
-puts "3 Notificationtypea created"
+puts "3 Notificationtypes created"
 
 Notification.create!(
   title: "Neu an der htw saar?",
   message: "Wir haben für Sie die wichtigsten Anlaufstellen und interessantesten 
             Angebote an der htw saar zusammen getragen, damit Sie sich in den ersten
             Tagen im Hochschuldschungel besser zurechtfinden. ",
-  image: "http://placehold.it/150x150",
+  image: "https://cdn.pixabay.com/photo/2017/08/31/11/39/iceland-2700427__340.jpg",
   notificationtype_id: 1)
   
 Notification.create!(
@@ -453,7 +458,7 @@ Notification.create!(
   message: "Am. 28. September 2017 findet zum 14. Mal der Projektleitertag an 
             der htw saar statt. Im Rahmen der Veranstaltung werden hochschulinterne
             Forschungsanträge für das Jahr 2018 präsentiert.",
-  image: "http://placehold.it/150x150",
+  image: "https://cdn.pixabay.com/photo/2017/09/07/03/03/coast-2723729__340.jpg",
   notificationtype_id: 1)
 
 Notification.create!(
@@ -462,9 +467,19 @@ Notification.create!(
             Saarland ein Ferienangebot für Grundschulkinder von Studierenden und 
             Beschäftigten im Wald am Campus Rotenbühl an. Viele spannende Aktivitäten 
             lassen keine Langeweile aufkommen. Die Anmeldung ist bis 1. Oktober 2017 möglich. ",
-  image: "http://placehold.it/150x150",
+  image: "https://cdn.pixabay.com/photo/2017/09/03/17/26/woman-2711279__340.jpg",
   notificationtype_id: 1)
-  
+
+
+Notification.create!(
+  title: "Immatrikulationsfeier der htw saar am 12. Oktober 2017",
+  message: "Am 12. Oktober 2017 sind die neu eingeschriebenen Studierenden der Hochschule
+            für Technik und Wirtschaft des Saarlandes (htw saar) in die Saarbrücker Congresshalle eingeladen,
+            um den Studienanfang zu feiern und wichtige Informationen zum Studienablauf zu erhalten.
+            Beginn ist um 9:00 Uhr.",
+  image: "https://www.htwsaar.de/hochschule/veranstaltungen/immatrikulationsfeier/immatrikulationsfeier-2017/@@images/profilbild/profilsize",
+  notificationtype_id: 1)
+  )  
 puts "4 Notification created"
 
 
