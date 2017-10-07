@@ -15,7 +15,9 @@
     <% @notificationtypes.each do |notificationtype| %>
       <tr>
         <td><%= notificationtype.name %></td>
-        <td class="text-justify"><%= notificationtype.description %></td>
+        <td class="text-justify">
+          <%= truncate(notificationtype.description, length: @moderator_description_length) %>
+        </td>
         <td><%= notificationtype.notifications.count %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

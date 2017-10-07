@@ -1,14 +1,14 @@
 <%- model_class = Notification -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %> -
+      <%= @notificationtype.name %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:message) %></th>
-      <th><%= model_class.human_attribute_name(:image_file_name) %></th>
-      <th><%= model_class.human_attribute_name(:notificationtype_id) %></th>
+      <th>Picture</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,9 +16,8 @@
     <% @notifications.each do |notification| %>
       <tr>
         <td><%= notification.title %></td>
-        <td><%= notification.message %></td>
-        <td><%= create_path(image_tag notification.image.url(:thumb)) if notification.image %></td>
-        <td><%= Notificationtype.find(notification.notificationtype_id).name %></td>
+        <td><%= truncate(notification.message, length: @moderator_message_length) %></td>
+        <td><%= image_tag create_path(notification.image.url(:thumb)) if notification.image %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       moderator_notificationtype_notification_path(params[:notificationtype_id],

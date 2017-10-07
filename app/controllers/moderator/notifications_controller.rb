@@ -8,7 +8,8 @@ class Moderator::NotificationsController < ApplicationController
   # GET /notifications
   # GET /notifications.json
   def index
-    @notifications = Notificationtype.find(params[:notificationtype_id]).notifications
+    @notificationtype = Notificationtype.find(params[:notificationtype_id])
+    @notifications = @notificationtype.notifications
   end
 
   # GET /notifications/1
