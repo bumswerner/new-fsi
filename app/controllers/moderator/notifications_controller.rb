@@ -1,5 +1,5 @@
 class Moderator::NotificationsController < ApplicationController
-  before_action :set_notification, only: [:show, :edit, :update, :destroy]
+  before_action :set_data, only: [:show, :edit, :update, :destroy]
   
    # set access roles
   access moderator: :all,
@@ -20,6 +20,7 @@ class Moderator::NotificationsController < ApplicationController
   # GET /notifications/new
   def new
     @notification = Notification.new
+    @notificationtype = Notificationtype.find(params[:notificationtype_id])
   end
 
   # GET /notifications/1/edit
@@ -71,7 +72,7 @@ class Moderator::NotificationsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_notification
+    def set_data
       @notification = Notification.find(params[:id])
       @notificationtype = Notificationtype.find(params[:notificationtype_id])
     end
