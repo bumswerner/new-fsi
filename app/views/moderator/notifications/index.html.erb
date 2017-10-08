@@ -7,7 +7,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:message) %></th>
+      <!--<th><%#= model_class.human_attribute_name(:message) %></th>-->
       <th>Picture</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -16,7 +16,7 @@
     <% @notifications.each do |notification| %>
       <tr>
         <td><%= notification.title %></td>
-        <td><%= truncate(notification.message, length: @moderator_message_length) %></td>
+        <!--<td><%#= truncate(notification.message, length: @moderator_message_length) %></td>-->
         <td><%= image_tag create_path(notification.image.url(:thumb)) if notification.image %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

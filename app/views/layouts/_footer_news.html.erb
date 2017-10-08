@@ -1,8 +1,7 @@
 <% news = Notification.order(created_at: :desc).limit(2) %>
 <% i = 0 %>
-
 <% news.each do |new| %>
-  <p><%= news[i].title %>
+  <p><%= link_to news[i].title, user_new_url(new.notificationtype_id, new.id) if new %>
     <span>
       Created:
         <%= distance_of_time_in_words_to_now(new.created_at) if new %>,
