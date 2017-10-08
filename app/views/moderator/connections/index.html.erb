@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:lecture_id) %></th>
-      <th><%= model_class.human_attribute_name(:section_id) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:lecture_id) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:section_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,8 +17,8 @@
         <td><%= connection.name %></td>
         <% current_lecture = Lecture.find(connection.lecture_id) 
            current_section = Section.find(connection.section_id) %>
-        <td><%= current_lecture.name if current_lecture.present? %></td>
-        <td><%= current_section.name if current_section.present? %></td>
+        <td class="hidden-xs"><%= current_lecture.name if current_lecture.present? %></td>
+        <td class="hidden-xs"><%= current_section.name if current_section.present? %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       moderator_connection_path(connection), :class => 'btn btn-default btn-xs' %>

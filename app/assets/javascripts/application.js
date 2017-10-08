@@ -63,7 +63,6 @@ function createNameFieldContent() {
   var lecture_name = $('#connection_lecture_id > option:selected').text();
   var section_name = $('#connection_section_id > option:selected').text();
   content.val(lecture_name + " >>> " + section_name);
-  
 }
   
   

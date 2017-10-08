@@ -1,5 +1,5 @@
 <% if logged_in?(:admin, :moderator, :user) and !current_user.is_a?(GuestUser) %>
-  <ul class="nav navbar-nav horizont-line">
+  <ul class="nav navbar-nav">
      <!-- load allways the first news category by default -->
      <li class="<%= active_class(user_news_path(Notificationtype.first)) if Notificationtype.first %>">
        <%= link_to "News", user_news_path(Notificationtype.first) if Notificationtype.first %></li>
