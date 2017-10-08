@@ -21,13 +21,10 @@
 
 
 
-// Zeigt ein Tooltip an
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
-});
 
 
 // Generiert ein passendes Dropdownmenu passend zur uebergebenen studytype_id
+// in der Moderator Section bei erstellen und bearbeiten einer Assoziation
 function showCourseofstudy(studytype_id, courseofstudy_id) {
   $.ajax({
       url: "/moderator/assoziations/" + studytype_id + "/dropdown",
@@ -55,7 +52,40 @@ function showCourseofstudy(studytype_id, courseofstudy_id) {
     content.append(html);
   }
 }
+
+
+/**
+ * Generiert einen passenden Name in der Moderator Section
+ * bei erstellen und bearbeiten einer Connection
+ */
+function createNameFieldContent() {
+  var content = $('#connection_name');
+  var lecture_name = $('#connection_lecture_id > option:selected').text();
+  var section_name = $('#connection_section_id > option:selected').text();
+  content.val(lecture_name + " >>> " + section_name);
   
-$(document).on("change", "#select-studytype", function() {
-    showCourseofstudy($(this).val(), 0);
+}
+  
+  
+/**
+ * Globaler Aufruf
+ */
+ 
+$(document).ready(function(){
+  
+  $(document).on("change", "#select-studytype", function() {
+      showCourseofstudy($(this).val(), 0);
+  });
+  
+  $(document).on("change", "#connection_lecture_id", function() {
+     createNameFieldContent();
+  });
+  
+  $(document).on("change", "#connection_section_id", function() {
+     createNameFieldContent();
+  });
+  
+  // Zeigt ein Tooltip an
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
 });
