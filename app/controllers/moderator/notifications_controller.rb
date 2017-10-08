@@ -73,6 +73,7 @@ class Moderator::NotificationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_notification
       @notification = Notification.find(params[:id])
+      @notificationtype = Notificationtype.find(params[:notificationtype_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

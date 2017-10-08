@@ -1,4 +1,4 @@
-<% news = Notification.order(created_at: :desc).limit(2) %>
+<% news = Notification.order(created_at: :desc).limit(@notifications_footer) %>
 <% i = 0 %>
 <% news.each do |new| %>
   <p><%= link_to news[i].title, user_new_url(new.notificationtype_id, new.id) if new %>

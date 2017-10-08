@@ -2,8 +2,13 @@ module SetGlobalParams
   extend ActiveSupport::Concern
   
   included do 
+    before_action :set_another_global_params
     before_action :set_pagination_params
     before_action :set_description_length
+  end
+  
+  def set_another_global_params
+    @notifications_footer = 2
   end
   
   def set_pagination_params
