@@ -168,85 +168,88 @@ puts "Created 1 Category of Wahlpflichtfächer"
 
 # id 1
 Lecture.create!(
-  name: "Mathe 1",
+  name: "Mathematik 1",
   symbol: "Mfi 1",
-  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  description: "Vermittlung von allgemeinen mathematischen Grundkenntnissen,
+                von Grundkenntnissen der Algebra und Analysis, sicherem Umgang
+                mit mathematischen Begriffen."
   )
 
 # id 2
 Lecture.create!(
   name: "Programmieren 1",
   symbol: "Prg 1",
-  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  description: "Die Veranstaltung führt in die Grundlagen der objektorientierten
+                Programmierung mit der Programmierpsrache Java ein. 
+                Die Studierenden sollen am Ende des Semesters in der Lage sein,
+                einfache Algorithmen und Datenstrukturen in Java umzusetzen.
+                Sie sollen dabei die Prinzipien der objektorientierten Programmierung
+                und die wichtigsten Sprachelemente von Java beherrschen."
   )
   
 # id 3
 Lecture.create!(
   name: "Betriebssystem Einführung",
   symbol: "BSE",
-  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  description: "Effektiver, professioneller Umgang mit dem UNIX-Betriebssystem 
+                im Allgemeinen und als Programmierumgebung im Besonderen.
+                Inhalte: Grundlagen UNIX, Shell als Kommandointerpreter,
+                Zugriffsrechte und Datensicherheit, Shellprogrammierung, 
+                Shell-Skripte, Programmentwicklungswerkzeuge unter UNIX,
+                UNIX Netzwerk-Utilities."
   )
   
 # id 4
 Lecture.create!(
   name: "Programmieren 2",
   symbol: "Prg 2",
-  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  description: "Aufbauend auf dem Modul Programmierung 1 vertiefen die Studierenden
+                ihre Kenntnisse und ihr Verständnis objektorientierter Programmierung.
+                Nach erfolgreicher Absolvierung dieses Moduls können die Studierenden
+                fortgeschrittene Konzepte objektorientierter Programmierung in Java 
+                erklären und anwenden. Sie sind in der Lage, objektorientierte
+                Lösungen zu entwerfen und umzusetzen. "
   )
   
 # id 5
 Lecture.create!(
   name: "Graphentheorie",
   symbol: "GT",
-  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  description: "- Verstehen und Einsetzen  von Datenstrukturen
+                - Grundlegende Algorithmen für Graphen kennen und analysieren können
+                - Modellierung von Sachverhalten mittels Graphentheorie kennenlernen
+                - Durchlaufprobleme in Graphen kennenlernen
+                - Implementierungsprobleme verstehen"
   )
   
 # id 6
 Lecture.create!(
   name: "Theoretische Informatik",
   symbol: "TI",
-  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  description: "Die Studierenden kennen die grundlegenden Begriffe und Konzepte der 
+                theoretischen Informatik. Sie sind mit den Eigenschaften von Automaten
+                und Sprachen vertraut und können bei praktischen Aufgabenstellungen die 
+                geeigneten theoretischen Konzepte (z.B. endlicher Automat oder Kellerautomat) 
+                auswählen und anwenden."
   )
   
 # id 7
 Lecture.create!(
   name: "Rechnerarchitektur",
   symbol: "RA",
-  description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  description: "Die  Studierenden  erlernen den Aufbau, die Organisation und die Arbeitsweise
+                eines Digitalcomputers. Dazu werden die Architekturelemente eines Rechners auf
+                Registerebene erarbeitet und zu einer Beispielarchitektur zusammengefügt. 
+                Auch Techniken zur Leistungssteigerung wie Pipelining und Cache werden vorgestellt
+                und die Interaktion mit Peripheriekomponenten wird erörtert. 
+                Anhand von Fallbeispielen unterschiedlicher Prozessoren werden 
+                die vorgestellten Architekturmerkmale verifiziert. "
   )
   
 puts "Created 7 Lectures"
 
 Assoziation.create!(
-  code: "PIB4711",
+  code: "PIB125",
   instructor: "Herr Braun",
   category_id: 1,
   courseofstudy_id: 1,
@@ -254,7 +257,7 @@ Assoziation.create!(
   )
   
 Assoziation.create!(
-  code: "PIB4812",
+  code: "PIB120",
   instructor: "Herr Folz",
   category_id: 1,
   courseofstudy_id: 1,
@@ -263,8 +266,8 @@ Assoziation.create!(
   
 # Semester 1 - Praktische Informatik - BSE
 Assoziation.create!(
-  code: "PIB9713",
-  instructor: "Herr Pauly and the Pick",
+  code: "PIB110",
+  instructor: "Herr Pauly, Herr Pick",
   category_id: 1,
   courseofstudy_id: 1,
   lecture_id: 3
@@ -272,8 +275,8 @@ Assoziation.create!(
   
 # Semester 2 - Praktische Informatk - Programmieren 2
 Assoziation.create!(
-  code: "PIB1151",
-  instructor: "Eschi",
+  code: "PIB210",
+  instructor: "Herr Esch",
   category_id: 2,
   courseofstudy_id: 1,
   lecture_id: 4
@@ -281,8 +284,8 @@ Assoziation.create!(
   
 # Semester 2 - Praktische Informatk - Graphentheorie
 Assoziation.create!(
-  code: "PIB1252",
-  instructor: "Berberisch",
+  code: "PIB220",
+  instructor: "Herr Berberisch",
   category_id: 2,
   courseofstudy_id: 1,
   lecture_id: 5
@@ -290,8 +293,8 @@ Assoziation.create!(
   
 # Semester 3 - Praktische Informatik - Theoretische Informatik
 Assoziation.create!(
-  code: "PIB3253",
-  instructor: "Kretchmer",
+  code: "PIB345",
+  instructor: "Herr Thomas Kretschmer",
   category_id: 3,
   courseofstudy_id: 1,
   lecture_id: 6
@@ -299,8 +302,8 @@ Assoziation.create!(
 
 # Semester 3 - Praktische Informatik - Rechnerarchitektur
 Assoziation.create!(
-  code: "PIB3354",
-  instructor: "Leiner",
+  code: "PIB325",
+  instructor: "Herr Leiner",
   category_id: 3,
   courseofstudy_id: 1,
   lecture_id: 7
@@ -369,43 +372,47 @@ Connection.create!(
 puts "Created 4 Connections"
 
 Material.create!(
-  name: "SS 2010",
+  name: "WS 2007",
   discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2007/Klausur.pdf",              
   section_id: 1,
-  lecture_id: 1
+  lecture_id: 6
   )
   
 Material.create!(
-  name: "SS 2011",
+  name: "WS 2008",
   discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2008/Klausur.pdf",
   section_id: 1,
-  lecture_id: 1
+  lecture_id: 6
   )
   
 Material.create!(
-  name: "SS 2012",
+  name: "WS 2009",
   discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2009/Klausur.pdf",
   section_id: 1,
-  lecture_id: 1
+  lecture_id: 6
   )
   
 Material.create!(
-  name: "SS 2013",
+  name: "WS 2010",
   discription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2010/Klausur.pdf",
   section_id: 1,
-  lecture_id: 1
+  lecture_id: 6
   )
   
 puts "Created 4 Materials"
@@ -487,7 +494,15 @@ Notification.create!(
   image: "https://www.htwsaar.de/hochschule/veranstaltungen/immatrikulationsfeier/immatrikulationsfeier-2017/@@images/profilbild/profilsize",
   notificationtype_id: 1)
   
-puts "4 Notification created"
+Notification.create!(
+  title: "Jetzt Punkte für soziales Engagement sammeln",
+  message: "Das Bonusheft sozial(und)kompetent zeigt vielfältige Möglichkeiten zur Mitarbeit, 
+            Mitbestimmung und sozialem Engagement an der htw saar auf und möchte zu noch mehr sozialen 
+            Tätigkeiten sowie noch stärkerer Ausübung von Ämtern innerhalb der Hochschule anregen.",
+  image: "http://htwsaar.de/carousel_startseite/bonusheft/image",
+  notificationtype_id: 1)
+  
+puts "5 Notification created"
 
 
 
