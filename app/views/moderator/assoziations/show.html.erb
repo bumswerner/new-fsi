@@ -10,11 +10,13 @@
   <dd><%= @assoziation.instructor %></dd>
   <% current_category = Category.find(@assoziation.category_id) 
      current_courseofstudy = Courseofstudy.find(@assoziation.courseofstudy_id)
+     current_studytype = Studytype.find(current_courseofstudy.studytype_id)
      current_lecture = Lecture.find(@assoziation.lecture_id) %>
   <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
   <dd><%= current_category.name if current_category.present? %></dd>
   <dt><strong><%= model_class.human_attribute_name(:courseofstudy_id) %>:</strong></dt>
-  <dd><%= current_courseofstudy.name if current_courseofstudy.present? %></dd>
+  <dd><%= current_courseofstudy.name if current_courseofstudy.present? %>
+       (<%= current_studytype.name if current_studytype.present? %>)</dd>
   <dt><strong><%= model_class.human_attribute_name(:lecture_id) %>:</strong></dt>
   <dd><%= current_lecture.name if current_lecture.present? %></dd>
 </dl>

@@ -169,6 +169,7 @@ puts "Created 1 Category of Wahlpflichtfächer"
 # id 1
 Lecture.create!(
   name: "Mathe 1",
+  symbol: "Mfi 1",
   description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -179,6 +180,7 @@ Lecture.create!(
 # id 2
 Lecture.create!(
   name: "Programmieren 1",
+  symbol: "Prg 1",
   description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -188,7 +190,8 @@ Lecture.create!(
   
 # id 3
 Lecture.create!(
-  name: "BSE",
+  name: "Betriebssystem Einführung",
+  symbol: "BSE",
   description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -199,6 +202,7 @@ Lecture.create!(
 # id 4
 Lecture.create!(
   name: "Programmieren 2",
+  symbol: "Prg 2",
   description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -209,6 +213,7 @@ Lecture.create!(
 # id 5
 Lecture.create!(
   name: "Graphentheorie",
+  symbol: "GT",
   description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -219,6 +224,7 @@ Lecture.create!(
 # id 6
 Lecture.create!(
   name: "Theoretische Informatik",
+  symbol: "TI",
   description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -229,6 +235,7 @@ Lecture.create!(
 # id 7
 Lecture.create!(
   name: "Rechnerarchitektur",
+  symbol: "RA",
   description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam
