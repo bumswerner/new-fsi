@@ -377,7 +377,7 @@ Material.create!(
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2007/Klausur.pdf",              
+ # data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2007/Klausur.pdf",              
   section_id: 1,
   lecture_id: 6
   )
@@ -388,7 +388,7 @@ Material.create!(
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2008/Klausur.pdf",
+#  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2008/Klausur.pdf",
   section_id: 1,
   lecture_id: 6
   )
@@ -399,7 +399,7 @@ Material.create!(
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2009/Klausur.pdf",
+#  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2009/Klausur.pdf",
   section_id: 1,
   lecture_id: 6
   )
@@ -410,7 +410,7 @@ Material.create!(
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2010/Klausur.pdf",
+#  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2010/Klausur.pdf",
   section_id: 1,
   lecture_id: 6
   )
