@@ -348,25 +348,25 @@ puts "Created 4 Sections"
 Connection.create!(
   name: "Klausuren --> Mathe 1",
   section_id: 1,
-  lecture_id: 1
+  lecture_id: 6
   )
   
 Connection.create!(
   name: "Übungen --> Mathe 1",
   section_id: 2,
-  lecture_id: 1
+  lecture_id: 6
   )
   
 Connection.create!(
   name: "Skripte --> Mathe 1",
   section_id: 3,
-  lecture_id: 1
+  lecture_id: 6
   )
 
 Connection.create!(
   name: "Lösungen --> Mathe 1",
   section_id: 4,
-  lecture_id: 1
+  lecture_id: 6
   )
   
 puts "Created 4 Connections"
