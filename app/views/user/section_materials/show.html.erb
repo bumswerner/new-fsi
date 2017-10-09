@@ -62,16 +62,17 @@
       </div>
       <div class='panel-footer user-panel-actions'>
         <a class='btn btn-default' 
-           href="<%= user_section_materials_url(params[:category_id],
-                                            params[:lecture_id],
-                                            params[:section_id]) %>">
+           href="<%= user_section_materials_path(@category.id,
+                                                 @courseofstudy.id,
+                                                 params[:lecture_id],
+                                                 params[:section_id]) %>">
           <span class="glyphicon glyphicon-share"></span> 
            Sections
         </a>
         <a class='btn btn-default' 
-           href="<%=  user_lecture_sections_url(params[:category_id],
-                                            params[:courseofstudy_id],
-                                            params[:lecture_id]) %>">
+           href="<%= user_category_lectures_path(@faculty_id,
+                                                 @category.id,
+                                                 @courseofstudy.id) %>">
           <span class="glyphicon glyphicon-share"></span> 
            Studiengänge
         </a>
