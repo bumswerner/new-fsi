@@ -1,43 +1,51 @@
 <%- model_class = Assoziation -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:instructor) %></th>
-      <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:courseofstudy_id) %></th>
-      <th><%= model_class.human_attribute_name(:lecture_id) %></th>
+      <th class="hidden-lg hidden-md hidden-sm">Cat.</th>
+      <th class="hidden-lg hidden-md hidden-sm">Cour.</th>
+      <th class="hidden-lg hidden-md hidden-sm">Lec.</th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:category_id) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:courseofstudy_id) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:lecture_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @assoziations.each do |assoziation| %>
       <tr>
-        <td><%= assoziation.code %></td>
+        <td class="hidden-xs"><%= assoziation.code %></td>
         <td><%= assoziation.instructor %></td>
         <% current_category = Category.find(assoziation.category_id) 
            current_courseofstudy = Courseofstudy.find(assoziation.courseofstudy_id)
            current_lecture = Lecture.find(assoziation.lecture_id) %>
-        <td><%= current_category.name if current_category.present? %></td>
-        <td><%= current_courseofstudy.name if current_courseofstudy.present? %></td>
-        <td><%= current_lecture.name if current_lecture.present? %></td>
+        <td><%= current_category.symbol if current_category.present? %></td>
+        <td><%= current_courseofstudy.symbol if current_courseofstudy.present? %></td>
+        <td class="hidden-xs"><%= current_lecture.name if current_lecture.present? %></td>
+        <td class="hidden-lg hidden-md hidden-sm">
+          <%= current_lecture.symbol if current_lecture.present? %>
+        </td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                                moderator_assoziation_path(assoziation), :class => 'btn btn-default btn-xs' %>
+                                moderator_assoziation_path(assoziation),
+                                :class => 'btn btn-default btn-xs action-buttons-height' %>
                                 
             <% if logged_in?(:admin, :moderator) %>            
               <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                          edit_moderator_assoziation_path(assoziation), :class => 'btn btn-default btn-xs' %>
+                          edit_moderator_assoziation_path(assoziation),
+                          :class => 'btn btn-default btn-xs action-buttons-height' %>
               <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                           moderator_assoziation_path(assoziation),
                           :method => :delete,
                           :data => { :confirm => t('.confirm',
                           :default => t("helpers.links.confirm", 
                           :default => 'Are you sure?')) },
-                          :class => 'btn btn-xs btn-danger' %>
+                          :class => 'btn btn-xs btn-danger action-buttons-height' %>
             <% end %>            
         </td>
       </tr>

@@ -1,6 +1,6 @@
 <%- model_class = Courseofstudy -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
 </div>
 <table class="table table-striped">
   <thead>
@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th class="hidden-xs"><%= model_class.human_attribute_name(:symbol) %></th>
       <th class="hidden-xs"><%= model_class.human_attribute_name(:faculty_id) %></th>
-      <th class="hidden-lg hidden-md hidden-ms">Faculty</th>
+      <th class="hidden-lg hidden-md hidden-sm">Faculty</th>
       <th><%= model_class.human_attribute_name(:studytype_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -21,7 +21,7 @@
         <% current_faculty = Faculty.find(courseofstudy.faculty_id) 
            current_studytype = Studytype.find(courseofstudy.studytype_id) %>
         <td class="hidden-xs"><%= current_faculty.name if current_faculty.present? %></td>
-        <td class="hidden-lg hidden-md hidden-ms"><%= current_faculty.symbol if current_faculty.present? %></td>
+        <td class="hidden-lg hidden-md hidden-sm"><%= current_faculty.symbol if current_faculty.present? %></td>
         <td><%= current_studytype.name if current_studytype.present? %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
