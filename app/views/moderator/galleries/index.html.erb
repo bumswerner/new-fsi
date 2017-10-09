@@ -1,12 +1,12 @@
 <%- model_class = Gallery -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
 </div>
 <table class="table table-striped table-responsive">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:description) %></th>
       <th>#count</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -15,31 +15,32 @@
     <% @galleries.each do |gallery| %>
       <tr>
         <td><%= gallery.name %></td>
-        <td><%= gallery.description %></td>
+        <td class="hidden-xs">
+          <%= truncate(gallery.description, length: @moderator_description_length) %>
+        </td>
         <td><%= gallery.images.count %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      moderator_gallery_path(gallery), :class => 'btn btn-default btn-xs' %>
-                      
-        <% if logged_in?(:admin, :moderator) %>
+                      moderator_gallery_path(gallery),
+                      :class => 'btn btn-default btn-xs action-buttons-height' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_moderator_gallery_path(gallery), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      edit_moderator_gallery_path(gallery),
+                      :class => 'btn btn-default btn-xs action-buttons-height' %>
+          <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       moderator_gallery_path(gallery),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-          <%= link_to 'Images', moderator_gallery_images_path(gallery), class: "btn btn-info btn-xs" %>
-        <% end %>
+                      :data => { :confirm => t('.confirm',
+                      :default => t("helpers.links.confirm", 
+                      :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger action-buttons-height' %>
+          <%= link_to 'Images', moderator_gallery_images_path(gallery), 
+                      class: "btn btn-info btn-xs action-buttons-height" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
-<% if logged_in?(:admin, :moderator) %>
-  <%= link_to t('.new', :default => t("helpers.links.new")), 
+<%= link_to t('.new', :default => t("helpers.links.new")), 
               new_moderator_gallery_path,
               :class => 'btn btn-primary' %>
-<% end %>

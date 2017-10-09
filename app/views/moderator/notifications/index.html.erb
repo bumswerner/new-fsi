@@ -1,9 +1,9 @@
 <%- model_class = Notification -%>
 <div class="page-header">
-  <h1>
+  <h2>
     <%= @notificationtype.name %> - 
     <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %> 
-  </h1>
+  </h2>
 </div>
 <table class="table table-striped">
   <thead>
@@ -18,21 +18,21 @@
     <% @notifications.each do |notification| %>
       <tr>
         <td><%= notification.title %></td>
-        <!--<td><%#= truncate(notification.message, length: @moderator_message_length) %></td>-->
+        <td class="hidden-xs"><%= truncate(notification.message, length: @moderator_message_length) %></td>
         <td><%= image_tag create_path(notification.image.url(:thumb)) if notification.image %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       moderator_notificationtype_notification_path(params[:notificationtype_id],
-                      notification), :class => 'btn btn-default btn-xs' %>
+                      notification), :class => 'btn btn-default btn-xs action-buttons-height' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_moderator_notificationtype_notification_path(params[:notificationtype_id],
-                      notification), :class => 'btn btn-default btn-xs' %>
+                      notification), :class => 'btn btn-default btn-xs action-buttons-height' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       moderator_notificationtype_notification_url(params[:notificationtype_id],
                       notification),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :class => 'btn btn-xs btn-danger action-buttons-height' %>
         </td>
       </tr>
     <% end %>

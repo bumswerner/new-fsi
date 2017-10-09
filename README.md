@@ -608,3 +608,7 @@ select_date(new.updated_at, order: [:year, :month, :day])
             <blockquote cite="https://www.facebook.com/facebook"><a href="https://de-de.facebook.com/htwsaar/" target="_blank">htw saar | Facebook</a></blockquote>
             <span style="font-size: 22pt"><%= fa_icon "facebook" %></span>
           </div>
+          
+          
+          
+          $ heroku pg:reset DATABASE
