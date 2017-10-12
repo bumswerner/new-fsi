@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/extras/dataTables.responsive
+//= require dataTables/jquery.dataTables
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require lightbox-bootstrap
@@ -83,8 +86,12 @@ $(document).ready(function(){
   $(document).on("change", "#connection_section_id", function() {
      createNameFieldContent();
   });
-  
-  // Zeigt ein Tooltip an
+ 
+});
+
+ // Zeigt ein Tooltip an
   $('[data-toggle="tooltip"]').tooltip(); 
   
-});
+ // Boottable - Responsive 
+  
+  

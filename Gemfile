@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'jquery-datatables-rails', '~> 3.4.0'
+
 # gem 'aws-sdk'
 gem 'fog'
 

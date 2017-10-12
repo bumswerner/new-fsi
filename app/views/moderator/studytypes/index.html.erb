@@ -1,8 +1,16 @@
+<script>
+  $(document).ready(function(){
+    $('#moderator-studytypes-table').DataTable({
+      responsive: true
+    });
+  });
+</script>
+
 <%- model_class = Studytype -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
 </div>
-<table class="table table-striped">
+<table id="moderator-studytypes-table" class="table display responsive no-wrap">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
