@@ -1,9 +1,9 @@
 <script>
-  $(document).ready(function(){
-    $('#moderator-assoziations-table').DataTable({
-      responsive: true
-    });
-  });
+  // $(document).ready(function(){
+  //   $('#moderator-assoziations-table').DataTable({
+  //     responsive: true
+  //   });
+  // });
 </script>
 
 <%- model_class = Assoziation -%>
@@ -13,21 +13,21 @@
 <table id="moderator-assoziations-table" class="table display responsive no-wrap">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:instructor) %></th>
-      <!-- <th class="hidden-lg hidden-md hidden-sm">Cat.</th>-->
-      <!--<th class="hidden-lg hidden-md hidden-sm">Cour.</th>-->
-      <!--<th class="hidden-lg hidden-md hidden-sm">Lec.</th>-->
-      <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:courseofstudy_id) %></th>
-      <th><%= model_class.human_attribute_name(:lecture_id) %></th>
+       <th class="hidden-lg hidden-md hidden-sm">Cat.</th>
+      <th class="hidden-lg hidden-md hidden-sm">Cour.</th>
+      <th class="hidden-lg hidden-md hidden-sm">Lec.</th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:category_id) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:courseofstudy_id) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:lecture_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @assoziations.each do |assoziation| %>
       <tr>
-        <td><%= assoziation.code %></td>
+        <td class="hidden-xs"><%= assoziation.code %></td>
         <td><%= assoziation.instructor %></td>
         <% current_category = Category.find(assoziation.category_id) 
            current_courseofstudy = Courseofstudy.find(assoziation.courseofstudy_id)
@@ -36,10 +36,10 @@
         <td><%= current_category.symbol if current_category.present? %></td>
         <td><%= current_courseofstudy.symbol if current_courseofstudy.present? %>
             <%= current_studytype.symbol if current_studytype.present? %></td>
-        <td><%= current_lecture.name if current_lecture.present? %></td>
-        <!--<td class="hidden-lg hidden-md hidden-sm">-->
-        <!--  <%#= current_lecture.symbol if current_lecture.present? %>-->
-        <!--</td>-->
+        <td class="hidden-xs"><%= current_lecture.name if current_lecture.present? %></td>
+        <td class="hidden-lg hidden-md hidden-sm">
+          <%= current_lecture.symbol if current_lecture.present? %>
+        </td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                                 moderator_assoziation_path(assoziation),
