@@ -12,12 +12,12 @@ module SetGlobalParams
   end
   
   def set_pagination_params
-    @faculties_per_page = 2
-    @courseofstudies_per_page = 2
-    @categories_per_page = 2
-    @lectures_per_page = 2
-    @sections_per_page = 2
-    @materials_per_page = 4
+    @faculties_per_page = 5
+    @courseofstudies_per_page = 5
+    @categories_per_page = 5
+    @lectures_per_page = 5
+    @sections_per_page = 5
+    @materials_per_page = 5
     
     @images_per_page = 12
   end
