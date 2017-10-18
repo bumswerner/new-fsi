@@ -28,6 +28,14 @@
     git remote add origin git@github.com:bumswerner/alpha-blog.git // in die Console von C9 eintragen
     dann zum testen 'git remote -v' eingeben
     git push -u origin master // pushed den Code zum Repository
+    
+    
+Create a new repo at github.
+Clone the repo from fedorahosted to your local machine.
+git remote rename origin upstream
+git remote add origin URL_TO_GITHUB_REPO
+git push origin master    
+    
 
 20. Install devise
     gem 'devise'
