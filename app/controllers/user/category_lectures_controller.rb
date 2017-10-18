@@ -21,8 +21,8 @@ class User::CategoryLecturesController < ApplicationController
   
     def get_data    
       @faculty = Faculty.find(params[:faculty_id])
-      @studytype = Studytype.find(params[:courseofstudy_id])
       @courseofstudy = Courseofstudy.find(params[:courseofstudy_id])
+      @studytype = Studytype.find(@courseofstudy.studytype_id)
       @assoziations = Assoziation.where("courseofstudy_id = ? AND category_id = ?",
                                         params[:courseofstudy_id],
                                         params[:category_id])

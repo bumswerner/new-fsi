@@ -20,8 +20,8 @@ class User::SectionMaterialsController < ApplicationController
     def get_data
       @faculty_id = Courseofstudy.find(params[:courseofstudy_id]).faculty_id
       @faculty = Faculty.find(@faculty_id)
-      @studytype = Studytype.find(params[:courseofstudy_id])
       @courseofstudy = Courseofstudy.find(params[:courseofstudy_id])
+      @studytype = Studytype.find(@courseofstudy.studytype_id)
       @category = Category.find(params[:category_id])
       @lecture = Lecture.find(params[:lecture_id])
       @section = Section.find(params[:section_id])
