@@ -531,7 +531,6 @@ Gallery.create!(
                 
 puts "3 Galleries created"
 
-
 Image.create!(
   name: "Pretzel",
   picture: "https://cdn.pixabay.com/photo/2017/09/17/22/01/pretzel-2759994__340.jpg",

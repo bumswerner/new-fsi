@@ -5,4 +5,5 @@ class Lecture < ApplicationRecord
   has_many :connections
  # has_many :materials, :through => :connections
   has_many :materials, :through => :connections, :source => :section
+  belongs_to :faculty
 end

@@ -1,6 +1,7 @@
 class Material < ApplicationRecord
   belongs_to :section
   belongs_to :lecture
+  belongs_to :faculty
  # before_validation :data
   has_attached_file :data
  # # Validate content type

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910153239) do
+ActiveRecord::Schema.define(version: 20171020201013) do
 
   create_table "assoziations", force: :cascade do |t|
     t.string "code"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170910153239) do
     t.integer "section_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "faculty_id"
     t.index ["lecture_id"], name: "index_connections_on_lecture_id"
     t.index ["section_id"], name: "index_connections_on_section_id"
   end
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170910153239) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "faculty_id"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 20170910153239) do
     t.integer "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "faculty_id"
     t.index ["lecture_id"], name: "index_materials_on_lecture_id"
     t.index ["section_id"], name: "index_materials_on_section_id"
   end
