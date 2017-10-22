@@ -26,8 +26,8 @@
        <li class="<%= active_class(moderator_assoziations_path) %>">
          <%= link_to "Assoziations", moderator_assoziations_path %></li>
        <li role="separator" class="divider"></li>
-       <li class="<%= active_class(moderator_lectures_path) %>">
-         <%= link_to "Lectures", moderator_lectures_path %></li>
+       <li class="<%= active_class(moderator_faculty_lectures_path(Faculty.first.id)) %>">
+         <%= link_to "Lectures", moderator_faculty_lectures_path(Faculty.first.id) %></li>
        <li class="<%= active_class(moderator_sections_path) %>">
          <%= link_to "Sections", moderator_sections_path %></li>
        <li role="separator" class="divider"></li>

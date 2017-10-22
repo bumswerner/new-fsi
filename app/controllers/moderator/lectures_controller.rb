@@ -9,7 +9,9 @@ class Moderator::LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all
+    @faculties = Faculty.all
+    @faculty = @faculties.find(params[:faculty_id])
+    @lectures = Lecture.where(faculty_id: @faculty.id)
   end
 
   # GET /lectures/1
