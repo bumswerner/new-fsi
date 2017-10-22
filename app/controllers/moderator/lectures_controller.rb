@@ -35,7 +35,7 @@ class Moderator::LecturesController < ApplicationController
 
     respond_to do |format|
       if @lecture.save
-        format.html { redirect_to moderator_lectures_path, notice: 'Lecture was successfully created.' }
+        format.html { redirect_to  moderator_faculty_lectures_path(params[:faculty_id]), notice: 'Lecture was successfully created.' }
         format.json { render :show, status: :created, location: @lecture }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class Moderator::LecturesController < ApplicationController
   def update
     respond_to do |format|
       if @lecture.update(lecture_params)
-        format.html { redirect_to moderator_lectures_path, notice: 'Lecture was successfully updated.' }
+        format.html { redirect_to moderator_faculty_lectures_path(params[:faculty_id]), notice: 'Lecture was successfully updated.' }
         format.json { render :show, status: :ok, location: @lecture }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class Moderator::LecturesController < ApplicationController
   def destroy
     @lecture.destroy
     respond_to do |format|
-      format.html { redirect_to moderator_lectures_url, notice: 'Lecture was successfully destroyed.' }
+      format.html { redirect_to moderator_faculty_lectures_url(params[:faculty_id]), notice: 'Lecture was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

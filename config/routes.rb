@@ -4,18 +4,20 @@ Rails.application.routes.draw do
 
   # material routes only for moderator and admin
   namespace :moderator do
-    resources :faculties
+    resources :faculties do 
+      resources :lectures
+    end
     resources :studytypes
     resources :courseofstudies
     resources :categories
     resources :assoziations
-    resources :lectures, except: [:new, :index]
-    get 'lectures_index/:faculty_id',
-        to: 'lectures#index',
-        as: 'faculty_lectures'
-    get 'lectures/:faculty_id/new',
-        to: 'lectures#new',
-        as: 'new_lecture'
+    
+    # get 'lectures_index/:faculty_id',
+    #     to: 'lectures#index',
+    #     as: 'faculty_lectures'
+    # get 'lectures/:faculty_id/new',
+    #     to: 'lectures#new',
+    #     as: 'new_lecture'
     resources :sections
     resources :connections
     resources :materials

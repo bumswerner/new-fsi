@@ -1,4 +1,8 @@
 <% if logged_in?(:admin, :moderator) %>
+  <%
+    first_faculty = Faculty.first.id
+  %>  
+  
   <ul class="nav navbar-nav">
     <li class="<%= active_class(moderator_galleries_path) %>">
       <%= link_to "Edit Galleries", moderator_galleries_path  %></li>
@@ -26,8 +30,8 @@
        <li class="<%= active_class(moderator_assoziations_path) %>">
          <%= link_to "Assoziations", moderator_assoziations_path %></li>
        <li role="separator" class="divider"></li>
-       <li class="<%= active_class(moderator_faculty_lectures_path(Faculty.first.id)) %>">
-         <%= link_to "Lectures", moderator_faculty_lectures_path(Faculty.first.id) %></li>
+       <li class="<%= active_class(moderator_faculty_lectures_path(first_faculty)) %>">
+         <%= link_to "Lectures", moderator_faculty_lectures_path(first_faculty) %></li>
        <li class="<%= active_class(moderator_sections_path) %>">
          <%= link_to "Sections", moderator_sections_path %></li>
        <li role="separator" class="divider"></li>

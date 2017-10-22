@@ -1,4 +1,6 @@
-<% target_url = @lecture.id.present? ? moderator_lecture_url : moderator_lectures_url %>
+<% target_url = @lecture.id.present? ? 
+                moderator_faculty_lecture_url(params[:faculty_id]) :
+                moderator_faculty_lectures_path(params[:faculty_id]) %>
 
 <%= form_for @lecture, url: target_url, :html => { :class => "form-horizontal lecture" } do |f| %>
 
@@ -27,7 +29,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                moderator_lectures_path, :class => 'btn btn-default' %>
+                moderator_faculty_lectures_path(params[:faculty_id]), :class => 'btn btn-default' %>
     </div>
   </div>
 
