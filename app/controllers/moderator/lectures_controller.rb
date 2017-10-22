@@ -71,9 +71,9 @@ class Moderator::LecturesController < ApplicationController
     def set_lecture
       @lecture = Lecture.find(params[:id])
     end
-
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:name, :symbol, :description)
+      params.require(:lecture).permit(:name, :symbol, :description, :faculty_id)
     end
 end

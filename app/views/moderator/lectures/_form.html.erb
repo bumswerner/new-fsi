@@ -22,7 +22,7 @@
       <%= f.text_area :description, rows: 10, :class => 'form-control', placeholder: 'Description of lecture' %>
     </div>
   </div>
-
+  <%= f.hidden_field :faculty_id, :value => params[:faculty_id] %>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>

@@ -9,7 +9,10 @@ Rails.application.routes.draw do
     resources :courseofstudies
     resources :categories
     resources :assoziations
-    resources :lectures
+    resources :lectures, except: [:new]
+    get 'lectures/:faculty_id/new',
+        to: 'lectures#new',
+        as: 'new_lecture'
     resources :sections
     resources :connections
     resources :materials
@@ -93,10 +96,6 @@ Rails.application.routes.draw do
          to: 'notifications#show',
          as: 'new'
   end
-
-  
-  # test ist jetzt die show action
-  get 'test', to: :show, controller: 'galleries'
   
   # vertecke den user_controller im admin - Ordner
   namespace :admin do

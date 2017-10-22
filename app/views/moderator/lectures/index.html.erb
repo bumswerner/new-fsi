@@ -51,6 +51,6 @@
 
 <% if logged_in?(:admin, :moderator) %>
   <%= link_to t('.new', :default => t("helpers.links.new")),
-              new_moderator_lecture_path,
+              moderator_new_lecture_path(1),
               :class => 'btn btn-primary' %>
 <% end %>
