@@ -1,4 +1,6 @@
-<% target_url = @courseofstudy.id.present? ? moderator_courseofstudy_url : moderator_courseofstudies_path  %>
+<% target_url = @courseofstudy.id.present? ?
+                moderator_faculty_courseofstudy_url(params[:faculty_id]) : 
+                moderator_faculty_courseofstudies_path(params[:faculty_id]) %>
 
 <%= form_for @courseofstudy, url: target_url, :html => { :class => "form-horizontal courseofstudy" } do |f| %>
 
@@ -28,7 +30,7 @@
     <div class="col-lg-10">
      <%= select_tag "courseofstudy[faculty_id]", 
           options_from_collection_for_select(Faculty.all, "id", "name",
-          :selected => @courseofstudy.faculty_id),
+          :selected => params[:faculty_id]),
           :prompt => "Please select",
           :class => 'form-control' %>
     </div>
@@ -48,7 +50,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                moderator_courseofstudies_path, :class => 'btn btn-default' %>
+                moderator_faculty_courseofstudies_path, :class => 'btn btn-default' %>
     </div>
   </div>
 

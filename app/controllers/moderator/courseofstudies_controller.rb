@@ -9,7 +9,9 @@ class Moderator::CourseofstudiesController < ApplicationController
   # GET /courseofstudies
   # GET /courseofstudies.json
   def index
-    @courseofstudies = Courseofstudy.all
+    @faculties = Faculty.all
+    @faculty = @faculties.find(params[:faculty_id])
+    @courseofstudies = Courseofstudy.where(faculty_id: @faculty.id)
   end
 
   # GET /courseofstudies/1
@@ -33,7 +35,8 @@ class Moderator::CourseofstudiesController < ApplicationController
 
     respond_to do |format|
       if @courseofstudy.save
-        format.html { redirect_to moderator_courseofstudies_path, notice: 'Courseofstudy was successfully created.' }
+        format.html { redirect_to moderator_faculty_courseofstudies_path(params[:faculty_id]), 
+                      notice: 'Courseofstudy was successfully created.' }
         format.json { render :show, status: :created, location: @courseofstudy }
       else
         format.html { render :new }
@@ -47,7 +50,8 @@ class Moderator::CourseofstudiesController < ApplicationController
   def update
     respond_to do |format|
       if @courseofstudy.update(courseofstudy_params)
-        format.html { redirect_to moderator_courseofstudies_path, notice: 'Courseofstudy was successfully updated.' }
+        format.html { redirect_to moderator_faculty_courseofstudies_path(params[:faculty_id]),
+                      notice: 'Courseofstudy was successfully updated.' }
         format.json { render :show, status: :ok, location: @courseofstudy }
       else
         format.html { render :edit }
@@ -61,7 +65,8 @@ class Moderator::CourseofstudiesController < ApplicationController
   def destroy
     @courseofstudy.destroy
     respond_to do |format|
-      format.html { redirect_to moderator_courseofstudies_url, notice: 'Courseofstudy was successfully destroyed.' }
+      format.html { redirect_to moderator_faculty_courseofstudies_url(params[:faculty_id]),
+                    notice: 'Courseofstudy was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -52,13 +52,24 @@
 
 
 /*******************************************************************************
-  Moderator Indexl - Views - Start
+  Moderator Index - Views - Start
 *******************************************************************************/
 .moderator-index-header {
   text-align: center;
   font-size: 14pt;
   letter-spacing: 1px;
   font-weight: bold;
+}
+
+.moderator-index-nav {
+  text-align: center;
+  
+  .active {
+   
+    a {
+       color: #ffffff !important;
+    }
+  }
 }
 
 
@@ -118,7 +129,7 @@
 }
 
 
-//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 footer {
   background-color: #0c1a1e;
   min-height: 100px;

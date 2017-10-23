@@ -21,8 +21,8 @@
        <li class="<%= active_class(moderator_studytypes_path) %>">
          <%= link_to "StudyTypes", moderator_studytypes_path %></li>
        <li role="separator" class="divider"></li>
-       <li class="<%= active_class(moderator_courseofstudies_path) %>">
-         <%= link_to "CourseOfStudies", moderator_courseofstudies_path %></li>
+       <li class="<%= active_class(moderator_faculty_courseofstudies_path(first_faculty)) %>">
+         <%= link_to "CourseOfStudies", moderator_faculty_courseofstudies_path(first_faculty) %></li>
        <li role="separator" class="divider"></li>
        <li class="<%= active_class(moderator_categories_path) %>">
          <%= link_to "Categories" ,moderator_categories_path %></li>

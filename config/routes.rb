@@ -5,19 +5,12 @@ Rails.application.routes.draw do
   # material routes only for moderator and admin
   namespace :moderator do
     resources :faculties do 
+      resources :courseofstudies
       resources :lectures
     end
     resources :studytypes
-    resources :courseofstudies
     resources :categories
     resources :assoziations
-    
-    # get 'lectures_index/:faculty_id',
-    #     to: 'lectures#index',
-    #     as: 'faculty_lectures'
-    # get 'lectures/:faculty_id/new',
-    #     to: 'lectures#new',
-    #     as: 'new_lecture'
     resources :sections
     resources :connections
     resources :materials
@@ -102,7 +95,7 @@ Rails.application.routes.draw do
          as: 'new'
   end
   
-  # vertecke den user_controller im admin - Ordner
+  # verstecke den user_controller im admin - Ordner
   namespace :admin do
     resources :users, only: [:edit, :update, :destroy, :index] 
   end
@@ -110,7 +103,13 @@ Rails.application.routes.draw do
   resources :profiles
   
   # change the default routes at devise
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+  devise_for :users, path: '',
+    path_names:
+    { 
+      sign_in: 'login',
+      sign_out: 'logout',
+      sign_up: 'register'
+    }
   
   root to: 'home#index'
   
