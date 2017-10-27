@@ -4,11 +4,16 @@ class Moderator::AssoziationsController < ApplicationController
   # set access roles
   access moderator:   :all,
   admin:       :all
+  
+ 
 
   # GET /assoziations
   # GET /assoziations.json
   def index
-    @assoziations = Assoziation.all
+    @faculties = Faculty.all
+    @faculty = @faculties.find(params[:faculty_id])
+    @courseofstudies = Courseofstudy.where(faculty_id: params[:faculty_id])
+    @assoziations = Assoziation.where(courseofstudy_id: get_courseofstudy_ids(@courseofstudies))
   end
 
   # GET /assoziations/1
@@ -33,7 +38,9 @@ class Moderator::AssoziationsController < ApplicationController
 
     respond_to do |format|
       if @assoziation.save
-        format.html { redirect_to moderator_assoziations_path, notice: 'Assoziation was successfully created.' }
+        format.html { redirect_to moderator_faculty_assoziations_path(params[:faculty_id]), 
+                      notice: 'Assoziation was successfully created.' 
+        }
         format.json { render :show, status: :created, location: @assoziation }
       else
         format.html { render :new }
@@ -47,7 +54,8 @@ class Moderator::AssoziationsController < ApplicationController
   def update
     respond_to do |format|
       if @assoziation.update(assoziation_params)
-        format.html { redirect_to moderator_assoziations_path, notice: 'Assoziation was successfully updated.' }
+        format.html { redirect_to moderator_faculty_assoziations_path(params[:faculty_id]),
+                      notice: 'Assoziation was successfully updated.' }
         format.json { render :show, status: :ok, location: @assoziation }
       else
         format.html { render :edit }
@@ -61,14 +69,17 @@ class Moderator::AssoziationsController < ApplicationController
   def destroy
     @assoziation.destroy
     respond_to do |format|
-      format.html { redirect_to moderator_assoziations_url, notice: 'Assoziation was successfully destroyed.' }
+      format.html { redirect_to moderator_faculty_assoziations_url(params[:faculty_id]), 
+                    notice: 'Assoziation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
   
   # for AJAX call
   def dropdown
+   # @courseofstudies = Studytype.find(params[:studytype_id]).courseofstudies
     @courseofstudies = Studytype.find(params[:studytype_id]).courseofstudies
+    @courseofstudies = @courseofstudies.where(faculty_id: params[:faculty_id])
     render :json => @courseofstudies.to_json()
   end
   
@@ -82,4 +93,15 @@ class Moderator::AssoziationsController < ApplicationController
     def assoziation_params
       params.require(:assoziation).permit(:code, :instructor, :category_id, :courseofstudy_id, :lecture_id)
     end
+    
+    # gets an array of courseofstudies ids back
+    def get_courseofstudy_ids courseofstudies
+      i = 0
+      ids = Array.new
+      courseofstudies.each do |courseofstudy|
+        ids.insert(i, courseofstudy.id)
+        i = i + 1
+      end
+    end
+  
 end

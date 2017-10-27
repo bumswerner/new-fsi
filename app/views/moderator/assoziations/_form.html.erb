@@ -1,14 +1,23 @@
 <% if params[:action] == "edit" %>
   <script>
     $(document).ready(function () {
-       showCourseofstudy(<%= @courseofstudy.studytype_id %>,
+       showCourseofstudy(<%= params[:faculty_id] %>,
+                         <%= @courseofstudy.studytype_id %>,
                          <%= @courseofstudy.id %>);
     });
-  </script>    
+  </script>
+<% else %>
+  <script>
+     $(document).on("change", "#select-studytype", function() {
+      showCourseofstudy(<%= params[:faculty_id] %>, $(this).val(), 0);
+    });
+  </script>
 <% end %>
  
 
-<% target_url = @assoziation.id.present? ? moderator_assoziation_url : moderator_assoziations_path %>
+<% target_url = @assoziation.id.present? ? 
+                moderator_faculty_assoziation_url(params[:faculty_id]) :
+                moderator_faculty_assoziations_path(params[:faculty_id]) %>
 
 <%= form_for @assoziation, url: target_url, :html => { :class => "form-horizontal assoziation" } do |f| %>
 
@@ -66,7 +75,8 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                moderator_assoziations_path, :class => 'btn btn-default' %>
+                moderator_faculty_assoziations_path(params[:faculty_id]),
+                :class => 'btn btn-default' %>
     </div>
   </div>
 

@@ -27,19 +27,19 @@
        <li class="<%= active_class(moderator_categories_path) %>">
          <%= link_to "Categories" ,moderator_categories_path %></li>
        <li role="separator" class="divider"></li>
-       <li class="<%= active_class(moderator_assoziations_path) %>">
-         <%= link_to "Assoziations", moderator_assoziations_path %></li>
+       <li class="<%= active_class(moderator_faculty_assoziations_path(first_faculty)) %>">
+         <%= link_to "Assoziations", moderator_faculty_assoziations_path(first_faculty) %></li>
        <li role="separator" class="divider"></li>
        <li class="<%= active_class(moderator_faculty_lectures_path(first_faculty)) %>">
          <%= link_to "Lectures", moderator_faculty_lectures_path(first_faculty) %></li>
        <li class="<%= active_class(moderator_sections_path) %>">
          <%= link_to "Sections", moderator_sections_path %></li>
        <li role="separator" class="divider"></li>
-       <li class="<%= active_class(moderator_connections_path) %>">
-         <%= link_to "Connections", moderator_connections_path %></li>
+       <li class="<%= active_class(moderator_faculty_connections_path(first_faculty)) %>">
+         <%= link_to "Connections", moderator_faculty_connections_path(first_faculty) %></li>
        <li role="separator" class="divider"></li>
-       <li class="<%= active_class(moderator_materials_path) %>">
-         <%= link_to "Materials", moderator_materials_path %></li>
+       <li class="<%= active_class(moderator_faculty_materials_path(first_faculty)) %>">
+         <%= link_to "Materials", moderator_faculty_materials_path(first_faculty) %></li>
       </ul>
      </li>
   </ul>

@@ -7,9 +7,41 @@
 </script>
 
 <%- model_class = Assoziation -%>
-<div class="page-header">
-  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
+
+<div class="row">
+  <div class="col-lg-4 col-lg-offset-4 
+              col-xs-6 col-xs-offset-3
+              well well-sm
+              moderator-index-header">
+   <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+  </div>
 </div>
+
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1
+              col-xs-10 col-xs-offset-1
+              well well-sm">
+    <ul class="nav nav-pills" role="tablist">
+      <% @faculties.each do |faculty| %>
+        <% active = (faculty.id == params[:faculty_id].to_i) ? "active" : "" %>
+        <li class="<%= active %>" role="presentation">
+          <a href="<%= moderator_faculty_assoziations_path(faculty.id) %>">
+            <%= faculty.name %>
+            <span class="badge">
+              <%
+                courseofstudies_pro_faculty = Courseofstudy.where(faculty_id: faculty.id)
+               # assoziations_pro_faculty = Assoziation.where(:courseofstudy_id, ) 
+                 assoziations = Assoziation.where(courseofstudy_id: get_courseofstudy_ids( courseofstudies_pro_faculty))
+              %>
+              <%= assoziations.count %>
+            </span>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 <table id="moderator-assoziations-table" class="table display responsive no-wrap">
   <thead>
     <tr>
@@ -43,13 +75,13 @@
         <!--</td>-->
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                                moderator_assoziation_path(assoziation),
+                                moderator_faculty_assoziation_path(params[:faculty_id], assoziation),
                                 :class => 'btn btn-default btn-xs action-buttons-height' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_moderator_assoziation_path(assoziation),
+                      edit_moderator_faculty_assoziation_path(params[:faculty_id], assoziation),
                       :class => 'btn btn-default btn-xs action-buttons-height' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      moderator_assoziation_path(assoziation),
+                      moderator_faculty_assoziations_path(params[:faculty_id], assoziation),
                       :method => :delete,
                       :data => { :confirm => t('.confirm',
                       :default => t("helpers.links.confirm", 
@@ -63,6 +95,6 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_moderator_assoziation_path,
+            new_moderator_faculty_assoziation_path(params[:faculty_id]),
             :class => 'btn btn-primary' %>
 

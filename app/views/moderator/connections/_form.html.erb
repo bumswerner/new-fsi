@@ -1,4 +1,6 @@
-<% target_url = @connection.id.present? ? moderator_connection_url : moderator_connections_url %>
+<% target_url = @connection.id.present? ?
+                moderator_faculty_connection_url(params[:faculty_id]) :
+                moderator_faculty_connections_url(params[:faculty_id]) %>
 
 <%= form_for @connection, url: target_url, :html => { :class => "form-horizontal connection" } do |f| %>
 
@@ -30,12 +32,24 @@
           :class => 'form-control' %>
     </div>
   </div>
+  
+   <div class="form-group">
+    <%= f.label :faculty_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+     <%= select_tag "connection[faculty_id]", 
+          options_from_collection_for_select(Faculty.all, "id", "name",
+          :selected => params[:faculty_id]),
+          :prompt => "Please select",
+          :class => 'form-control' %>
+    </div>
+  </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                moderator_connections_path, :class => 'btn btn-default' %>
+                moderator_faculty_connections_path(params[:faculty_id]),
+                :class => 'btn btn-default' %>
     </div>
   </div>
 

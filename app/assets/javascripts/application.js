@@ -28,9 +28,9 @@
 
 // Generiert ein passendes Dropdownmenu passend zur uebergebenen studytype_id
 // in der Moderator Section bei erstellen und bearbeiten einer Assoziation
-function showCourseofstudy(studytype_id, courseofstudy_id) {
+function showCourseofstudy(faculty_id, studytype_id, courseofstudy_id) {
   $.ajax({
-      url: "/moderator/assoziations/" + studytype_id + "/dropdown",
+      url: "/moderator/faculties/" + faculty_id + "/assoziations/" + studytype_id + "/dropdown",
       type: "GET",
       success: showCouseofstudies,
       dataType: "json"
@@ -65,7 +65,7 @@ function createNameFieldContent() {
   var content = $('#connection_name');
   var lecture_name = $('#connection_lecture_id > option:selected').text();
   var section_name = $('#connection_section_id > option:selected').text();
-  content.val(lecture_name + " >>> " + section_name);
+  content.val(lecture_name + " <> " + section_name);
 }
   
   
@@ -74,11 +74,7 @@ function createNameFieldContent() {
  */
  
 $(document).ready(function(){
-  
-  $(document).on("change", "#select-studytype", function() {
-      showCourseofstudy($(this).val(), 0);
-  });
-  
+
   $(document).on("change", "#connection_lecture_id", function() {
      createNameFieldContent();
   });

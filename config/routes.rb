@@ -6,20 +6,20 @@ Rails.application.routes.draw do
   namespace :moderator do
     resources :faculties do 
       resources :courseofstudies
+      resources :assoziations
+      # Route for AJAX - Request
+      get 'assoziations/:studytype_id/dropdown',
+          to: "assoziations#dropdown",
+          as: 'dropdown'
       resources :lectures
+      resources :connections
+       resources :materials
     end
+    
     resources :studytypes
     resources :categories
-    resources :assoziations
     resources :sections
-    resources :connections
-    resources :materials
-    
-    # Route for AJAX - Request
-    get 'assoziations/:studytype_id/dropdown',
-         to: "assoziations#dropdown",
-         as: 'dropdown'
-    
+   
     resources :notificationtypes do
       resources :notifications
     end

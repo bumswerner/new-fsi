@@ -10,7 +10,9 @@ class Moderator::ConnectionsController < ApplicationController
   # GET /connections
   # GET /connections.json
   def index
-    @connections = Connection.all
+    @faculties = Faculty.all
+    @faculty = @faculties.find(params[:faculty_id])
+    @connections = Connection.where(faculty_id: @faculty.id)
   end
 
   # GET /connections/1
@@ -34,7 +36,8 @@ class Moderator::ConnectionsController < ApplicationController
 
     respond_to do |format|
       if @connection.save
-        format.html { redirect_to moderator_connections_path, notice: 'Connection was successfully created.' }
+        format.html { redirect_to moderator_faculty_connections_path(), 
+                      notice: 'Connection was successfully created.' }
         format.json { render :show, status: :created, location: @connection }
       else
         format.html { render :new }
@@ -75,6 +78,6 @@ class Moderator::ConnectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def connection_params
-      params.require(:connection).permit(:name, :lecture_id, :section_id)
+      params.require(:connection).permit(:name, :lecture_id, :section_id, :faculty_id)
     end
 end

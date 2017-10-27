@@ -9,7 +9,12 @@ class Moderator::MaterialsController < ApplicationController
   # GET /materials
   # GET /materials.json
   def index
-    @materials = Material.all
+    @faculties = Faculty.all
+    @faculty = @faculties.find(params[:faculty_id])
+    @materials = Material.where(faculty_id: @faculty.id)
+    
+   # @materials_per_lecture = @materials.where(lecture_id: 1)
+    
   end
 
   # GET /materials/1
@@ -33,7 +38,8 @@ class Moderator::MaterialsController < ApplicationController
 
     respond_to do |format|
       if @material.save
-        format.html { redirect_to moderator_materials_path, notice: 'Material was successfully created.' }
+        format.html { redirect_to moderator_faculty_materials_path(params[:faculty_id]),
+                      notice: 'Material was successfully created.' }
         format.json { render :show, status: :created, location: @material }
       else
         format.html { render :new }
@@ -47,7 +53,8 @@ class Moderator::MaterialsController < ApplicationController
   def update
     respond_to do |format|
       if @material.update(material_params)
-        format.html { redirect_to  moderator_materials_path, notice: 'Material was successfully updated.' }
+        format.html { redirect_to  moderator_faculty_materials_path(params[:faculty_id]), 
+                      notice: 'Material was successfully updated.' }
         format.json { render :show, status: :ok, location: @material }
       else
         format.html { render :edit }
@@ -61,7 +68,8 @@ class Moderator::MaterialsController < ApplicationController
   def destroy
     @material.destroy
     respond_to do |format|
-      format.html { redirect_to moderator_materials_url, notice: 'Material was successfully destroyed.' }
+      format.html { redirect_to moderator_faculty_materials_url(params[:faculty_id]),
+                    notice: 'Material was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -91,6 +99,6 @@ class Moderator::MaterialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def material_params
-      params.require(:material).permit(:name, :discription, :data, :section_id, :lecture_id)
+      params.require(:material).permit(:name, :discription, :data, :section_id, :lecture_id, :faculty_id)
     end
 end

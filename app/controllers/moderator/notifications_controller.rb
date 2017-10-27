@@ -31,6 +31,7 @@ class Moderator::NotificationsController < ApplicationController
   # POST /notifications.json
   def create
     @notification = Notification.new(notification_params)
+    @notificationtype = Notificationtype.find(params[:notificationtype_id])
 
     respond_to do |format|
       if @notification.save

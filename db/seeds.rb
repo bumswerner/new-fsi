@@ -172,7 +172,8 @@ Lecture.create!(
   symbol: "Mfi 1",
   description: "Vermittlung von allgemeinen mathematischen Grundkenntnissen,
                 von Grundkenntnissen der Algebra und Analysis, sicherem Umgang
-                mit mathematischen Begriffen."
+                mit mathematischen Begriffen.",
+  faculty_id: 1
   )
 
 # id 2
@@ -184,7 +185,8 @@ Lecture.create!(
                 Die Studierenden sollen am Ende des Semesters in der Lage sein,
                 einfache Algorithmen und Datenstrukturen in Java umzusetzen.
                 Sie sollen dabei die Prinzipien der objektorientierten Programmierung
-                und die wichtigsten Sprachelemente von Java beherrschen."
+                und die wichtigsten Sprachelemente von Java beherrschen.",
+  faculty_id: 1
   )
   
 # id 3
@@ -196,7 +198,8 @@ Lecture.create!(
                 Inhalte: Grundlagen UNIX, Shell als Kommandointerpreter,
                 Zugriffsrechte und Datensicherheit, Shellprogrammierung, 
                 Shell-Skripte, Programmentwicklungswerkzeuge unter UNIX,
-                UNIX Netzwerk-Utilities."
+                UNIX Netzwerk-Utilities.",
+  faculty_id: 1
   )
   
 # id 4
@@ -208,7 +211,8 @@ Lecture.create!(
                 Nach erfolgreicher Absolvierung dieses Moduls können die Studierenden
                 fortgeschrittene Konzepte objektorientierter Programmierung in Java 
                 erklären und anwenden. Sie sind in der Lage, objektorientierte
-                Lösungen zu entwerfen und umzusetzen. "
+                Lösungen zu entwerfen und umzusetzen. ",
+  faculty_id: 1
   )
   
 # id 5
@@ -219,7 +223,8 @@ Lecture.create!(
                 - Grundlegende Algorithmen für Graphen kennen und analysieren können
                 - Modellierung von Sachverhalten mittels Graphentheorie kennenlernen
                 - Durchlaufprobleme in Graphen kennenlernen
-                - Implementierungsprobleme verstehen"
+                - Implementierungsprobleme verstehen",
+  faculty_id: 1            
   )
   
 # id 6
@@ -230,7 +235,8 @@ Lecture.create!(
                 theoretischen Informatik. Sie sind mit den Eigenschaften von Automaten
                 und Sprachen vertraut und können bei praktischen Aufgabenstellungen die 
                 geeigneten theoretischen Konzepte (z.B. endlicher Automat oder Kellerautomat) 
-                auswählen und anwenden."
+                auswählen und anwenden.",
+  faculty_id: 1
   )
   
 # id 7
@@ -243,7 +249,8 @@ Lecture.create!(
                 Auch Techniken zur Leistungssteigerung wie Pipelining und Cache werden vorgestellt
                 und die Interaktion mit Peripheriekomponenten wird erörtert. 
                 Anhand von Fallbeispielen unterschiedlicher Prozessoren werden 
-                die vorgestellten Architekturmerkmale verifiziert. "
+                die vorgestellten Architekturmerkmale verifiziert. ",
+  faculty_id: 1
   )
   
 puts "Created 7 Lectures"
@@ -348,25 +355,29 @@ puts "Created 4 Sections"
 Connection.create!(
   name: "Klausuren --> Mathe 1",
   section_id: 1,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1
   )
   
 Connection.create!(
   name: "Übungen --> Mathe 1",
   section_id: 2,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1
   )
   
 Connection.create!(
   name: "Skripte --> Mathe 1",
   section_id: 3,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1  
   )
 
 Connection.create!(
   name: "Lösungen --> Mathe 1",
   section_id: 4,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1  
   )
   
 puts "Created 4 Connections"
@@ -379,7 +390,8 @@ Material.create!(
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
  # data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2007/Klausur.pdf",              
   section_id: 1,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1  
   )
   
 Material.create!(
@@ -390,7 +402,8 @@ Material.create!(
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
 #  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2008/Klausur.pdf",
   section_id: 1,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1  
   )
   
 Material.create!(
@@ -401,7 +414,8 @@ Material.create!(
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
 #  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2009/Klausur.pdf",
   section_id: 1,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1  
   )
   
 Material.create!(
@@ -412,7 +426,8 @@ Material.create!(
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
 #  data: "http://fs-i.s3-eu-central-1.amazonaws.com/material/PI%20Bachelor/WS2010/Klausur.pdf",
   section_id: 1,
-  lecture_id: 6
+  lecture_id: 6,
+  faculty_id: 1  
   )
   
 puts "Created 4 Materials"
@@ -491,7 +506,7 @@ Notification.create!(
             für Technik und Wirtschaft des Saarlandes (htw saar) in die Saarbrücker Congresshalle eingeladen,
             um den Studienanfang zu feiern und wichtige Informationen zum Studienablauf zu erhalten.
             Beginn ist um 9:00 Uhr.",
-  image: "https://www.htwsaar.de/hochschule/veranstaltungen/immatrikulationsfeier/immatrikulationsfeier-2017/@@images/profilbild/profilsize",
+ # image: "https://www.htwsaar.de/hochschule/veranstaltungen/immatrikulationsfeier/immatrikulationsfeier-2017/@@images/profilbild/profilsize",
   notificationtype_id: 1)
   
 Notification.create!(
@@ -499,7 +514,7 @@ Notification.create!(
   message: "Das Bonusheft sozial(und)kompetent zeigt vielfältige Möglichkeiten zur Mitarbeit, 
             Mitbestimmung und sozialem Engagement an der htw saar auf und möchte zu noch mehr sozialen 
             Tätigkeiten sowie noch stärkerer Ausübung von Ämtern innerhalb der Hochschule anregen.",
-  image: "http://htwsaar.de/carousel_startseite/bonusheft/image",
+ # image: "http://htwsaar.de/carousel_startseite/bonusheft/image",
   notificationtype_id: 1)
   
 puts "5 Notification created"
@@ -590,4 +605,5 @@ Image.create!(
   picture: "https://cdn.pixabay.com/photo/2017/09/04/22/16/grapes-2715711_960_720.jpg",
   gallery_id: 1
   )
+  
 puts "10 Images created"
