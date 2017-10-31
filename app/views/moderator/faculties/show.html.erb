@@ -1,6 +1,12 @@
 <%- model_class = Faculty -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+
+</div><div class="row">
+  <div class="col-lg-4 col-lg-offset-4 
+              col-xs-6 col-xs-offset-3
+              well well-sm
+              moderator-index-header">
+   Show - <%= t '.title', :default => model_class.model_name.human %>
+  </div>
 </div>
 
 <dl class="dl-horizontal">
