@@ -5,11 +5,13 @@
 %>
 
 <%- model_class = Connection -%>
-<div class="page-header">
-  <h2>
-    <%= current_faculty.name if current_faculty.present? %> - 
-    <%=t '.title', :default => model_class.model_name.human.titleize %>
-  </h2>
+<div class="row">
+  <div class="col-lg-4 col-lg-offset-4 
+              col-xs-6 col-xs-offset-3
+              well well-sm
+              moderator-index-header">
+  Show - <%= t '.title', :default => model_class.model_name.human %>
+  </div>
 </div>
 
 <dl class="dl-horizontal">
