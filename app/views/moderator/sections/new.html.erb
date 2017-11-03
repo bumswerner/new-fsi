@@ -4,7 +4,7 @@
               col-xs-6 col-xs-offset-3
               well well-sm
               moderator-index-header">
- <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+   New - <%= t '.title', :default => model_class.model_name.human %>
   </div>
 </div>
 <%= render :partial => 'form' %>

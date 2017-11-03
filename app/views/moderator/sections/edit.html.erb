@@ -1,11 +1,11 @@
 <%- model_class = Section -%>
 
-</div><div class="row">
+<div class="row">
   <div class="col-lg-4 col-lg-offset-4 
               col-xs-6 col-xs-offset-3
               well well-sm
               moderator-index-header">
- <%=t '.title', :default => model_class.model_name.human %>
+   Edit - <%= t '.title', :default => model_class.model_name.human %>
   </div>
 </div>
 <%= render :partial => 'form' %>
