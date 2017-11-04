@@ -36,7 +36,7 @@ class Moderator::ConnectionsController < ApplicationController
 
     respond_to do |format|
       if @connection.save
-        format.html { redirect_to moderator_faculty_connections_path(), 
+        format.html { redirect_to moderator_faculty_connections_path(params[:faculty_id]), 
                       notice: 'Connection was successfully created.' }
         format.json { render :show, status: :created, location: @connection }
       else
@@ -51,7 +51,8 @@ class Moderator::ConnectionsController < ApplicationController
   def update
     respond_to do |format|
       if @connection.update(connection_params)
-        format.html { redirect_to moderator_connections_path, notice: 'Connection was successfully updated.' }
+        format.html { redirect_to moderator_faculty_connections_path(params[:faculty_id]),
+                      notice: 'Connection was successfully updated.' }
         format.json { render :show, status: :ok, location: @connection }
       else
         format.html { render :edit }
@@ -65,7 +66,8 @@ class Moderator::ConnectionsController < ApplicationController
   def destroy
     @connection.destroy
     respond_to do |format|
-      format.html { redirect_to moderator_connections_url, notice: 'Connection was successfully destroyed.' }
+      format.html { redirect_to moderator_faculty_connections_url(params[:faculty_id]),
+                    notice: 'Connection was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
