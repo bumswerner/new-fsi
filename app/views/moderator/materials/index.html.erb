@@ -52,7 +52,7 @@
     <% @materials.each do |material| %>
       <tr>
         <td><%= material.name %></td>
-        <td class="hidden-xs"><%= material.data_file_name %></td>
+        <td class="hidden-xs"><%= truncate(material.data_file_name, length: 35) %></td>
         <% current_section = Section.find(material.section_id) 
            current_lecture = Lecture.find(material.lecture_id) %>      
         <td><%= current_section.name if current_section.present? %></td>
