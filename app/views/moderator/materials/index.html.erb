@@ -75,11 +75,9 @@
                         :class => 'btn btn-xs btn-danger action-buttons-height' %>
           <% end %>
             <%= link_to 'Download',
-                material.data.url(:original, false),
+                create_path(material.data.url(:original, false)),
                 download: '',
                 :class => 'btn btn-xs btn-primary action-buttons-height' %>
-                
-            <%#= link_to 'Download',  download_url(material), :method => 'download', :class => 'btn btn-xs btn-primary' %>
         </td>
       </tr>
     <% end %>
